@@ -1,7 +1,11 @@
 {
   "name": "inscribe-app",
+  "author": "your name",
+  "description": "My Electron app",
   "version": "0.1.0",
+  "main": "electron/main.js",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@craco/craco": "^6.0.0",
     "@material-ui/core": "^4.11.2",
@@ -26,8 +30,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "export BROWSER=none && craco start",
     "build": "craco build",
+    "start-electron": "export ELECTRON_START_URL=http://localhost:3000 && electron .",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -48,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^11.2.0"
   }
 }
