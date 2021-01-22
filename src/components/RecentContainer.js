@@ -19,7 +19,6 @@ function RecentContainer() {
         </div>
         <RecentFile name="1004_W18_040_TRUTH-1.MEPSA" date="December, 12th 2020 - 12:48pm" />
         <RecentFile name="1004_W18.MEPSP" date="Yesterday - 08:46am"/>
-
         </div>
     )
 }

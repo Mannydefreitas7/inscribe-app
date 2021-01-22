@@ -4,7 +4,7 @@ import MoreIcon from './../assets/icons/MoreIcon'
 
 function RecentFile(props) {
     return (
-        <div className="flex justify-between py-4 px-4 border-b hover:bg-gray-200">
+        <div className="flex justify-between py-4 px-4 border-b hover:bg-gray-200 rounded">
             <div className="flex content-center">
                 <DocumentIcon />
                 <span className="ml-2 font-semibold">{props.name}</span>

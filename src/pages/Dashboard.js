@@ -14,6 +14,7 @@ function Dashboard() {
     <Router>
       <div>
         <DashboardBar />
+        <div className="pt-10">
         <Switch>
         <Route path="/" exact>
             <Redirect to="/home" />
@@ -26,6 +27,7 @@ function Dashboard() {
             <Extensions />
           </Route>
         </Switch>
+        </div>
       </div>
     </Router>
     )

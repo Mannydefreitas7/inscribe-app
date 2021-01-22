@@ -7,8 +7,8 @@ function Home() {
     return (
         <div className="flex flex-row">
             <TemplatesBar />
-            <div className="p-5 flex-grow">
-            <DropZoneFile />
+            <div className="p-5 flex-grow pt-10">
+            <DropZoneFile name="file" />
             <RecentContainer />
             </div>
         </div>
