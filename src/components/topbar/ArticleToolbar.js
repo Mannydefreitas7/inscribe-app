@@ -28,7 +28,12 @@ function ArticleToolbar() {
                 />
             </button>
 
-            <button className="p-2 mx-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
+            <button 
+            onMouseDown={evt => {
+                evt.preventDefault();
+                document.execCommand("styleWithCSS", false, false) 
+            }}
+            className="p-2 mx-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
                 <ReactSVG
                     beforeInjection={(svg) => {
                         svg.setAttribute("style", "width: 20px; height: 20px;");

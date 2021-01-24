@@ -3,7 +3,16 @@ h1 {
     font-size: larger;
 }
 
+* {
+    caret-color:#9B1A4B;
+}
+
+*::selection {
+    background: #9b1a4b2a;
+}
+
 a {
     color: #9B1A4B;
     text-decoration: none;
 }
+

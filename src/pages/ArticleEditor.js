@@ -87,7 +87,7 @@ function ArticleEditor() {
        style={{ paddingTop: "100px" }}
           className="px-4 container mx-auto"
           tagName="div"
-          html={`<h1 class="text-center">HELLO WORLD</h1>`} // innerHTML of the editable div
+          html={`<h1>HELLO WORLD</h1>`} // innerHTML of the editable div
           disabled={false} // use true to disable edition
           onChange={(e) => console.log(e)} // handle innerHTML change
           onBlur={() => {}}
