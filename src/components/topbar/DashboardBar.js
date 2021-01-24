@@ -10,7 +10,6 @@ import { Typography } from '@material-ui/core';
 function DashboardBar() {
     return (
         <div className="flex px-4 border-b justify-between fixed w-full" style={{backgroundColor: '#F8F8F8' }}>
-
           <div className="flex flex-row">
               <a className="py-4 px-4" href="/">New</a>
               <a className="py-4 px-4" href="/">Open...</a>

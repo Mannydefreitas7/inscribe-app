@@ -2,8 +2,11 @@ import React from 'react'
 import RecentFile from './RecentFile'
 import GridIcon from './../assets/icons/GridIcon'
 import ListIcon from './../assets/icons/ListIcon'
+import { Link } from 'react-router-dom'
 
 function RecentContainer() {
+
+
     return (
         <div className="mt-4">
         <div className="flex py-3 justify-between w-full border-t">
@@ -17,7 +20,9 @@ function RecentContainer() {
                 </a>
             </div>
         </div>
-        <RecentFile name="1004_W18_040_TRUTH-1.MEPSA" date="December, 12th 2020 - 12:48pm" />
+        <Link to="/editor/article">
+            <RecentFile name="1004_W18_040_TRUTH-1.MEPSA" date="December, 12th 2020 - 12:48pm" />
+        </Link>
         <RecentFile name="1004_W18.MEPSP" date="Yesterday - 08:46am"/>
         </div>
     )

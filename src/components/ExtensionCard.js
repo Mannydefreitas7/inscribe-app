@@ -8,7 +8,7 @@ function ExtensionCard(props) {
 
 
   return (
-    <div className="flex flex-row p-4 justify-between content-center rounded-lg bg-gray-900 bg-opacity-5 hover:bg-opacity-10">
+    <div key={props.id} className="flex flex-row p-4 justify-between content-center rounded-lg bg-gray-900 bg-opacity-5 hover:bg-opacity-10">
       <div className="flex content-center w-9/12">
         <div className="self-center mr-4">
           <ReactSVG

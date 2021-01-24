@@ -47,7 +47,7 @@
     {
         "id": "7630469e-d624-443a-be7d-dbeb2ccfb6dd",
         "name": "PageFlow",
-        "description": "Digital content layout and presentation tools.",
+        "description": "Digital content layout and presentation tooling.",
         "size": "2.4 MB",
         "isInstalled": false,
         "hasUpdate": false,
@@ -56,7 +56,7 @@
     {
         "id": "b209d335-e765-4ecf-a44d-50699cafdd51",
         "name": "Photons",
-        "description": "Art assets version explorer service",
+        "description": "Assets versioned explorer service",
         "size": "345 KB",
         "isInstalled": false,
         "hasUpdate": false,

@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import DragDropIcon from "./../assets/icons/DragDropIcon";
-
+import article from "./../assets/articles/Article.xml"
+const XMLParser = require('react-xml-parser');
+const axios = require('axios');
 function DropZoneFile(props) {
-  const getColor = (props) => {
-    if (props.isDragAccept) {
-      return "#00e676";
-    }
-    if (props.isDragReject) {
-      return "#ff1744";
-    }
-    if (props.isDragActive) {
-      return "#2196f3";
-    }
-    return "#eeeeee";
-  };
+
 
   const {
     getRootProps,
     getInputProps,
+    acceptedFiles,
     isDragActive,
     isDragAccept,
     isDragReject,
-  } = useDropzone({ accept: ".json" });
+  } = useDropzone({ accept: ".mepsa" });
+
+  
+
+  useEffect(() => {
+
+  //   axios.get(article, {
+  //     "Content-Type": "application/xml; charset=utf-8"
+  //  })
+  //  .then((response) => {
+  //     console.log('Your xml file as string', response.data);
+  //  });
+
+    acceptedFiles.map(file => {
+      file.text().then(article => {
+        console.log(article)
+      })
+    });
+  })
 
   return (
     <div className="flex justify-center content-center" style={{ height : '300px'}}>
+      
       <div
         {...getRootProps({
+          onDrop: event => {
+            console.log(acceptedFiles)
+            
+          },
           className: `${
             isDragActive
               ? "bg-pink-700 border-pink-200"
@@ -35,7 +50,7 @@ function DropZoneFile(props) {
           } bg-gray-100 p-3 flex-grow rounded-lg flex justify-center border-dotted border-4 focus:outline-none focus:border-4 focus:border-pink-700 flex-col bg-opacity-5`,
         })}
       >
-        <input {...getInputProps({ className: "min-w-full" })} />
+        <input  {...getInputProps({className: "min-w-full" })} />
         <div className="flex justify-center flex-wrap self-center">
           <DragDropIcon fill={isDragActive ? "#F9A8D4" : "#9CA3AF"} />
         </div>

@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    outline: none !important;
+}
+.ql-clipboard {
+    display: none !important;
+}
