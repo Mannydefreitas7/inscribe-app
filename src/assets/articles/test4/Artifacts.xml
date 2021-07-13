@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Artifacts schema="1" compatibleSchema="1" mlSignature="54c4cbe9462b7e91c7273a1a185692a1f27a7acb">
+ <LegacyMepsDocument mepsType="90" primary="true" schema="1" compatibleSchema="1">
+  <Source signature="55e1243381ed6d49c821a600c5421ef7a1dd2b1e">
+   <Document fileName="1004_W16_040_STRA.N-1 rootUrl="file:/d:/meps/jasper/mfconverter/""/>
+   <Replacement name="Research Source" fileName="1004_W16_040_STRA.N-1"/>
+  </Source>
+  <Conversion releaseNumber="1"/>
+ </LegacyMepsDocument>
+</Artifacts>

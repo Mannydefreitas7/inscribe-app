@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.125" height="16.125" viewBox="0 0 16.125 16.125">
+  <g id="drag" transform="translate(0.5 0.5)">
+    <path id="Path_8872" data-name="Path 8872" d="M1,3.161V1H3.161" transform="translate(-1 -1)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_8873" data-name="Path 8873" d="M3.161,18.161H1V16" transform="translate(-1 -5.196)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_8874" data-name="Path 8874" d="M16,1h2.161V3.161" transform="translate(-5.196 -1)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_63" data-name="Line 63" x2="1" transform="translate(6)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <line id="Line_64" data-name="Line 64" y2="1" transform="translate(0 6)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_8875" data-name="Path 8875" d="M17.643,10.44,9,9l1.44,8.643L12.6,14.762l3.6,3.6L18.363,16.2l-3.6-3.6Z" transform="translate(-3.238 -3.238)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

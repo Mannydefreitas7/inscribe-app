@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Annotations schema="1" compatibleSchema="1" mlSignature="ac3f96d3677845164d7698b141a8424c5b3554ca">
+ <NextAnnotationId number="5"/>
+ <Annotation id="1" componentId="993" type="ConversionArtifact">
+  <Tag value="Section Label"/>
+  <Conversation presentation="Block">
+   <Text>**[Endnote]**</Text>
+  </Conversation>
+ </Annotation>
+ <Annotation id="2" componentId="994" type="ConversionArtifact">
+  <Tag value="Section Label"/>
+  <Conversation presentation="Block">
+   <Text>**[Study Questions]**</Text>
+  </Conversation>
+ </Annotation>
+ <Annotation id="3" componentId="995" type="ConversionArtifact">
+  <Tag value="Section Label"/>
+  <Conversation presentation="Block">
+   <Text>​**[Pictures on page 11]**</Text>
+  </Conversation>
+ </Annotation>
+ <Annotation id="4" componentId="996" type="ConversionArtifact">
+  <Tag value="Section Label"/>
+  <Conversation presentation="Block">
+   <Text>**[Picture on page 12]**</Text>
+  </Conversation>
+ </Annotation>
+</Annotations>

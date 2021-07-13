@@ -1,0 +1,14 @@
+<svg id="zoom-out" xmlns="http://www.w3.org/2000/svg" width="16.213" height="16.213" viewBox="0 0 16.213 16.213">
+  <g id="Canvas_Marker" data-name="Canvas Marker">
+    <path id="Path_274" data-name="Path 274" d="M616,592" transform="translate(-599.787 -592)"/>
+    <path id="Path_275" data-name="Path 275" d="M592,592" transform="translate(-592 -592)"/>
+    <path id="Path_276" data-name="Path 276" d="M616,616" transform="translate(-599.787 -599.787)"/>
+    <path id="Path_277" data-name="Path 277" d="M592,616" transform="translate(-592 -599.787)"/>
+  </g>
+  <g id="Expanded" transform="translate(2.364 2.364)">
+    <g id="Group_43" data-name="Group 43">
+      <path id="Path_278" data-name="Path 278" d="M608.912,608.434l-3.378-3.378-.008,0a5.765,5.765,0,1,0-.475.475l0,.008,3.378,3.378a.338.338,0,0,0,.478-.478Zm-7.67-2.125a5.067,5.067,0,1,1,5.067-5.067A5.072,5.072,0,0,1,601.242,606.309Z" transform="translate(-595.5 -595.5)" fill="#707070"/>
+      <path id="Path_279" data-name="Path 279" d="M605.242,603.5h-5.4a.338.338,0,0,0,0,.676h5.4a.338.338,0,0,0,0-.676Z" transform="translate(-596.798 -598.096)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

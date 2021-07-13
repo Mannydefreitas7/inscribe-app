@@ -9,7 +9,7 @@ function Extensions() {
       <div className="lg:w-1/2 px-4">
         <h2 className="font-bold text-xl mb-1">Extensions</h2>
         <input
-          className="px-2 mb-4 w-full rounded py-2 border border-gray-300 appearance-none focus:outline-none focus:border-pink-800"
+          className="px-2 mb-4 w-full rounded py-2 border border-gray-300 appearance-none focus:outline-none focus:border-indigo-800"
           type="text"
           placeholder="Search Extensions"
         />

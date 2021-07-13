@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article schema="1" compatibleSchema="1" mlSignature="af38cb6e6fdd58ba7a6b1ff3b1f9db2bba17d618">
+ <SectionTypes>
+  <SectionType name="Endnotes" nameId="1"/>
+ </SectionTypes>
+ <TextTypes>
+  <TextType name="Title" nameId="1"/>
+  <TextType name="Scripture.Theme" nameId="2"/>
+  <TextType name="TextFlow" nameId="3"/>
+  <TextType name="Element.Title" nameId="4"/>
+  <TextType name="List.Unordered" nameId="5"/>
+  <TextType name="List.Item" nameId="6"/>
+  <TextType name="Subheading" nameId="7"/>
+  <TextType name="Element.Label" nameId="8"/>
+  <TextType name="Link" nameId="9"/>
+  <TextType name="Link.Block" nameId="10"/>
+  <TextType name="Number.Paragraph" nameId="11"/>
+  <TextType name="Cross-referenceLabel" nameId="12"/>
+  <TextType name="EndnoteItem" nameId="13"/>
+  <TextType name="StudyQuestionItem" nameId="14"/>
+ </TextTypes>
+ <Groups>
+  <Group name="Box.Teaching" nameId="1"/>
+  <Group name="TeachingCaption" nameId="2"/>
+  <Group name="Internal.Reference.Position" nameId="3"/>
+  <Group name="Internal.Metatag" nameId="4"/>
+  <Group name="Internal.Decoration" nameId="5"/>
+ </Groups>
+ <Content nextComponentId="1380" mlSignature="f14375eb1de296c03d2fb8c35fadf0c9b3238a91">
+  <Section id="1190" label="Opening Content" locked="false" textSignature="38d5fe537e665d4f69949c49558d27ed0f122b5f">
+   <Fragment type="Block" id="1" textTypeId="1"><Fragment type="Segment" id="1191" groupId="5">“Do Not Forget Kindness to Strangers”</Fragment></Fragment>
+   <Fragment type="Block" id="2" textTypeId="2">“Do not forget kindness to strangers.”<Fragment type="Anchor" id="1192" groupId="4"/>—H<Fragment type="Segment" id="997" textTypeId="9" groupId="4">EB. 13:2,</Fragment> ftn.</Fragment>
+   <Fragment type="Block" id="3">S<Fragment type="Segment" id="1003" textTypeId="10">ONGS: <Fragment type="Segment" id="1196" groupId="5">124,</Fragment><Fragment type="Anchor" id="1194" groupId="4"/>79</Fragment></Fragment>
+   <Fragment type="Container" id="4" textTypeId="3" groupId="1">
+    <Fragment type="Block" id="5" textTypeId="4"><Fragment type="Segment" id="1197" groupId="5">HOW WOULD YOU ANSWER?</Fragment></Fragment>
+    <Fragment type="Container" id="6" textTypeId="3">
+     <Fragment type="Container" id="7" textTypeId="5">
+      <Fragment type="Block" id="8" textTypeId="6">Why might we need to adjust our view of strangers?</Fragment>
+      <Fragment type="Block" id="9" textTypeId="6">How did Boaz reflect Jehovah’s view of strangers in his dealings with Ruth?</Fragment>
+      <Fragment type="Block" id="10" textTypeId="6">How can we show kindness to strangers?</Fragment>
+     </Fragment>
+    </Fragment>
+   </Fragment>
+  </Section>
+  <Section id="1198" label="Main Content" locked="false" textSignature="b08d023aa1a70419a3030efbf868816087b7083e">
+   <Fragment type="Container" id="11" textTypeId="3">
+    <Fragment type="Block" id="961"><Fragment type="Anchor" id="1005" textTypeId="11" groupId="4"/>OVER 30 years ago, Osei,<Fragment type="Anchor" id="1164" textTypeId="9" groupId="4"/> who was not a Witness at that time, arrived in Europe from Ghana. He recalls: “I soon realized that most people did not care about me. The climate was also quite a shock. When I left the airport and felt the cold for the first time in my life, I started crying.” Because he struggled with the language, Osei could not find a decent job for over a year. Being far away from his family, he felt alone and homesick.</Fragment>
+    <Fragment type="Block" id="962"><Fragment type="Segment" id="1007" textTypeId="11" groupId="4"><Fragment type="Segment" id="1199" groupId="5">2</Fragment></Fragment><Fragment type="Segment" id="1008" groupId="4"> </Fragment>Think about how you would like others to act toward you if you were in a similar situation. Would you not appreciate a warm welcome at the Kingdom Hall, regardless of your nationality or skin color? In fact, the Bible urges genuine Christians: “Do not forget kindness to strangers.” (H<Fragment type="Segment" id="1009" textTypeId="9" groupId="4">eb. 13:2,</Fragment> ftn.) So let us consider the following questions: How does Jehovah view strangers? Why might we need to adjust our view of strangers? And how can we help those from a foreign background to feel at home in our congregation?</Fragment>
+    <Fragment type="Block" id="12" textTypeId="7"><Fragment type="Segment" id="1200" groupId="5">HOW JEHOVAH VIEWS STRANGERS</Fragment></Fragment>
+    <Fragment type="Block" id="963"><Fragment type="Segment" id="1012" textTypeId="11" groupId="4"><Fragment type="Segment" id="1205" groupId="5">3</Fragment></Fragment><Fragment type="Segment" id="1013" groupId="4"> </Fragment>After Jehovah delivered his people from Egypt, he gave them a set of laws that showed special consideration for the many non-Israelites who had joined them. (E<Fragment type="Segment" id="1022" textTypeId="10"><Fragment type="Segment" id="1014" textTypeId="9" groupId="4">x. 12:38, </Fragment><Fragment type="Segment" id="1016" textTypeId="9" groupId="4">49; </Fragment><Fragment type="Segment" id="1018" textTypeId="9" groupId="4">22:21)</Fragment></Fragment> Since foreigners are often disadvantaged, Jehovah lovingly made provisions for them. The right to glean food was one such provision.<Fragment type="Anchor" id="1201" groupId="4"/>—L<Fragment type="Segment" id="1020" textTypeId="9" groupId="4">ev. 19:9,<Fragment type="Anchor" id="1203" groupId="4"/>10.</Fragment></Fragment>
+    <Fragment type="Block" id="964"><Fragment type="Segment" id="1024" textTypeId="11" groupId="4"><Fragment type="Segment" id="1210" groupId="5">4</Fragment></Fragment><Fragment type="Segment" id="1025" groupId="4"> </Fragment>Rather than order the Israelites to respect foreigners, Jehovah appealed to their empathy. <Fragment type="Segment" id="1211" groupId="5">(Read</Fragment> <Fragment type="Segment" id="1026" textTypeId="9" groupId="4">E<Fragment type="Segment" id="1212" groupId="5">xodus 23:9</Fragment></Fragment>.<Fragment type="Segment" id="1213" groupId="5">)</Fragment> They knew ‘how it felt to be a foreigner.’ Even before they were reduced to slavery, the Hebrews were likely shunned by the Egyptians because of racial pride or religious prejudice. (G<Fragment type="Segment" id="1036" textTypeId="10"><Fragment type="Segment" id="1028" textTypeId="9" groupId="4">en. 43:32; </Fragment><Fragment type="Segment" id="1030" textTypeId="9" groupId="4">46:34; </Fragment><Fragment type="Segment" id="1032" textTypeId="9" groupId="4">Ex. 1:11-14)</Fragment></Fragment> The Israelites had experienced a bitter life as foreign residents, but Jehovah expected them to treat the foreigner “like a native” among them.<Fragment type="Anchor" id="1206" groupId="4"/>—L<Fragment type="Segment" id="1034" textTypeId="9" groupId="4">ev. 19:33,<Fragment type="Anchor" id="1208" groupId="4"/>34.</Fragment></Fragment>
+    <Fragment type="Block" id="965"><Fragment type="Segment" id="1038" textTypeId="11" groupId="4"><Fragment type="Segment" id="1220" groupId="5">5</Fragment></Fragment><Fragment type="Segment" id="1039" groupId="4"> </Fragment>Today, we can be sure that Jehovah is equally concerned about people from a foreign background who attend meetings in our congregations. (D<Fragment type="Segment" id="1046" textTypeId="10"><Fragment type="Segment" id="1040" textTypeId="9" groupId="4">eut. 10:17-19; </Fragment><Fragment type="Segment" id="1042" textTypeId="9" groupId="4">Mal. 3:5,<Fragment type="Anchor" id="1214" groupId="4"/>6)</Fragment></Fragment> If we reflect on the challenges that they are facing, such as discrimination or the language barrier, we will look for ways to show them kindness and fellow feeling.<Fragment type="Anchor" id="1216" groupId="4"/>—1<Fragment type="Segment" id="1044" textTypeId="9" groupId="4"><Fragment type="Anchor" id="1218" groupId="4"/>Pet. 3:8.</Fragment></Fragment>
+    <Fragment type="Block" id="13" textTypeId="7"><Fragment type="Segment" id="1221" groupId="5">DO WE NEED TO ADJUST OUR VIEW OF STRANGERS?</Fragment></Fragment>
+    <Fragment type="Block" id="966"><Fragment type="Segment" id="1048" textTypeId="11" groupId="4"><Fragment type="Segment" id="1224" groupId="5">6</Fragment></Fragment><Fragment type="Segment" id="1049" groupId="4"> </Fragment>First-century Christians learned to overcome the deep-seated prejudices that prevailed among the Jews. At Pentecost 33<Fragment type="Anchor" id="1222" groupId="4"/>C.E., those living in Jerusalem extended hospitality to newly converted Christians from various lands. (A<Fragment type="Segment" id="1054" textTypeId="10"><Fragment type="Segment" id="1050" textTypeId="9" groupId="4">cts 2:5, </Fragment><Fragment type="Segment" id="1052" textTypeId="9" groupId="4">44-47)</Fragment></Fragment> The loving concern of Jewish Christians for fellow believers from other lands showed that they understood the meaning of the word “hospitality,” that is, “kindness to strangers.”</Fragment>
+    <Fragment type="Block" id="967"><Fragment type="Segment" id="1056" textTypeId="11" groupId="4"><Fragment type="Segment" id="1227" groupId="5">7</Fragment></Fragment><Fragment type="Segment" id="1057" groupId="4"> </Fragment>As the early Christian congregation grew, however, a situation that apparently involved discrimination arose. Greek-speaking Jews complained that their widows were not being treated fairly. (A<Fragment type="Segment" id="1058" textTypeId="9" groupId="4">cts 6:1)</Fragment> To settle this issue, the apostles appointed seven men to make sure that nobody was neglected. These men all had Greek names, which seems to indicate that the apostles wanted to ease any tensions over background that might have existed among the early Christians.<Fragment type="Anchor" id="1225" groupId="4"/>—A<Fragment type="Segment" id="1060" textTypeId="9" groupId="4">cts 6:2-6.</Fragment></Fragment>
+    <Fragment type="Block" id="968"><Fragment type="Segment" id="1063" textTypeId="11" groupId="4"><Fragment type="Segment" id="1230" groupId="5">8</Fragment></Fragment><Fragment type="Segment" id="1064" groupId="4"> </Fragment>Whether we realize it or not, we are all deeply influenced by our culture. (R<Fragment type="Segment" id="1065" textTypeId="9" groupId="4">om. 12:2)</Fragment> Moreover, we likely hear neighbors, fellow workers, or schoolmates make derogatory remarks about those of another background, tribe, or skin color. How deeply are we affected by such biased views? And how do we react when someone makes fun of our nationality<Fragment type="Anchor" id="1228" groupId="4"/>—maybe by exaggerating some feature of our culture?</Fragment>
+    <Fragment type="Block" id="969"><Fragment type="Segment" id="1068" textTypeId="11" groupId="4"><Fragment type="Segment" id="1243" groupId="5">9</Fragment></Fragment><Fragment type="Segment" id="1069" groupId="4"> </Fragment>For a while, the apostle Peter harbored prejudice against non-Jews, but he gradually learned to eradicate negative views from his heart. (A<Fragment type="Segment" id="1088" textTypeId="10"><Fragment type="Segment" id="1070" textTypeId="9" groupId="4">cts 10:28, </Fragment><Fragment type="Segment" id="1072" textTypeId="9" groupId="4">34, 35; </Fragment><Fragment type="Segment" id="1074" textTypeId="9" groupId="4">Gal. 2:11-14)</Fragment></Fragment> Likewise, if we detect any trace of prejudice or racial pride in us, we should make a conscious effort to root it out of our heart. <Fragment type="Segment" id="1244" groupId="5">(Read</Fragment> <Fragment type="Segment" id="1076" textTypeId="9" groupId="4">1<Fragment type="Anchor" id="1231" groupId="4"/><Fragment type="Segment" id="1245" groupId="5">Peter 1:22</Fragment></Fragment>.<Fragment type="Segment" id="1246" groupId="5">)</Fragment> We might reflect on the fact that none of us deserve salvation; we are all imperfect humans, regardless of our nationality. (R<Fragment type="Segment" id="1089" textTypeId="10"><Fragment type="Segment" id="1078" textTypeId="9" groupId="4">om. 3:9, 10, </Fragment><Fragment type="Segment" id="1080" textTypeId="9" groupId="4">21-24)</Fragment></Fragment> So why should we feel superior to anyone else? (1<Fragment type="Segment" id="1082" textTypeId="9" groupId="4"><Fragment type="Anchor" id="1233" groupId="4"/>Cor. 4:7)</Fragment> We should have a view like that of the apostle Paul, who admonished his fellow anointed Christians that they were “no longer strangers and foreigners, but .<Fragment type="Anchor" id="1235" groupId="4"/>.<Fragment type="Anchor" id="1237" groupId="4"/>. members of the household of God.” (E<Fragment type="Segment" id="1084" textTypeId="9" groupId="4">ph. 2:19)</Fragment> Earnest effort to overcome prejudiced views regarding those who are of a different background will certainly help us to put on the new personality.<Fragment type="Anchor" id="1239" groupId="4"/>—C<Fragment type="Segment" id="1086" textTypeId="9" groupId="4">ol. 3:10,<Fragment type="Anchor" id="1241" groupId="4"/>11.</Fragment></Fragment>
+    <Fragment type="Block" id="14" textTypeId="7"><Fragment type="Segment" id="1247" groupId="5">HOW TO SHOW KINDNESS TO STRANGERS</Fragment></Fragment>
+    <Fragment type="Block" id="970"><Fragment type="Segment" id="1091" textTypeId="11" groupId="4"><Fragment type="Segment" id="1256" groupId="5">10</Fragment></Fragment><Fragment type="Segment" id="1092" groupId="4"> </Fragment>Boaz undoubtedly reflected Jehovah’s view of strangers in his dealings with Ruth the Moabitess. When he came to inspect his fields during the harvest, Boaz could not fail to notice a hardworking foreign woman gleaning behind his harvesters. On hearing that she had asked permission to glean<Fragment type="Anchor" id="1248" groupId="4"/>—even though she was within her full right to do so—<Fragment type="Anchor" id="1250" groupId="4"/>Boaz generously allowed her to glean even among the sheaves.<Fragment type="Anchor" id="1252" groupId="4"/>—<Fragment type="Segment" id="1257" groupId="5">Read</Fragment> <Fragment type="Segment" id="1097" textTypeId="10"><Fragment type="Segment" id="1093" textTypeId="9" groupId="4">R<Fragment type="Segment" id="1258" groupId="5">uth 2:5-7,</Fragment> </Fragment><Fragment type="Segment" id="1095" textTypeId="9" groupId="4">15,<Fragment type="Anchor" id="1254" groupId="4"/>16</Fragment></Fragment><Fragment type="Segment" id="1259" groupId="5"></Fragment>.</Fragment>
+    <Fragment type="Block" id="971"><Fragment type="Segment" id="1099" textTypeId="11" groupId="4"><Fragment type="Segment" id="1264" groupId="5">11</Fragment></Fragment><Fragment type="Segment" id="1100" groupId="4"> </Fragment>The conversation that ensued shows that Boaz was clearly concerned about Ruth and her precarious situation as a foreigner. For one thing, he invited her to stay with his group of young women so that she would not be harassed by the men who were working in the field. He even made sure that she would get enough food and water, just like the hired workers. In addition, Boaz did not speak down to the poor foreign woman but, instead, reassured her.<Fragment type="Anchor" id="1260" groupId="4"/>—R<Fragment type="Segment" id="1105" textTypeId="10"><Fragment type="Segment" id="1101" textTypeId="9" groupId="4">uth 2:8-10, </Fragment><Fragment type="Segment" id="1103" textTypeId="9" groupId="4">13,<Fragment type="Anchor" id="1262" groupId="4"/>14.</Fragment></Fragment></Fragment>
+    <Fragment type="Block" id="972"><Fragment type="Segment" id="1107" textTypeId="11" groupId="4"><Fragment type="Segment" id="1271" groupId="5">12</Fragment></Fragment><Fragment type="Segment" id="1108" groupId="4"> </Fragment>Not only was Boaz moved by Ruth’s unselfish love for her mother-in-law, Naomi, but he was also impressed that she had become a worshipper of Jehovah. Boaz’ kindness was actually an expression of Jehovah’s loyal love toward a woman who had come to ‘seek refuge under the wings of the God of Israel.’ (R<Fragment type="Segment" id="1117" textTypeId="10"><Fragment type="Segment" id="1109" textTypeId="9" groupId="4">uth 2:12, </Fragment><Fragment type="Segment" id="1111" textTypeId="9" groupId="4">20; </Fragment><Fragment type="Segment" id="1113" textTypeId="9" groupId="4">Prov. 19:17)</Fragment></Fragment> Similarly today, our kindly demeanor can help “all sorts of people” recognize the truth and sense how much Jehovah loves them.<Fragment type="Anchor" id="1265" groupId="4"/>—1<Fragment type="Segment" id="1115" textTypeId="9" groupId="4"><Fragment type="Anchor" id="1267" groupId="4"/>Tim. 2:3,<Fragment type="Anchor" id="1269" groupId="4"/>4.</Fragment></Fragment>
+    <Fragment type="Block" id="973"><Fragment type="Segment" id="1119" textTypeId="11" groupId="4"><Fragment type="Segment" id="1276" groupId="5">13</Fragment></Fragment><Fragment type="Segment" id="1120" groupId="4"> </Fragment>We can show kindness to newcomers from a foreign background by warmly greeting them at the Kingdom Hall. We may have noticed that new immigrants are sometimes shy and stay by themselves. Because of their upbringing or social status, they may feel inferior to those of another race or nationality. So we should take the initiative to show a warm and sincere interest in them. If available in your language, the <Fragment type="Segment" id="1277" groupId="5">JW Language</Fragment> app can help you learn how to greet newcomers in their mother tongue.<Fragment type="Anchor" id="1272" groupId="4"/>—<Fragment type="Segment" id="1278" groupId="5">Read</Fragment> <Fragment type="Segment" id="1121" textTypeId="9" groupId="4">P<Fragment type="Segment" id="1279" groupId="5">hilippians 2:3,</Fragment><Fragment type="Anchor" id="1274" groupId="4"/>4</Fragment><Fragment type="Segment" id="1280" groupId="5"></Fragment>.</Fragment>
+    <Fragment type="Block" id="974"><Fragment type="Segment" id="1124" textTypeId="11" groupId="4"><Fragment type="Segment" id="1285" groupId="5">14</Fragment></Fragment><Fragment type="Segment" id="1125" groupId="4"> </Fragment>You may feel awkward about approaching those from another culture. To overcome such feelings, you might tell them something about yourself. You may soon realize that you have more things in common than you have differences<Fragment type="Anchor" id="1281" groupId="4"/>—real or imagined—<Fragment type="Anchor" id="1283" groupId="4"/>and that each culture has its own strengths and weaknesses.</Fragment>
+    <Fragment type="Block" id="16" textTypeId="7"><Fragment type="Segment" id="1286" groupId="5">HELP ALL TO FEEL AT HOME</Fragment></Fragment>
+    <Fragment type="Block" id="975"><Fragment type="Segment" id="1127" textTypeId="11" groupId="4"><Fragment type="Segment" id="1289" groupId="5">15</Fragment></Fragment><Fragment type="Segment" id="1128" groupId="4"> </Fragment>To help others feel at home in the congregation, honestly ask yourself, ‘If I were in a foreign country, how would I want to be treated?’ (M<Fragment type="Segment" id="1129" textTypeId="9" groupId="4">att. 7:12)</Fragment> Be patient with those who are adjusting to a new country. At first, we may not fully understand their way of thinking or reacting. But rather than expect them to embrace our culture, why not accept them just the way they are?<Fragment type="Anchor" id="1287" groupId="4"/>—<Fragment type="Segment" id="1290" groupId="5">Read</Fragment> <Fragment type="Segment" id="1131" textTypeId="9" groupId="4">R<Fragment type="Segment" id="1291" groupId="5">omans 15:7</Fragment></Fragment>, <Fragment type="Segment" id="1292" groupId="5">footnote.</Fragment></Fragment>
+    <Fragment type="Block" id="976"><Fragment type="Segment" id="1134" textTypeId="11" groupId="4"><Fragment type="Segment" id="1295" groupId="5">16</Fragment></Fragment><Fragment type="Segment" id="1135" groupId="4"> </Fragment>If we learn about the homeland and culture of those from a foreign background, we may find it easier to interact with them. We might include time in our family worship to do research on peoples we are not acquainted with in our congregation or territory. Another way to draw closer to those from another background is to invite them for a meal in our home. Since Jehovah has “opened to the nations the door to faith,” could we not open our own door to strangers who are “related to us in the faith”?<Fragment type="Anchor" id="1293" groupId="4"/>—A<Fragment type="Segment" id="1142" textTypeId="10"><Fragment type="Segment" id="1136" textTypeId="9" groupId="4">cts 14:27; </Fragment><Fragment type="Segment" id="1138" textTypeId="9" groupId="4">Gal. 6:10; </Fragment><Fragment type="Segment" id="1140" textTypeId="9" groupId="4">Job 31:32.</Fragment></Fragment></Fragment>
+    <Fragment type="Block" id="977"><Fragment type="Segment" id="1144" textTypeId="11" groupId="4"><Fragment type="Segment" id="1298" groupId="5">17</Fragment></Fragment><Fragment type="Segment" id="1145" groupId="4"> </Fragment>By spending time with an immigrant family, we will better appreciate the extent of their efforts to adjust to our culture. We may realize, though, that they need practical help to learn the language. Also, could we direct them to local agencies that may help them to obtain suitable housing or employment? Such initiatives may make a big difference in the life of a fellow believer.<Fragment type="Anchor" id="1296" groupId="4"/>—P<Fragment type="Segment" id="1146" textTypeId="9" groupId="4">rov. 3:27.</Fragment></Fragment>
+    <Fragment type="Block" id="978"><Fragment type="Segment" id="1149" textTypeId="11" groupId="4"><Fragment type="Segment" id="1299" groupId="5">18</Fragment></Fragment><Fragment type="Segment" id="1150" groupId="4"> </Fragment>Of course, immigrants will want to do their best to adjust to the culture of the new country. Ruth set a fine example in this regard. First, she showed respect for the customs of her new country by asking permission to glean. (R<Fragment type="Segment" id="1151" textTypeId="9" groupId="4">uth 2:7)</Fragment> She did not take this right for granted as if others owed her something. Second, she readily expressed gratitude for the kindnesses shown to her. (R<Fragment type="Segment" id="1153" textTypeId="9" groupId="4">uth 2:13)</Fragment> When immigrants display such a fine attitude, they are more likely to gain the respect of local residents and fellow believers.</Fragment>
+    <Fragment type="Block" id="979"><Fragment type="Segment" id="1156" textTypeId="11" groupId="4"><Fragment type="Segment" id="1304" groupId="5">19</Fragment></Fragment><Fragment type="Segment" id="1157" groupId="4"> </Fragment>We rejoice that Jehovah in his undeserved kindness has allowed people from all backgrounds to hear the good news. In their home country, they may not have been able to take advantage of a Bible study or to associate freely with Jehovah’s people. But now that they have the opportunity to associate with us, should we not help them so that they no longer feel like strangers in our midst? Even though we may be limited in the material or practical help we can provide, our kindness to them reflects Jehovah’s love for them. As “imitators of God,” then, let us do our very best to welcome strangers among us.<Fragment type="Anchor" id="1300" groupId="4"/>—E<Fragment type="Segment" id="1158" textTypeId="9" groupId="4">ph. 5:1,<Fragment type="Anchor" id="1302" groupId="4"/>2.</Fragment></Fragment>
+   </Fragment>
+  </Section>
+  <Section id="1305" label="Endnotes" sectionTypeId="1" locked="false" textSignature="a874e1eea6086a831734843a92b7580bee937b0d">
+   <Fragment type="Container" id="17">
+    <Fragment type="Block" id="980" textTypeId="13"><Fragment type="Anchor" id="993" groupId="3"/><Fragment type="Anchor" id="1165" textTypeId="12"/><Fragment type="Segment" id="1308" groupId="5">[1]</Fragment> (paragraph<Fragment type="Anchor" id="1306" groupId="4"/>1) Name has been changed.</Fragment>
+   </Fragment>
+  </Section>
+  <Section id="1309" label="Study Questions" locked="false" textSignature="d0d9c4cbe5d9bcd1ef0fdfed5461a1be95afeff7">
+   <Fragment type="Container" id="19">
+    <Fragment type="Block" id="981" textTypeId="14"><Fragment type="Anchor" id="994" groupId="3"/><Fragment type="Segment" id="1316" groupId="5">1,</Fragment><Fragment type="Anchor" id="1310" groupId="4"/><Fragment type="Segment" id="1317" groupId="5">2.</Fragment> (a)<Fragment type="Anchor" id="1312" groupId="4"/>What challenges do many strangers face today? (See opening picture.) (b)<Fragment type="Anchor" id="1314" groupId="4"/>What reminder did the apostle Paul give, and what questions does this raise?</Fragment>
+    <Fragment type="Block" id="982" textTypeId="14"><Fragment type="Segment" id="1320" groupId="5">3,</Fragment><Fragment type="Anchor" id="1318" groupId="4"/><Fragment type="Segment" id="1321" groupId="5">4.</Fragment> According to E<Fragment type="Segment" id="1160" textTypeId="9" groupId="4">xodus 23:9,</Fragment> how were God’s ancient people expected to treat foreigners, and why?</Fragment>
+    <Fragment type="Block" id="983" textTypeId="14"><Fragment type="Anchor" id="1322" groupId="4"/><Fragment type="Segment" id="1324" groupId="5">5.</Fragment> What will help us to reflect Jehovah’s concern for people from a foreign background?</Fragment>
+    <Fragment type="Block" id="984" textTypeId="14"><Fragment type="Segment" id="1327" groupId="5">6,</Fragment><Fragment type="Anchor" id="1325" groupId="4"/><Fragment type="Segment" id="1328" groupId="5">7.</Fragment> What shows that first-century Christians learned to overcome deep-seated prejudices?</Fragment>
+    <Fragment type="Block" id="985" textTypeId="14"><Fragment type="Segment" id="1337" groupId="5">8,</Fragment><Fragment type="Anchor" id="1329" groupId="4"/><Fragment type="Segment" id="1338" groupId="5">9.</Fragment> (a)<Fragment type="Anchor" id="1331" groupId="4"/>What might indicate that we are harboring prejudice or racial pride? (b)<Fragment type="Anchor" id="1333" groupId="4"/>What must we root out of our heart? (1<Fragment type="Segment" id="1162" textTypeId="9" groupId="4"><Fragment type="Anchor" id="1335" groupId="4"/>Pet. 1:22)</Fragment></Fragment>
+    <Fragment type="Block" id="986" textTypeId="14"><Fragment type="Segment" id="1341" groupId="5">10,</Fragment><Fragment type="Anchor" id="1339" groupId="4"/><Fragment type="Segment" id="1342" groupId="5">11.</Fragment> How did Boaz reflect Jehovah’s view of strangers in his dealings with Ruth the Moabitess?</Fragment>
+    <Fragment type="Block" id="987" textTypeId="14"><Fragment type="Segment" id="1343" groupId="5">12.</Fragment> What positive effect can kindness have on newcomers from a foreign background?</Fragment>
+    <Fragment type="Block" id="988" textTypeId="14"><Fragment type="Segment" id="1350" groupId="5">13,</Fragment><Fragment type="Anchor" id="1344" groupId="4"/><Fragment type="Segment" id="1351" groupId="5">14.</Fragment> (a)<Fragment type="Anchor" id="1346" groupId="4"/>Why should we make an earnest effort to greet strangers at the Kingdom Hall? (b)<Fragment type="Anchor" id="1348" groupId="4"/>How can you overcome awkward feelings about approaching individuals from another culture?</Fragment>
+    <Fragment type="Block" id="989" textTypeId="14"><Fragment type="Segment" id="1352" groupId="5">15.</Fragment> What will help us to be more understanding toward those who are adjusting to a new country?</Fragment>
+    <Fragment type="Block" id="990" textTypeId="14"><Fragment type="Segment" id="1359" groupId="5">16,</Fragment><Fragment type="Anchor" id="1353" groupId="4"/><Fragment type="Segment" id="1360" groupId="5">17.</Fragment> (a)<Fragment type="Anchor" id="1355" groupId="4"/>What initiatives can we take in order to feel closer to those from another culture? (b)<Fragment type="Anchor" id="1357" groupId="4"/>In what practical ways can we assist immigrants in our congregation?</Fragment>
+    <Fragment type="Block" id="991" textTypeId="14"><Fragment type="Segment" id="1361" groupId="5">18.</Fragment> What example of respect and gratitude can immigrants imitate today?</Fragment>
+    <Fragment type="Block" id="992" textTypeId="14"><Fragment type="Segment" id="1362" groupId="5">19.</Fragment> What reasons do we have for welcoming strangers among us?</Fragment>
+   </Fragment>
+  </Section>
+  <Section id="1363" label="Multimedia Text (image.cnt_01)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="801" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Section id="1364" label="Multimedia Text (image.cnt_02)" locked="false" textSignature="acaa349254608da808a798c23145682577305c63">
+   <Fragment type="Container" id="802">
+    <Fragment type="Block" id="803" textTypeId="8">A family welcomes a newcomer from a foreign land to the Kingdom Hall</Fragment>
+    <Fragment type="Block" id="804" groupId="2"><Fragment type="Anchor" id="995" groupId="3"/>Are we warmly greeting newcomers when they arrive at the Kingdom Hall? (See paragraphs<Fragment type="Anchor" id="1365" groupId="4"/>13,<Fragment type="Anchor" id="1367" groupId="4"/>14)</Fragment>
+   </Fragment>
+  </Section>
+  <Section id="1369" label="Multimedia Text (image.cnt_03)" locked="false" textSignature="de2842ad03e2a9402df2cbdfe0c466a6396af3f1">
+   <Fragment type="Container" id="805">
+    <Fragment type="Block" id="806" textTypeId="8">A family extends hospitality to a newcomer from a foreign land</Fragment>
+    <Fragment type="Block" id="807" groupId="2"><Fragment type="Anchor" id="996" groupId="3"/>Are we showing gracious hospitality to newcomers from other lands? (See paragraphs<Fragment type="Anchor" id="1370" groupId="4"/>16,<Fragment type="Anchor" id="1372" groupId="4"/>17)</Fragment>
+   </Fragment>
+  </Section>
+  <Section id="1374" label="Multimedia Text (image.pnr)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="901" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Section id="1375" label="Multimedia Text (image.pns)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="903" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Section id="1376" label="Multimedia Text (image.lsr)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="905" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Section id="1377" label="Multimedia Text (image.lss)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="907" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Section id="1378" label="Multimedia Text (image.sqr)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="909" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Section id="1379" label="Multimedia Text (image.sqs)" locked="false" textSignature="9d39beacdcc883ec26b8ae3d4df41ed0b34fc361">
+   <Fragment type="Block" id="911" textTypeId="8">A young man struggles to find his way in a foreign land</Fragment>
+  </Section>
+  <Metatags mlSignature="fc80b641030b150d9a98acf3bff7693600a0944d">
+   <References>
+    <Reference metatagId="998" referencedComponentId="997"/>
+    <Reference metatagId="1004" referencedComponentId="1005"/>
+    <Reference metatagId="1006" referencedComponentId="1007"/>
+    <Reference metatagId="1006" referencedComponentId="1008"/>
+    <Reference metatagId="1010" referencedComponentId="1009"/>
+    <Reference metatagId="1011" referencedComponentId="1012"/>
+    <Reference metatagId="1011" referencedComponentId="1013"/>
+    <Reference metatagId="1015" referencedComponentId="1014"/>
+    <Reference metatagId="1017" referencedComponentId="1016"/>
+    <Reference metatagId="1019" referencedComponentId="1018"/>
+    <Reference metatagId="1021" referencedComponentId="1020"/>
+    <Reference metatagId="1023" referencedComponentId="1024"/>
+    <Reference metatagId="1023" referencedComponentId="1025"/>
+    <Reference metatagId="1027" referencedComponentId="1026"/>
+    <Reference metatagId="1029" referencedComponentId="1028"/>
+    <Reference metatagId="1031" referencedComponentId="1030"/>
+    <Reference metatagId="1033" referencedComponentId="1032"/>
+    <Reference metatagId="1035" referencedComponentId="1034"/>
+    <Reference metatagId="1037" referencedComponentId="1038"/>
+    <Reference metatagId="1037" referencedComponentId="1039"/>
+    <Reference metatagId="1041" referencedComponentId="1040"/>
+    <Reference metatagId="1043" referencedComponentId="1042"/>
+    <Reference metatagId="1045" referencedComponentId="1044"/>
+    <Reference metatagId="1047" referencedComponentId="1048"/>
+    <Reference metatagId="1047" referencedComponentId="1049"/>
+    <Reference metatagId="1051" referencedComponentId="1050"/>
+    <Reference metatagId="1053" referencedComponentId="1052"/>
+    <Reference metatagId="1055" referencedComponentId="1056"/>
+    <Reference metatagId="1055" referencedComponentId="1057"/>
+    <Reference metatagId="1059" referencedComponentId="1058"/>
+    <Reference metatagId="1061" referencedComponentId="1060"/>
+    <Reference metatagId="1062" referencedComponentId="1063"/>
+    <Reference metatagId="1062" referencedComponentId="1064"/>
+    <Reference metatagId="1066" referencedComponentId="1065"/>
+    <Reference metatagId="1067" referencedComponentId="1068"/>
+    <Reference metatagId="1067" referencedComponentId="1069"/>
+    <Reference metatagId="1071" referencedComponentId="1070"/>
+    <Reference metatagId="1073" referencedComponentId="1072"/>
+    <Reference metatagId="1075" referencedComponentId="1074"/>
+    <Reference metatagId="1077" referencedComponentId="1076"/>
+    <Reference metatagId="1079" referencedComponentId="1078"/>
+    <Reference metatagId="1081" referencedComponentId="1080"/>
+    <Reference metatagId="1083" referencedComponentId="1082"/>
+    <Reference metatagId="1085" referencedComponentId="1084"/>
+    <Reference metatagId="1087" referencedComponentId="1086"/>
+    <Reference metatagId="1090" referencedComponentId="1091"/>
+    <Reference metatagId="1090" referencedComponentId="1092"/>
+    <Reference metatagId="1094" referencedComponentId="1093"/>
+    <Reference metatagId="1096" referencedComponentId="1095"/>
+    <Reference metatagId="1098" referencedComponentId="1099"/>
+    <Reference metatagId="1098" referencedComponentId="1100"/>
+    <Reference metatagId="1102" referencedComponentId="1101"/>
+    <Reference metatagId="1104" referencedComponentId="1103"/>
+    <Reference metatagId="1106" referencedComponentId="1107"/>
+    <Reference metatagId="1106" referencedComponentId="1108"/>
+    <Reference metatagId="1110" referencedComponentId="1109"/>
+    <Reference metatagId="1112" referencedComponentId="1111"/>
+    <Reference metatagId="1114" referencedComponentId="1113"/>
+    <Reference metatagId="1116" referencedComponentId="1115"/>
+    <Reference metatagId="1118" referencedComponentId="1119"/>
+    <Reference metatagId="1118" referencedComponentId="1120"/>
+    <Reference metatagId="1122" referencedComponentId="1121"/>
+    <Reference metatagId="1123" referencedComponentId="1124"/>
+    <Reference metatagId="1123" referencedComponentId="1125"/>
+    <Reference metatagId="1126" referencedComponentId="1127"/>
+    <Reference metatagId="1126" referencedComponentId="1128"/>
+    <Reference metatagId="1130" referencedComponentId="1129"/>
+    <Reference metatagId="1132" referencedComponentId="1131"/>
+    <Reference metatagId="1133" referencedComponentId="1134"/>
+    <Reference metatagId="1133" referencedComponentId="1135"/>
+    <Reference metatagId="1137" referencedComponentId="1136"/>
+    <Reference metatagId="1139" referencedComponentId="1138"/>
+    <Reference metatagId="1141" referencedComponentId="1140"/>
+    <Reference metatagId="1143" referencedComponentId="1144"/>
+    <Reference metatagId="1143" referencedComponentId="1145"/>
+    <Reference metatagId="1147" referencedComponentId="1146"/>
+    <Reference metatagId="1148" referencedComponentId="1149"/>
+    <Reference metatagId="1148" referencedComponentId="1150"/>
+    <Reference metatagId="1152" referencedComponentId="1151"/>
+    <Reference metatagId="1154" referencedComponentId="1153"/>
+    <Reference metatagId="1155" referencedComponentId="1156"/>
+    <Reference metatagId="1155" referencedComponentId="1157"/>
+    <Reference metatagId="1159" referencedComponentId="1158"/>
+    <Reference metatagId="1161" referencedComponentId="1160"/>
+    <Reference metatagId="1163" referencedComponentId="1162"/>
+    <Reference metatagId="1167" referencedComponentId="980"/>
+    <Reference metatagId="1167" referencedComponentId="1164"/>
+    <Reference metatagId="1167" referencedComponentId="1165"/>
+    <Reference metatagId="1168" referencedComponentId="961"/>
+    <Reference metatagId="1168" referencedComponentId="962"/>
+    <Reference metatagId="1168" referencedComponentId="981"/>
+    <Reference metatagId="1169" referencedComponentId="963"/>
+    <Reference metatagId="1169" referencedComponentId="964"/>
+    <Reference metatagId="1169" referencedComponentId="982"/>
+    <Reference metatagId="1170" referencedComponentId="965"/>
+    <Reference metatagId="1170" referencedComponentId="983"/>
+    <Reference metatagId="1171" referencedComponentId="966"/>
+    <Reference metatagId="1171" referencedComponentId="967"/>
+    <Reference metatagId="1171" referencedComponentId="984"/>
+    <Reference metatagId="1172" referencedComponentId="968"/>
+    <Reference metatagId="1172" referencedComponentId="969"/>
+    <Reference metatagId="1172" referencedComponentId="985"/>
+    <Reference metatagId="1173" referencedComponentId="970"/>
+    <Reference metatagId="1173" referencedComponentId="971"/>
+    <Reference metatagId="1173" referencedComponentId="986"/>
+    <Reference metatagId="1174" referencedComponentId="972"/>
+    <Reference metatagId="1174" referencedComponentId="987"/>
+    <Reference metatagId="1175" referencedComponentId="973"/>
+    <Reference metatagId="1175" referencedComponentId="974"/>
+    <Reference metatagId="1175" referencedComponentId="988"/>
+    <Reference metatagId="1176" referencedComponentId="975"/>
+    <Reference metatagId="1176" referencedComponentId="989"/>
+    <Reference metatagId="1177" referencedComponentId="976"/>
+    <Reference metatagId="1177" referencedComponentId="977"/>
+    <Reference metatagId="1177" referencedComponentId="990"/>
+    <Reference metatagId="1178" referencedComponentId="978"/>
+    <Reference metatagId="1178" referencedComponentId="991"/>
+    <Reference metatagId="1179" referencedComponentId="979"/>
+    <Reference metatagId="1179" referencedComponentId="992"/>
+    <Reference metatagId="700" referencedComponentId="1"/>
+    <Reference metatagId="700" referencedComponentId="801"/>
+    <Reference metatagId="702" referencedComponentId="803"/>
+    <Reference metatagId="702" referencedComponentId="804"/>
+    <Reference metatagId="702" referencedComponentId="972"/>
+    <Reference metatagId="705" referencedComponentId="806"/>
+    <Reference metatagId="705" referencedComponentId="807"/>
+    <Reference metatagId="705" referencedComponentId="976"/>
+    <Reference metatagId="950" referencedComponentId="901"/>
+    <Reference metatagId="952" referencedComponentId="903"/>
+    <Reference metatagId="954" referencedComponentId="905"/>
+    <Reference metatagId="956" referencedComponentId="907"/>
+    <Reference metatagId="958" referencedComponentId="909"/>
+    <Reference metatagId="960" referencedComponentId="911"/>
+    <Reference metatagId="1193" referencedComponentId="1192"/>
+    <Reference metatagId="1195" referencedComponentId="1194"/>
+    <Reference metatagId="1202" referencedComponentId="1201"/>
+    <Reference metatagId="1204" referencedComponentId="1203"/>
+    <Reference metatagId="1207" referencedComponentId="1206"/>
+    <Reference metatagId="1209" referencedComponentId="1208"/>
+    <Reference metatagId="1215" referencedComponentId="1214"/>
+    <Reference metatagId="1217" referencedComponentId="1216"/>
+    <Reference metatagId="1219" referencedComponentId="1218"/>
+    <Reference metatagId="1223" referencedComponentId="1222"/>
+    <Reference metatagId="1226" referencedComponentId="1225"/>
+    <Reference metatagId="1229" referencedComponentId="1228"/>
+    <Reference metatagId="1232" referencedComponentId="1231"/>
+    <Reference metatagId="1234" referencedComponentId="1233"/>
+    <Reference metatagId="1236" referencedComponentId="1235"/>
+    <Reference metatagId="1238" referencedComponentId="1237"/>
+    <Reference metatagId="1240" referencedComponentId="1239"/>
+    <Reference metatagId="1242" referencedComponentId="1241"/>
+    <Reference metatagId="1249" referencedComponentId="1248"/>
+    <Reference metatagId="1251" referencedComponentId="1250"/>
+    <Reference metatagId="1253" referencedComponentId="1252"/>
+    <Reference metatagId="1255" referencedComponentId="1254"/>
+    <Reference metatagId="1261" referencedComponentId="1260"/>
+    <Reference metatagId="1263" referencedComponentId="1262"/>
+    <Reference metatagId="1266" referencedComponentId="1265"/>
+    <Reference metatagId="1268" referencedComponentId="1267"/>
+    <Reference metatagId="1270" referencedComponentId="1269"/>
+    <Reference metatagId="1273" referencedComponentId="1272"/>
+    <Reference metatagId="1275" referencedComponentId="1274"/>
+    <Reference metatagId="1282" referencedComponentId="1281"/>
+    <Reference metatagId="1284" referencedComponentId="1283"/>
+    <Reference metatagId="1288" referencedComponentId="1287"/>
+    <Reference metatagId="1294" referencedComponentId="1293"/>
+    <Reference metatagId="1297" referencedComponentId="1296"/>
+    <Reference metatagId="1301" referencedComponentId="1300"/>
+    <Reference metatagId="1303" referencedComponentId="1302"/>
+    <Reference metatagId="1307" referencedComponentId="1306"/>
+    <Reference metatagId="1311" referencedComponentId="1310"/>
+    <Reference metatagId="1313" referencedComponentId="1312"/>
+    <Reference metatagId="1315" referencedComponentId="1314"/>
+    <Reference metatagId="1319" referencedComponentId="1318"/>
+    <Reference metatagId="1323" referencedComponentId="1322"/>
+    <Reference metatagId="1326" referencedComponentId="1325"/>
+    <Reference metatagId="1330" referencedComponentId="1329"/>
+    <Reference metatagId="1332" referencedComponentId="1331"/>
+    <Reference metatagId="1334" referencedComponentId="1333"/>
+    <Reference metatagId="1336" referencedComponentId="1335"/>
+    <Reference metatagId="1340" referencedComponentId="1339"/>
+    <Reference metatagId="1345" referencedComponentId="1344"/>
+    <Reference metatagId="1347" referencedComponentId="1346"/>
+    <Reference metatagId="1349" referencedComponentId="1348"/>
+    <Reference metatagId="1354" referencedComponentId="1353"/>
+    <Reference metatagId="1356" referencedComponentId="1355"/>
+    <Reference metatagId="1358" referencedComponentId="1357"/>
+    <Reference metatagId="1366" referencedComponentId="1365"/>
+    <Reference metatagId="1368" referencedComponentId="1367"/>
+    <Reference metatagId="1371" referencedComponentId="1370"/>
+    <Reference metatagId="1373" referencedComponentId="1372"/>
+   </References>
+   <Metatag type="Link" id="998">
+    <LinkRef fragmentId="997"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="58" chapter="13" verse="2">
+     <ContentRef firstBook="58" firstChapter="13" firstVerse="2"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1004">
+    <Number value="1"/>
+    <LabelRef fragmentId="1005"/>
+    <ParagraphRef fragmentId="961"/>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1006">
+    <Number value="2"/>
+    <LabelRef fragmentId="1007" trailingFragmentId="1008"/>
+    <ParagraphRef fragmentId="962"/>
+   </Metatag>
+   <Metatag type="Link" id="1010">
+    <LinkRef fragmentId="1009"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="58" chapter="13" verse="2">
+     <ContentRef firstBook="58" firstChapter="13" firstVerse="2"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1011">
+    <Number value="3"/>
+    <LabelRef fragmentId="1012" trailingFragmentId="1013"/>
+    <ParagraphRef fragmentId="963"/>
+   </Metatag>
+   <Metatag type="Link" id="1015">
+    <LinkRef fragmentId="1014"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="2" chapter="12" verse="38">
+     <ContentRef firstBook="2" firstChapter="12" firstVerse="38"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1017">
+    <LinkRef fragmentId="1016"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="2" chapter="12" verse="49">
+     <ContentRef firstBook="2" firstChapter="12" firstVerse="49"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1019">
+    <LinkRef fragmentId="1018"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="2" chapter="22" verse="21">
+     <ContentRef firstBook="2" firstChapter="22" firstVerse="21"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1021">
+    <LinkRef fragmentId="1020"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="3" chapter="19" verse="9">
+     <ContentRef firstBook="3" firstChapter="19" firstVerse="9" lastBook="3" lastChapter="19" lastVerse="10"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1023">
+    <Number value="4"/>
+    <LabelRef fragmentId="1024" trailingFragmentId="1025"/>
+    <ParagraphRef fragmentId="964"/>
+   </Metatag>
+   <Metatag type="Link" id="1027">
+    <LinkRef fragmentId="1026"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="2" chapter="23" verse="9">
+     <ContentRef firstBook="2" firstChapter="23" firstVerse="9"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1029">
+    <LinkRef fragmentId="1028"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="1" chapter="43" verse="32">
+     <ContentRef firstBook="1" firstChapter="43" firstVerse="32"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1031">
+    <LinkRef fragmentId="1030"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="1" chapter="46" verse="34">
+     <ContentRef firstBook="1" firstChapter="46" firstVerse="34"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1033">
+    <LinkRef fragmentId="1032"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="2" chapter="1" verse="11">
+     <ContentRef firstBook="2" firstChapter="1" firstVerse="11" lastBook="2" lastChapter="1" lastVerse="14"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1035">
+    <LinkRef fragmentId="1034"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="3" chapter="19" verse="33">
+     <ContentRef firstBook="3" firstChapter="19" firstVerse="33" lastBook="3" lastChapter="19" lastVerse="34"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1037">
+    <Number value="5"/>
+    <LabelRef fragmentId="1038" trailingFragmentId="1039"/>
+    <ParagraphRef fragmentId="965"/>
+   </Metatag>
+   <Metatag type="Link" id="1041">
+    <LinkRef fragmentId="1040"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="5" chapter="10" verse="17">
+     <ContentRef firstBook="5" firstChapter="10" firstVerse="17" lastBook="5" lastChapter="10" lastVerse="19"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1043">
+    <LinkRef fragmentId="1042"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="39" chapter="3" verse="5">
+     <ContentRef firstBook="39" firstChapter="3" firstVerse="5" lastBook="39" lastChapter="3" lastVerse="6"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1045">
+    <LinkRef fragmentId="1044"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="60" chapter="3" verse="8">
+     <ContentRef firstBook="60" firstChapter="3" firstVerse="8"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1047">
+    <Number value="6"/>
+    <LabelRef fragmentId="1048" trailingFragmentId="1049"/>
+    <ParagraphRef fragmentId="966"/>
+   </Metatag>
+   <Metatag type="Link" id="1051">
+    <LinkRef fragmentId="1050"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="2" verse="5">
+     <ContentRef firstBook="44" firstChapter="2" firstVerse="5"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1053">
+    <LinkRef fragmentId="1052"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="2" verse="44">
+     <ContentRef firstBook="44" firstChapter="2" firstVerse="44" lastBook="44" lastChapter="2" lastVerse="47"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1055">
+    <Number value="7"/>
+    <LabelRef fragmentId="1056" trailingFragmentId="1057"/>
+    <ParagraphRef fragmentId="967"/>
+   </Metatag>
+   <Metatag type="Link" id="1059">
+    <LinkRef fragmentId="1058"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="6" verse="1">
+     <ContentRef firstBook="44" firstChapter="6" firstVerse="1"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1061">
+    <LinkRef fragmentId="1060"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="6" verse="2">
+     <ContentRef firstBook="44" firstChapter="6" firstVerse="2" lastBook="44" lastChapter="6" lastVerse="6"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1062">
+    <Number value="8"/>
+    <LabelRef fragmentId="1063" trailingFragmentId="1064"/>
+    <ParagraphRef fragmentId="968"/>
+   </Metatag>
+   <Metatag type="Link" id="1066">
+    <LinkRef fragmentId="1065"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="45" chapter="12" verse="2">
+     <ContentRef firstBook="45" firstChapter="12" firstVerse="2"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1067">
+    <Number value="9"/>
+    <LabelRef fragmentId="1068" trailingFragmentId="1069"/>
+    <ParagraphRef fragmentId="969"/>
+   </Metatag>
+   <Metatag type="Link" id="1071">
+    <LinkRef fragmentId="1070"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="10" verse="28">
+     <ContentRef firstBook="44" firstChapter="10" firstVerse="28"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1073">
+    <LinkRef fragmentId="1072"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="10" verse="34">
+     <ContentRef firstBook="44" firstChapter="10" firstVerse="34" lastBook="44" lastChapter="10" lastVerse="35"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1075">
+    <LinkRef fragmentId="1074"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="48" chapter="2" verse="11">
+     <ContentRef firstBook="48" firstChapter="2" firstVerse="11" lastBook="48" lastChapter="2" lastVerse="14"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1077">
+    <LinkRef fragmentId="1076"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="60" chapter="1" verse="22">
+     <ContentRef firstBook="60" firstChapter="1" firstVerse="22"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1079">
+    <LinkRef fragmentId="1078"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="45" chapter="3" verse="9">
+     <ContentRef firstBook="45" firstChapter="3" firstVerse="9" lastBook="45" lastChapter="3" lastVerse="10"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1081">
+    <LinkRef fragmentId="1080"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="45" chapter="3" verse="21">
+     <ContentRef firstBook="45" firstChapter="3" firstVerse="21" lastBook="45" lastChapter="3" lastVerse="24"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1083">
+    <LinkRef fragmentId="1082"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="46" chapter="4" verse="7">
+     <ContentRef firstBook="46" firstChapter="4" firstVerse="7"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1085">
+    <LinkRef fragmentId="1084"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="49" chapter="2" verse="19">
+     <ContentRef firstBook="49" firstChapter="2" firstVerse="19"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1087">
+    <LinkRef fragmentId="1086"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="51" chapter="3" verse="10">
+     <ContentRef firstBook="51" firstChapter="3" firstVerse="10" lastBook="51" lastChapter="3" lastVerse="11"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1090">
+    <Number value="10"/>
+    <LabelRef fragmentId="1091" trailingFragmentId="1092"/>
+    <ParagraphRef fragmentId="970"/>
+   </Metatag>
+   <Metatag type="Link" id="1094">
+    <LinkRef fragmentId="1093"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="5">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="5" lastBook="8" lastChapter="2" lastVerse="7"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1096">
+    <LinkRef fragmentId="1095"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="15">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="15" lastBook="8" lastChapter="2" lastVerse="16"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1098">
+    <Number value="11"/>
+    <LabelRef fragmentId="1099" trailingFragmentId="1100"/>
+    <ParagraphRef fragmentId="971"/>
+   </Metatag>
+   <Metatag type="Link" id="1102">
+    <LinkRef fragmentId="1101"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="8">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="8" lastBook="8" lastChapter="2" lastVerse="10"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1104">
+    <LinkRef fragmentId="1103"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="13">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="13" lastBook="8" lastChapter="2" lastVerse="14"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1106">
+    <Number value="12"/>
+    <LabelRef fragmentId="1107" trailingFragmentId="1108"/>
+    <ParagraphRef fragmentId="972"/>
+   </Metatag>
+   <Metatag type="Link" id="1110">
+    <LinkRef fragmentId="1109"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="12">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="12"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1112">
+    <LinkRef fragmentId="1111"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="20">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="20"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1114">
+    <LinkRef fragmentId="1113"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="20" chapter="19" verse="17">
+     <ContentRef firstBook="20" firstChapter="19" firstVerse="17"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1116">
+    <LinkRef fragmentId="1115"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="54" chapter="2" verse="3">
+     <ContentRef firstBook="54" firstChapter="2" firstVerse="3" lastBook="54" lastChapter="2" lastVerse="4"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1118">
+    <Number value="13"/>
+    <LabelRef fragmentId="1119" trailingFragmentId="1120"/>
+    <ParagraphRef fragmentId="973"/>
+   </Metatag>
+   <Metatag type="Link" id="1122">
+    <LinkRef fragmentId="1121"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="50" chapter="2" verse="3">
+     <ContentRef firstBook="50" firstChapter="2" firstVerse="3" lastBook="50" lastChapter="2" lastVerse="4"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1123">
+    <Number value="14"/>
+    <LabelRef fragmentId="1124" trailingFragmentId="1125"/>
+    <ParagraphRef fragmentId="974"/>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1126">
+    <Number value="15"/>
+    <LabelRef fragmentId="1127" trailingFragmentId="1128"/>
+    <ParagraphRef fragmentId="975"/>
+   </Metatag>
+   <Metatag type="Link" id="1130">
+    <LinkRef fragmentId="1129"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="40" chapter="7" verse="12">
+     <ContentRef firstBook="40" firstChapter="7" firstVerse="12"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1132">
+    <LinkRef fragmentId="1131"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="45" chapter="15" verse="7">
+     <ContentRef firstBook="45" firstChapter="15" firstVerse="7"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1133">
+    <Number value="16"/>
+    <LabelRef fragmentId="1134" trailingFragmentId="1135"/>
+    <ParagraphRef fragmentId="976"/>
+   </Metatag>
+   <Metatag type="Link" id="1137">
+    <LinkRef fragmentId="1136"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="44" chapter="14" verse="27">
+     <ContentRef firstBook="44" firstChapter="14" firstVerse="27"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1139">
+    <LinkRef fragmentId="1138"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="48" chapter="6" verse="10">
+     <ContentRef firstBook="48" firstChapter="6" firstVerse="10"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1141">
+    <LinkRef fragmentId="1140"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="18" chapter="31" verse="32">
+     <ContentRef firstBook="18" firstChapter="31" firstVerse="32"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1143">
+    <Number value="17"/>
+    <LabelRef fragmentId="1144" trailingFragmentId="1145"/>
+    <ParagraphRef fragmentId="977"/>
+   </Metatag>
+   <Metatag type="Link" id="1147">
+    <LinkRef fragmentId="1146"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="20" chapter="3" verse="27">
+     <ContentRef firstBook="20" firstChapter="3" firstVerse="27"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1148">
+    <Number value="18"/>
+    <LabelRef fragmentId="1149" trailingFragmentId="1150"/>
+    <ParagraphRef fragmentId="978"/>
+   </Metatag>
+   <Metatag type="Link" id="1152">
+    <LinkRef fragmentId="1151"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="7">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="7"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1154">
+    <LinkRef fragmentId="1153"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="8" chapter="2" verse="13">
+     <ContentRef firstBook="8" firstChapter="2" firstVerse="13"/>
+    </Address>
+   </Metatag>
+   <Metatag type="NumberedParagraph" id="1155">
+    <Number value="19"/>
+    <LabelRef fragmentId="1156" trailingFragmentId="1157"/>
+    <ParagraphRef fragmentId="979"/>
+   </Metatag>
+   <Metatag type="Link" id="1159">
+    <LinkRef fragmentId="1158"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="49" chapter="5" verse="1">
+     <ContentRef firstBook="49" firstChapter="5" firstVerse="1" lastBook="49" lastChapter="5" lastVerse="2"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1161">
+    <LinkRef fragmentId="1160"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="2" chapter="23" verse="9">
+     <ContentRef firstBook="2" firstChapter="23" firstVerse="9"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1163">
+    <LinkRef fragmentId="1162"/>
+    <Address type="BibleCitation" numberingSystem="NWT" book="60" chapter="1" verse="22">
+     <ContentRef firstBook="60" firstChapter="1" firstVerse="22"/>
+    </Address>
+   </Metatag>
+   <Metatag type="Link" id="1167">
+    <LinkRef fragmentId="1164"/>
+    <Address type="CrossReference" labelFragmentId="1165">
+     <LinkTextFormat textElementId="1166"/>
+     <ContentRef fragmentId="980"/>
+    </Address>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1168">
+    <Blocks>
+     <BlockRef fragmentId="961"/>
+     <BlockRef fragmentId="962"/>
+    </Blocks>
+    <BlockRef fragmentId="981"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1169">
+    <Blocks>
+     <BlockRef fragmentId="963"/>
+     <BlockRef fragmentId="964"/>
+    </Blocks>
+    <BlockRef fragmentId="982"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1170">
+    <BlockRef fragmentId="965"/>
+    <BlockRef fragmentId="983"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1171">
+    <Blocks>
+     <BlockRef fragmentId="966"/>
+     <BlockRef fragmentId="967"/>
+    </Blocks>
+    <BlockRef fragmentId="984"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1172">
+    <Blocks>
+     <BlockRef fragmentId="968"/>
+     <BlockRef fragmentId="969"/>
+    </Blocks>
+    <BlockRef fragmentId="985"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1173">
+    <Blocks>
+     <BlockRef fragmentId="970"/>
+     <BlockRef fragmentId="971"/>
+    </Blocks>
+    <BlockRef fragmentId="986"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1174">
+    <BlockRef fragmentId="972"/>
+    <BlockRef fragmentId="987"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1175">
+    <Blocks>
+     <BlockRef fragmentId="973"/>
+     <BlockRef fragmentId="974"/>
+    </Blocks>
+    <BlockRef fragmentId="988"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1176">
+    <BlockRef fragmentId="975"/>
+    <BlockRef fragmentId="989"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1177">
+    <Blocks>
+     <BlockRef fragmentId="976"/>
+     <BlockRef fragmentId="977"/>
+    </Blocks>
+    <BlockRef fragmentId="990"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1178">
+    <BlockRef fragmentId="978"/>
+    <BlockRef fragmentId="991"/>
+   </Metatag>
+   <Metatag type="BlockAssociation" id="1179">
+    <BlockRef fragmentId="979"/>
+    <BlockRef fragmentId="992"/>
+   </Metatag>
+   <Metatag type="Image" id="700">
+    <Resource uuid="9D0C8E07-B398-4D13-9304-2333202559EA"/>
+    <PlacementRef fragmentId="1"/>
+    <LabelRef fragmentId="801"/>
+   </Metatag>
+   <Metatag type="Image" id="702">
+    <Resource uuid="176F558B-8389-4724-B2C7-ED479597E558"/>
+    <PlacementRef fragmentId="972"/>
+    <LabelRef fragmentId="803"/>
+    <CaptionRef fragmentId="804" standalone="true"/>
+   </Metatag>
+   <Metatag type="Image" id="705">
+    <Resource uuid="F2EE17BA-C61C-42AC-AE57-983A28BCB054"/>
+    <PlacementRef fragmentId="976"/>
+    <LabelRef fragmentId="806"/>
+    <CaptionRef fragmentId="807" standalone="true"/>
+   </Metatag>
+   <Metatag type="Image" id="950">
+    <Resource uuid="4DF2F9A5-08C7-403C-8709-F0C87EC3923A"/>
+    <LabelRef fragmentId="901"/>
+   </Metatag>
+   <Metatag type="Image" id="952">
+    <Resource uuid="A48A8C63-E90D-4DF6-8ADB-00A90EBB7196"/>
+    <LabelRef fragmentId="903"/>
+   </Metatag>
+   <Metatag type="Image" id="954">
+    <Resource uuid="8E7362CD-C460-4CF5-8305-0C02C62132FA"/>
+    <LabelRef fragmentId="905"/>
+   </Metatag>
+   <Metatag type="Image" id="956">
+    <Resource uuid="E9ACDAFD-8DD4-4338-934D-CD11189C318C"/>
+    <LabelRef fragmentId="907"/>
+   </Metatag>
+   <Metatag type="Image" id="958">
+    <Resource uuid="6472F26E-A548-4E1E-96B1-0B104D33B679"/>
+    <LabelRef fragmentId="909"/>
+   </Metatag>
+   <Metatag type="Image" id="960">
+    <Resource uuid="72B53589-C813-4CC1-8057-9348F1B81A0A"/>
+    <LabelRef fragmentId="911"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1193">
+    <TargetRef fragmentId="1192"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1195">
+    <JoinerRef fragmentId="1194"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1202">
+    <TargetRef fragmentId="1201"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1204">
+    <JoinerRef fragmentId="1203"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1207">
+    <TargetRef fragmentId="1206"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1209">
+    <JoinerRef fragmentId="1208"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1215">
+    <JoinerRef fragmentId="1214"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1217">
+    <TargetRef fragmentId="1216"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1219">
+    <JoinerRef fragmentId="1218"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1223">
+    <JoinerRef fragmentId="1222"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1226">
+    <TargetRef fragmentId="1225"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1229">
+    <TargetRef fragmentId="1228"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1232">
+    <JoinerRef fragmentId="1231"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1234">
+    <JoinerRef fragmentId="1233"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1236">
+    <JoinerRef fragmentId="1235"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1238">
+    <JoinerRef fragmentId="1237"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1240">
+    <TargetRef fragmentId="1239"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1242">
+    <JoinerRef fragmentId="1241"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1249">
+    <TargetRef fragmentId="1248"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1251">
+    <TargetRef fragmentId="1250"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1253">
+    <TargetRef fragmentId="1252"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1255">
+    <JoinerRef fragmentId="1254"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1261">
+    <TargetRef fragmentId="1260"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1263">
+    <JoinerRef fragmentId="1262"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1266">
+    <TargetRef fragmentId="1265"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1268">
+    <JoinerRef fragmentId="1267"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1270">
+    <JoinerRef fragmentId="1269"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1273">
+    <TargetRef fragmentId="1272"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1275">
+    <JoinerRef fragmentId="1274"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1282">
+    <TargetRef fragmentId="1281"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1284">
+    <TargetRef fragmentId="1283"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1288">
+    <TargetRef fragmentId="1287"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1294">
+    <TargetRef fragmentId="1293"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1297">
+    <TargetRef fragmentId="1296"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1301">
+    <TargetRef fragmentId="1300"/>
+    <Character entity="zwnj"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1303">
+    <JoinerRef fragmentId="1302"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1307">
+    <JoinerRef fragmentId="1306"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1311">
+    <JoinerRef fragmentId="1310"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1313">
+    <JoinerRef fragmentId="1312"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1315">
+    <JoinerRef fragmentId="1314"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1319">
+    <JoinerRef fragmentId="1318"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="CharacterEntity" id="1323">
+    <TargetRef fragmentId="1322"/>
+    <Character entity="ensp"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1326">
+    <JoinerRef fragmentId="1325"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1330">
+    <JoinerRef fragmentId="1329"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1332">
+    <JoinerRef fragmentId="1331"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1334">
+    <JoinerRef fragmentId="1333"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1336">
+    <JoinerRef fragmentId="1335"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1340">
+    <JoinerRef fragmentId="1339"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1345">
+    <JoinerRef fragmentId="1344"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1347">
+    <JoinerRef fragmentId="1346"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1349">
+    <JoinerRef fragmentId="1348"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1354">
+    <JoinerRef fragmentId="1353"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1356">
+    <JoinerRef fragmentId="1355"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1358">
+    <JoinerRef fragmentId="1357"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1366">
+    <JoinerRef fragmentId="1365"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1368">
+    <JoinerRef fragmentId="1367"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1371">
+    <JoinerRef fragmentId="1370"/>
+    <Space width="Full"/>
+   </Metatag>
+   <Metatag type="WordJoiner" id="1373">
+    <JoinerRef fragmentId="1372"/>
+    <Space width="Full"/>
+   </Metatag>
+  </Metatags>
+  <TextElements locked="false" mlSignature="0b64de4654cb6602a6c14c56cb89634e74512218">
+   <TextElement id="1180" name="Article.Title">
+    <Label value="Article title"/>
+    <Text value="“Do Not Forget Kindness to Strangers”"/>
+   </TextElement>
+   <Group label="Html Metadata" locked="false">
+    <TextElement id="1182" name="HtmlMeta.MetaTitle">
+     <Label value="Html title"/>
+     <Text value="“Do Not Forget Kindness to Strangers”—Hebrews 13:2 | Study"/>
+    </TextElement>
+    <TextElement id="1183" name="HtmlMeta.MetaDescription">
+     <Label value="Html description"/>
+     <Text value="Watchtower Study November 28—December 4, 2016: How can we help those from a foreign background feel at home in the congregation?"/>
+    </TextElement>
+    <TextElement id="1184" name="HtmlMeta.MetaKeywords">
+     <Label value="Html keywords"/>
+     <Text value="hebrews 13 2, kindness to strangers, foreign background, god, view of strangers, culture, hospitality, christians, kingdom hall, congregation"/>
+    </TextElement>
+   </Group>
+   <Group label="Link text" locked="false">
+    <TextElement id="1166">
+     <Label value="Endnote 1 link text"/>
+     <Text value="[1]"/>
+    </TextElement>
+   </Group>
+   <Group label="Web Publishing" locked="false">
+    <TextElement id="1181" name="WebPub.URLSegment">
+     <Label value="URLSegment"/>
+     <Text value="do-not-forget-kindness-to-strangers"/>
+    </TextElement>
+    <TextElement id="1185" name="WebPub.OnPageTitle">
+     <Label value="OnPageTitle"/>
+     <Text value="“Do Not Forget Kindness to Strangers”"/>
+    </TextElement>
+    <TextElement id="1186" name="WebPub.OnPageTitleSentenceCase">
+     <Label value="OnPageTitleSentenceCase"/>
+     <Text value="“Do not forget kindness to strangers”"/>
+    </TextElement>
+    <TextElement id="1187" name="WebPub.OnSiteAdDescription">
+     <Label value="OnSiteAdDescription"/>
+     <Text value="How does God view strangers? What can you do to help any from a foreign background feel at home in your congregation?"/>
+    </TextElement>
+    <TextElement id="1188" name="WebPub.OnSiteAdTitle">
+     <Label value="OnSiteAdTitle"/>
+     <Text value="“Do Not Forget Kindness to Strangers”"/>
+    </TextElement>
+    <TextElement id="1189" name="WebPub.OnSiteAdTitleSentenceCase">
+     <Label value="OnSiteAdTitleSentenceCase"/>
+     <Text value="“Do not forget kindness to strangers”"/>
+    </TextElement>
+   </Group>
+  </TextElements>
+ </Content>
+</Article>

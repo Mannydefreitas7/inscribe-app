@@ -1,18 +1,22 @@
 import React from 'react'
-import DocumentIcon from './../assets/icons/DocumentIcon'
-import MoreIcon from './../assets/icons/MoreIcon'
+import mepsaIcon from './../assets/icons/mepsa.svg';
+import moreIcon from './../assets/icons/more.svg';
 
 function RecentFile(props) {
     return (
-        <div className="flex justify-between py-4 px-4 border-b hover:bg-gray-200 rounded">
+        <div className="flex justify-between items-center py-2 px-4 border-b border-gray-50 hover:bg-gray-100 rounded hover:bg-opacity-30">
             <div className="flex content-center">
-                <DocumentIcon />
-                <span className="ml-2 font-semibold">{props.name}</span>
+                <img src={mepsaIcon} width="24" className="mr-2" alt=""/>
+                <div>
+                    <span className="ml-2 font-normal text-gray-600">{props.name}</span> <br />
+                    <span className="ml-2 font-normal text-sm text-gray-400">{props.type}</span>
+                </div>
+               
             </div>
 
             <div className="flex content-center">
-                <span className="mr-4 text-gray-400">{props.date}</span>
-                <MoreIcon />
+                <span className="mr-4 text-gray-300">{props.date}</span>
+                <img src={moreIcon} width="24" className="mr-2" alt="" />
             </div>
         </div>
     )

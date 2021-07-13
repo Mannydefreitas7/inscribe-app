@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDropzone } from "react-dropzone";
-import DragDropIcon from "./../assets/icons/DragDropIcon";
-import article from "./../assets/articles/Article.xml"
-const XMLParser = require('react-xml-parser');
-const axios = require('axios');
+import DragDropIcon from "./../assets/icons/drag.svg";
+// import article from "./../assets/articles/Article.xml"
+// const XMLParser = require('react-xml-parser');
+// const axios = require('axios');
 function DropZoneFile(props) {
 
 
@@ -46,18 +46,18 @@ function DropZoneFile(props) {
           className: `${
             isDragActive
               ? "bg-pink-700 border-pink-200"
-              : "bg-gray-900 border-gray-300"
+              : "bg-gray-900 border-gray-100"
           } bg-gray-100 p-3 flex-grow rounded-lg flex justify-center border-dotted border-4 focus:outline-none focus:border-4 focus:border-pink-700 flex-col bg-opacity-5`,
         })}
       >
         <input  {...getInputProps({className: "min-w-full" })} />
         <div className="flex justify-center flex-wrap self-center">
-          <DragDropIcon fill={isDragActive ? "#F9A8D4" : "#9CA3AF"} />
+            <img src={DragDropIcon} width="32" className="my-4 opacity-50" alt="" />
         </div>
         <div className="mx-auto flex justify-center flex-wrap self-center">
           <p
             className={`${
-              isDragActive ? "text-pink-300" : "text-gray-400"
+              isDragActive ? "text-indigo-300" : "text-gray-300"
             } self-center text-gray-300  text-center`}
           >
             Drag and drop {props.name}, <br /> or click to upload.
