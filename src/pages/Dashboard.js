@@ -5,6 +5,7 @@ import {
     Route,
     Redirect
   } from "react-router-dom";
+import { GlobalProvider } from '../store/GlobalState';
 import DashboardBar from './../components/topbar/DashboardBar';
 import ArticleEditor from './ArticleEditor';
 import Extensions from './Extensions';
@@ -31,7 +32,16 @@ function Dashboard() {
             </div>
           </Route>
           <Route path="/editor/article" >
+          <GlobalProvider>
               <ArticleEditor />
+            </GlobalProvider>
+          </Route>
+
+          <Route path="/editor/presentation" >
+            <GlobalProvider>
+              <ArticleEditor />
+            </GlobalProvider>
+              
           </Route>
         </Switch>
       </div>

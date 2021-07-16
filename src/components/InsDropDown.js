@@ -1,7 +1,8 @@
 import { withStyles } from '@material-ui/core';
-import React from 'react';
+import React, { useContext } from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { GlobalContext } from '../store/GlobalState';
 
 const StyledMenu = withStyles({
     paper: {
@@ -33,32 +34,23 @@ const StyledMenu = withStyles({
     },
   }))(MenuItem);
 
-export default function DropDown(props) {
-
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+export default function InsDropDown(props) {
+    const { isDropdownOpen, openDropdown, closeDropdown } = useContext(GlobalContext);
 
     return (
        <> 
-        <div onClick={handleClick}>
+        <div onClick={openDropdown}>
              {props.children}
         </div>
         <StyledMenu
             id="customized-menu"
-            anchorEl={anchorEl}
+            anchorEl={isDropdownOpen}
             keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
+            open={Boolean(isDropdownOpen)}
+            onClose={closeDropdown}
         >
             <div className="pb-3 pt-1 px-4 border-b border-gray-100">
-                <div className="text-gray-400 font-semibold">Project</div>
+                <div className="text-gray-400 font-semibold">{props.title}</div>
             </div>
             {
                 props.items && props.items.map(item => {

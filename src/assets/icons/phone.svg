@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="9" height="13" viewBox="0 0 9 13">
-  <g id="Group_5606" data-name="Group 5606" transform="translate(-217 136.872)">
-    <g id="Rectangle_7" data-name="Rectangle 7" transform="translate(226 -136.872) rotate(90)" fill="none" stroke="#707070" stroke-width="1">
-      <rect width="13" height="9" rx="2" stroke="none"/>
-      <rect x="0.5" y="0.5" width="12" height="8" rx="1.5" fill="none"/>
-    </g>
-    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(221 -126.872)" fill="none" stroke="#707070" stroke-width="1">
-      <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
-      <circle cx="0.5" cy="0.5" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="15.541" height="23.8" viewBox="0 0 15.541 23.8">
+  <g id="Group_5606" data-name="Group 5606" transform="translate(-216.25 137.622)">
+    <rect id="Rectangle_7" data-name="Rectangle 7" width="22.3" height="14.041" rx="2" transform="translate(231.041 -136.872) rotate(90)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(223.117 -118.991)" fill="none" stroke="#707070" stroke-width="1">
+      <circle cx="1" cy="1" r="1" stroke="none"/>
+      <circle cx="1" cy="1" r="0.5" fill="none"/>
     </g>
   </g>
 </svg>

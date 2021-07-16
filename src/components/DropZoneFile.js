@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
+import { useContext } from "react";
 import { useDropzone } from "react-dropzone";
+import { GlobalContext } from "../store/GlobalState";
 import DragDropIcon from "./../assets/icons/drag.svg";
 // import article from "./../assets/articles/Article.xml"
 // const XMLParser = require('react-xml-parser');
 // const axios = require('axios');
+
+import { uuid } from 'uuidv4';
 function DropZoneFile(props) {
 
+  const { addAsset } = useContext(GlobalContext);
 
   const {
     getRootProps,
@@ -14,29 +19,41 @@ function DropZoneFile(props) {
     isDragActive,
     isDragAccept,
     isDragReject,
-  } = useDropzone({ accept: ".mepsa" });
+  } = useDropzone();
 
   
 
   useEffect(() => {
 
-  //   axios.get(article, {
-  //     "Content-Type": "application/xml; charset=utf-8"
-  //  })
-  //  .then((response) => {
-  //     console.log('Your xml file as string', response.data);
-  //  });
-
     acceptedFiles.map(file => {
-      file.text().then(article => {
-        console.log(article)
-      })
+      if (file.type === 'image/jpeg') {
+        file.text().then(data => {
+          console.log(data)
+          let asset = {
+            id: uuid(),
+            date: new Date().toLocaleString(),
+            extension: 'JPEG',
+            size: `${file.size}KB`,
+            blob: data,
+            name: file.name
+          }
+          addAsset(asset)
+        })
+      }
+
+      if (file.type === 'application/json') {
+        file.text().then(article => {
+          let file = JSON.parse(article);
+            if (file && file.extension === 'MEPSA') {
+              addAsset(file)
+            }
+        })
+      }
     });
-  })
+  }, [acceptedFiles])
 
   return (
-    <div className="flex justify-center content-center" style={{ height : '300px'}}>
-      
+    <div className="flex justify-center content-center">
       <div
         {...getRootProps({
           onDrop: event => {
@@ -60,7 +77,7 @@ function DropZoneFile(props) {
               isDragActive ? "text-indigo-300" : "text-gray-300"
             } self-center text-gray-300  text-center`}
           >
-            Drag and drop {props.name}, <br /> or click to upload.
+            Drag and drop file here.
           </p>
         </div>
       </div>
