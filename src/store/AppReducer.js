@@ -17,6 +17,12 @@ const reducer = (
          ...state,
          presentation: action.payload
       };
+
+      case actionTypes.ADD_TO_PRESENTATION:
+         return {
+            ...state,
+            presentation: action.payload
+         };
      
       case actionTypes.CHANGE_WORKSPACE:
       return {

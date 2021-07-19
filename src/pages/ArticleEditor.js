@@ -22,7 +22,7 @@ import {
 
 function ArticleEditor() {
 
-    const { workspace, changeWorkspace, breakpoint, toggleLeftSidebar, toggleRightSidebar, loadPresentationOne, presentationOne, isLeftSidebarOpen, isRightSidebarOpen } = useContext(GlobalContext);
+    const { workspace, changeWorkspace, breakpoint, toggleLeftSidebar, toggleRightSidebar, loadPresentation, presentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation } = useContext(GlobalContext);
 
     useEffect(() => {
         localforage.config({
@@ -30,12 +30,12 @@ function ArticleEditor() {
             name: 'inscribe',
             version: 1.0,
         });
-        loadPresentationOne();
+        loadPresentation();
     }, []);
 
     const onDragEnd = async (result) => {
         try {
-            const { source, destination } = result;     
+            const { source, destination, draggableId } = result;
             if (!destination) {
                 return;
             }
@@ -44,14 +44,28 @@ function ArticleEditor() {
             console.log(result)
             if (destId) {
                 if (srcId === `droppable-assets`) {
-                    
+                    filterAsset(draggableId)
                 }
-                
             }
 
         } catch (error) { console.log(error) }
     };
 
+
+    const filterAsset = async (id) => {
+        try {
+            let _presentation = await localforage.getItem('presentation');
+            if (_presentation) {
+                let filteredItems = _presentation.assets.filter(item => item.id === id);
+                if (filteredItems.length > 0) {
+                    let items = filteredItems[0].items;
+                    addToPresentation(items)
+                }
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
     const items = [
@@ -91,91 +105,92 @@ function ArticleEditor() {
 
 
     return (
-        <DragDropContext onDragEnd={onDragEnd}> 
-        <div className="editor">
-            <div className="flex fixed w-full border-b border-gray-100 px-4 flex-row justify-between py-2 z-50 bg-gray-50">
-                <button className={`p-2 rounded bg-gray-900 ${isLeftSidebarOpen ? 'bg-opacity-5' : 'bg-opacity-0'}  hover:bg-opacity-5`} onClick={() => toggleLeftSidebar(isLeftSidebarOpen)}>
-                    <ReactSVG src={SideLeftIcon} />
-                </button>
-                {
-                    workspace === 'presentation' ? <DesignToolbar /> : <ArticleToolbar />
-                }
-                <div className="flex items-center">
-                    <InsMenu items={items} title="Workspace">
-                        <div className="hasDropdown p-2 rounded cursor-pointer bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
-                            <img style={{ float: 'left' }} src={workspace === "presentation" ? PageFlowIcon : InscribeIcon} alt="" />
-                        </div>
-                    </InsMenu>
-                    <button className="p-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
-                        <ReactSVG
-                            src="/images/add.svg"
-                        />
+        <DragDropContext onDragEnd={onDragEnd}>
+            <div className="editor">
+                <div className="flex fixed w-full border-b border-gray-100 px-4 flex-row justify-between py-2 z-50 bg-gray-50 ">
+                    <button className={`p-2 rounded bg-gray-900 ${isLeftSidebarOpen ? 'bg-opacity-5' : 'bg-opacity-0'}  hover:bg-opacity-5`} onClick={() => toggleLeftSidebar(isLeftSidebarOpen)}>
+                        <ReactSVG src={SideLeftIcon} />
                     </button>
-                    <button className={`p-2 mr-2 rounded bg-gray-900 ${isRightSidebarOpen ? 'bg-opacity-5' : 'bg-opacity-0'}  hover:bg-opacity-5`} onClick={() => toggleRightSidebar(isRightSidebarOpen)}>
-                        <ReactSVG src={SideRightIcon} />
-                    </button>
+                    {
+                        workspace === 'presentation' ? <DesignToolbar /> : <ArticleToolbar />
+                    }
+                    <div className="flex items-center">
+                        <InsMenu items={items} title="Workspace">
+                            <div className="hasDropdown p-2 rounded cursor-pointer bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
+                                <img style={{ float: 'left' }} src={workspace === "presentation" ? PageFlowIcon : InscribeIcon} alt="" />
+                            </div>
+                        </InsMenu>
+                        <button className="p-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
+                            <ReactSVG
+                                src="/images/add.svg"
+                            />
+                        </button>
+                        <button className={`p-2 mr-2 rounded bg-gray-900 ${isRightSidebarOpen ? 'bg-opacity-5' : 'bg-opacity-0'}  hover:bg-opacity-5`} onClick={() => toggleRightSidebar(isRightSidebarOpen)}>
+                            <ReactSVG src={SideRightIcon} />
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div className="flex justify-between bg-gray-200">
+                <div className="flex justify-between bg-gray-200 overflow-hidden">
 
-                {isLeftSidebarOpen ? <SideBarLeft /> : null}
+                    {isLeftSidebarOpen ? <SideBarLeft /> : null}
 
-                <div className={`bg-white h-screen flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
+                    <div className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
 
-                    <div className="container px-4 mx-auto" style={{ paddingTop: workspace === 'presentation' ? 60 : 100 }} onClick={(e) => console.log(e)}>
-                    <Droppable
-                            key={0}
-                            ignoreContainerClipping={true}
-                            
-                            droppableId={`droppable-document`}
-                            isDropDisabled={false}
-                        >
-                            {(provided, snapshot) => (
+                        <div className="container px-4 overscroll-contain mx-auto pb-24" style={{ paddingTop: workspace === 'presentation' ? 60 : 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 767 }} >
+                            <Droppable
+                                key={0}
+                                ignoreContainerClipping={true}
 
-                                <div
-                                    className="border"
-                                    ref={provided.innerRef}
-                                >
+                                droppableId={`droppable-document`}
+                                isDropDisabled={false}
+                            >
+                                {(provided, snapshot) => (
+
+                                    <div
+                                        className={`${snapshot.isDraggingOver ? 'bg-indigo-50 rounded-sm' : ''}`}
+                                        style={{ minHeight: presentation && presentation.items.length > 0 ? 'auto' : 800 }}
+                                        ref={provided.innerRef}
+                                    >
                                         {
-                                            presentationOne && presentationOne.items.map((item, index) => {
+                                            presentation && presentation.items.map((item, index) => {
                                                 return <Draggable
                                                     key={index}
+                                                    
                                                     draggableId={`${item.id}`}
                                                     index={index}>
-                                                        {(provided, snapshot) => (
-                                                <div
-                                                    className={`p-2 rounded my-2 bg-white ${snapshot.isDragging ? 'shadow-lg' : 'shadow'}`}
-                                                    ref={provided.innerRef}
-                                                    {...provided.draggableProps}
-                                                    {...provided.dragHandleProps}
-                                                >
-                                                    <BlockEditor block={item} />
-                                                </div>
-                                            )}
-                                        </Draggable> 
+                                                    {(provided, snapshot) => (
+                                                        <div
+                                                            ref={provided.innerRef}
+                                                            {...provided.draggableProps}
+                                                            {...provided.dragHandleProps}
+                                                        >
+                                                            <BlockEditor snapshot={snapshot} block={item} />
+                                                        </div>
+                                                    )}
+                                                </Draggable>
                                             })
                                         }
-                                                     
-                                    {provided.placeholder}
-                                </div>
-                            )}
-                        </Droppable>
+
+                                        {provided.placeholder}
+                                    </div>
+                                )}
+                            </Droppable>
+
+                        </div>
 
                     </div>
 
+                    {
+                        isRightSidebarOpen ?
+                            <SideBarRight content={<h1>TEST</h1>} /> :
+                            null
+                    }
+
                 </div>
 
-                {
-                    isRightSidebarOpen ?
-                        <SideBarRight content={<h1>TEST</h1>} /> :
-                        null
-                }
 
             </div>
-
-
-        </div>
         </DragDropContext>
     )
 }

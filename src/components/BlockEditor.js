@@ -1,27 +1,65 @@
 import React, { useState } from 'react'
 import ContentEditable from 'react-contenteditable'
 import PlusIcon from './../assets/icons/plus.svg';
-import MoreIcon from './../assets/icons/three-dots-vertical.svg';
 import { ReactSVG } from 'react-svg';
 
 export default function BlockEditor(props) {
 
-    const [isFocused, setIsFocused] = useState(false)
+    const [isFocused, setIsFocused] = useState(false);
 
-    return (
-        <div className={`border-indigo-500 rounded-sm relative w-11/12 ${isFocused ? 'border-2' : 'border-0'}`} onBlur={() => setIsFocused(false)} onFocus={(e) => setIsFocused(true)}>
-
-                {
-                    props.block.type === 'text' ?
-                    <ContentEditable
-                        tagName="div"
+    const blockType = () => {
+        switch (props.block.type) {
+            case 'text':
+                return <ContentEditable
+                    tagName="div"
+                    className={props.block.classlist.toString().replace(',', ' ')}
+                    draggable={false}
+                    html={props.block.data} 
+                    disabled={false} 
+                    onChange={(e) => console.log(e)} 
+                    onBlur={() => {}}
+                />
+            case 'container':
+                return <div className={props.block.classlist.toString().replace(',', ' ')}>{
+                props.block.children.map(item => {
+                    if (item.type === 'text') {
+                        return <ContentEditable
+                        tagName="span"
+                        className={item.classlist.toString().replace(',', ' ')}
                         draggable={false}
-                        html={props.block.data} 
+                        html={item.data} 
                         disabled={false} 
                         onChange={(e) => console.log(e)} 
                         onBlur={() => {}}
-                        /> : props.block.data
+                    />
+                    }
+                    if (item.type === 'link') {
+                        return <a className={item.classlist.toString().replace(',', ' ')}>{item.data}</a>
+                    }
+                })
                 }
+                </div>
+            default:
+                break;
+        }
+    }
+
+    return (
+        <div className="cursor-default" onBlur={() => setIsFocused(false)} onFocus={(e) => setIsFocused(true)}>
+        {
+                props.block.classlist.length > 0 && isFocused ? 
+                <div className="py-1 px-2 bg-indigo-600 cursor-move rounded-sm inline-flex">
+                    {
+                        props.block.classlist.map(c => {
+                            return <span className="text-white text-xs">.{c}</span>
+                        })
+                    }
+                
+                </div> : null
+            }
+        <div className={`border-indigo-500 bg-white rounded-sm relative w-full ${isFocused ? 'border-2' : 'border-0'} ${props.snapshot.isDragging ? 'shadow-lg' : ''}`}>
+
+                { blockType() }
 
             {
                 isFocused ? 
@@ -34,6 +72,7 @@ export default function BlockEditor(props) {
             </button> : null
             }
 
+        </div>
         </div>
     )
 }

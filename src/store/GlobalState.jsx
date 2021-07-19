@@ -10,7 +10,8 @@ import {
     TOGGLE_LEFT_SIDEBAR,
     TOGGLE_RIGHT_SIDEBAR,
     LOAD_PRESENTATION,
-    ADD_ASSET
+    ADD_ASSET,
+    ADD_TO_PRESENTATION
 } from './ActionTypes';
 
 
@@ -28,7 +29,8 @@ const initialState = {
    toggleRightSidebar: null,
    changeBreakpoint: null,
    breakpoint: 'desktop',
-   openDropdown: null
+   openDropdown: null,
+   addToPresentation: null
 }
 
 export const GlobalContext = createContext(initialState)
@@ -82,7 +84,7 @@ export const GlobalProvider = (props) => {
         })
     }
 
-    const loadPresentationOne = async () => {
+    const loadPresentation = async () => {
         try {
             let presentation = await localforage.getItem('presentation');
             if (!presentation) {
@@ -101,6 +103,7 @@ export const GlobalProvider = (props) => {
                     payload: data
                 })
             } else {
+                console.log(presentation)
                 dispatch({
                     type: LOAD_PRESENTATION,
                     payload: presentation
@@ -126,6 +129,23 @@ export const GlobalProvider = (props) => {
     }
 
 
+    const addToPresentation = async (items) => {
+
+        let _presentation = await localforage.getItem('presentation');
+        if (_presentation) {
+            _presentation.items = [
+                ..._presentation.items,
+                ...items
+            ]
+            await localforage.setItem('presentation', _presentation)
+        }
+        dispatch({
+            type: ADD_TO_PRESENTATION,
+            payload: _presentation
+        })
+    }
+
+
     return (
         <GlobalContext.Provider value={{
            workspace: state.workspace,
@@ -134,14 +154,15 @@ export const GlobalProvider = (props) => {
            isDropdownOpen: state.isDropdownOpen,
            isLeftSidebarOpen: state.isLeftSidebarOpen,
            isRightSidebarOpen: state.isRightSidebarOpen,
-           loadPresentationOne,
+           loadPresentation,
            addAsset,
            openDropdown,
            changeBreakpoint,
            closeDropdown,
            toggleRightSidebar,
            toggleLeftSidebar,
-           changeWorkspace
+           changeWorkspace,
+           addToPresentation
         }}>
             {props.children}
         </GlobalContext.Provider>

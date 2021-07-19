@@ -9,47 +9,298 @@
             "id": "8dbd905e-71f3-4569-a38f-06e359698b5b",
             "index": 0,
             "type": "text",
-            "data": {
-                "blob": "",
-                "description": "",
-                "classlist": [],
-                "properties": {}
-            }
+            "data": "Knowledge That Draws Us to God",
+            "description": "Title",
+            "classlist": ["title"],
+            "properties": {}
         },
         {
-            "id": "2c70433e-43c3-435c-9aaa-bff434d8d6c7",
+            "id": "c1c6e82f-ad63-470a-927b-e03fff33b6b1",
             "index": 1,
-            "type": "image",
-            "data": {
-                "blob": "",
-                "description": "",
-                "classlist": [],
-                "properties": {}
-            }
-        },
-        {
-            "id": "8f117347-7397-48e3-a85a-9dbbaba41b09",
-            "index": 2,
-            "type": "columns",
+            "type": "container",
             "children": [
                 {
-                    "id": "8dbd905e-71f3-4569-a38f-06e359698b5b",
+                    "id": "",
                     "index": 0,
                     "type": "text",
-                    "data": {
-                        "blob": "",
-                        "description": "",
-                        "classlist": [],
-                        "properties": {}
-                    }
+                    "desciption": "fragment",
+                    "data": "Our Creator is not merely a force. He has endearing qualities. And he wants us to learn about him and draw close to him. (",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "type": "link",
+                    "desciption": "fragment",
+                    "data": "John 17:3;",
+                    "classlist": ["link"],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 2,
+                    "type": "link",
+                    "desciption": "fragment",
+                    "data": " James 4:8",
+                    "classlist": ["link"],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 3,
+                    "desciption": "fragment",
+                    "type": "text",
+                    "data": ") That is why he has revealed much about himself.",
+                    "classlist": [],
+                    "properties": {}
                 }
             ],
-            "data": {
-                "blob": "",
-                "description": "",
-                "classlist": [],
-                "properties": {}
-            }
+            "description": "Container",
+            "classlist": ["opening", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "86c36ebc-13a7-4892-8bc2-39cdaffac7ed",
+            "index": 1,
+            "type": "text",
+            "data": "Our Creator Has a Personal Name",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "5fcd1f6e-91df-434d-a824-8221cb1427da",
+            "index": 2,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "“May people know that you, whose name is Jehovah, you alone are the Most High over all the earth.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "desciption": "link",
+                    "type": "link",
+                    "data": "PSALM 83:18.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "48827dd8-9e79-4a63-a119-2f82ca920dd5",
+            "index": 2,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "The Bible teaches that Jehovah is the one true God. He is the Creator of the universe and of all life. He alone deserves our worship.​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "desciption": "link",
+                    "type": "link",
+                    "data": "Revelation 4:11.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "8f30c647-4650-42d5-b1e6-f521dca6a12f",
+            "index": 2,
+            "type": "text",
+            "data": "Jehovah Is a Loving God",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "8bd8201a-22dd-40a6-89af-b2aa9103d7ec",
+            "index": 3,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "“God is love.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "desciption": "link",
+                    "type": "link",
+                    "data": "1 JOHN 4:8.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "353f13ca-f28b-4d97-8da2-ce03f21a87ca",
+            "index": 4,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "By means of the Bible and the natural world around us, Jehovah has revealed many of his qualities. Love is his foremost quality. It defines who he is. The more we learn about Jehovah, the more we love him.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "37eaca11-2dd0-462f-a8af-2d3e1474a49a",
+            "index": 5,
+            "type": "text",
+            "data": "Jehovah Is a Forgiving God",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "717583ba-02ac-444a-b5f7-987febb976e5",
+            "index": 6,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "“You are a God ready to forgive.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "desciption": "link",
+                    "type": "link",
+                    "data": "NEHEMIAH 9:17.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "b7a0f08e-bead-4e0d-bd88-8c3122fcff4d",
+            "index": 7,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "Jehovah knows that we are imperfect. So he is “ready to forgive” us. When we tell him we are sorry and try hard to stop doing bad things, he will forgive us and not hold our past sins against us.​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "desciption": "link",
+                    "type": "link",
+                    "data": "Psalm 103:12, 13.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "dc90c13e-7bc2-4531-8a0e-329d046014af",
+            "index": 8,
+            "type": "text",
+            "data": "Jehovah Welcomes Our Prayers",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "3531fa3b-460a-4b34-aa83-72320636ba14",
+            "index": 9,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "“Jehovah is near to all those calling on him . . . He hears their cry for help.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "",
+                    "index": 1,
+                    "desciption": "link",
+                    "type": "link",
+                    "data": "PSALM 145:18, 19.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "d51aa7e3-ff50-493a-a6e6-a7c000df69fc",
+            "index": 10,
+            "type": "container",
+            "children": [
+                {
+                    "id": "",
+                    "index": 0,
+                    "type": "text",
+                    "desciption": "fragment",
+                    "data": "Jehovah requires no special rituals or religious objects in his worship. He listens to our prayers just as loving parents listen to their dear children.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
         }
     ]
 }

@@ -7,7 +7,7 @@ import DragDropIcon from "./../assets/icons/drag.svg";
 // const XMLParser = require('react-xml-parser');
 // const axios = require('axios');
 
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuidv4';
 function DropZoneFile(props) {
 
   const { addAsset } = useContext(GlobalContext);
@@ -30,7 +30,7 @@ function DropZoneFile(props) {
         file.text().then(data => {
           console.log(data)
           let asset = {
-            id: uuid(),
+            id: v4(),
             date: new Date().toLocaleString(),
             extension: 'JPEG',
             size: `${file.size}KB`,
@@ -62,9 +62,9 @@ function DropZoneFile(props) {
           },
           className: `${
             isDragActive
-              ? "bg-pink-700 border-pink-200"
+              ? "bg-indigo-700 border-indigo-200"
               : "bg-gray-900 border-gray-100"
-          } bg-gray-100 p-3 flex-grow rounded-lg flex justify-center border-dotted border-4 focus:outline-none focus:border-4 focus:border-pink-700 flex-col bg-opacity-5`,
+          } bg-gray-100 p-3 flex-grow rounded-lg flex justify-center border-dotted border-4 focus:outline-none focus:border-4 focus:border-indigo-700 flex-col bg-opacity-5`,
         })}
       >
         <input  {...getInputProps({className: "min-w-full" })} />

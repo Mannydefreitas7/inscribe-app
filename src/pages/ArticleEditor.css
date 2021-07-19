@@ -1,14 +1,14 @@
 
 * {
-    caret-color:#9B1A4B;
+    caret-color:#6C6997;
 }
 
 *::selection {
-    background: #9b1a4b2a;
+    background: #6c69972a;
 }
 
 .editor a {
-    color: #9B1A4B;
+    color: #0140b6;
     text-decoration: none;
 }
 
@@ -17,3 +17,50 @@
     font-size: larger;
 }
 
+.title {
+    font-size:xx-large;
+    font-weight: bold;
+    line-height: normal;
+    margin-bottom: 1rem;
+}
+
+.subheading-1 {
+    font-size: 28px;
+    line-height: normal;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.subheading-2 {
+    font-size: 24px;
+    line-height: normal;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.subheading-3 {
+    font-size: 18px;
+    line-height: normal;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.subheading-4 {
+    font-size: 16px;
+    line-height: normal;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+.paragraph {
+    margin-bottom: 1rem;
+    font-size: 16px;
+}
+
+.opening {
+    font-size: 20px;
+    color: gray
+}

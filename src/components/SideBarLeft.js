@@ -14,8 +14,9 @@ export default function SideBarLeft() {
     const { presentation } = useContext(GlobalContext);
 
     return (
-            <div className="relative bg-gray-50 border-r border-gray-100" 
+            <div className="fixed h-full z-10 bg-gray-50 border-r border-gray-100" 
             style={{ width: 350, paddingTop: 60 }}>
+               
                 <Collaspible title="Assets" >
 
                     <DropZoneFile  />
@@ -46,8 +47,7 @@ export default function SideBarLeft() {
                 </Collaspible>
                 <Collaspible title="Outline" >
                     <span>Outline</span>
-                </Collaspible>
-                
+                </Collaspible> 
             </div>
         
     )
