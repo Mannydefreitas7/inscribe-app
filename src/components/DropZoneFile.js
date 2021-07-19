@@ -7,7 +7,7 @@ import DragDropIcon from "./../assets/icons/drag.svg";
 // const XMLParser = require('react-xml-parser');
 // const axios = require('axios');
 
-import { v4 } from 'uuidv4';
+import { uuid } from 'uuidv4';
 function DropZoneFile(props) {
 
   const { addAsset } = useContext(GlobalContext);
@@ -26,17 +26,26 @@ function DropZoneFile(props) {
   useEffect(() => {
 
     acceptedFiles.map(file => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      
+    })
       if (file.type === 'image/jpeg') {
-        file.text().then(data => {
-          console.log(data)
+        file.arrayBuffer().then(data => {
+          
           let asset = {
-            id: v4(),
+            id: uuid(),
             date: new Date().toLocaleString(),
             extension: 'JPEG',
+            classlist:[],
+            type: 'image',
             size: `${file.size}KB`,
-            blob: data,
-            name: file.name
+            data: file.name,
+            name: file.name,
+            blob: data
           }
+          console.log(asset)
           addAsset(asset)
         })
       }
