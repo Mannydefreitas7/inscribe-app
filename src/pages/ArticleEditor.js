@@ -19,6 +19,7 @@ import {
     Droppable,
     Draggable
 } from "react-beautiful-dnd";
+import InsModal from '../components/InsModal';
 
 function ArticleEditor() {
 
@@ -31,7 +32,26 @@ function ArticleEditor() {
             version: 1.0,
         });
         loadPresentation();
+
+        // shortcuts keys
+        shortcurtMethods();
+
     }, []);
+
+    const shortcurtMethods = () => {
+        document.onkeyup = function (e) {
+            var evt = window.event || e;
+            console.log(evt)
+            switch (evt.keyCode) {
+                // delete
+                case 220:  
+                    // Call your method Here
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
     const onDragEnd = async (result) => {
         try {
@@ -44,27 +64,42 @@ function ArticleEditor() {
             console.log(result)
             if (destId) {
                 if (srcId === `droppable-assets`) {
-                    filterAsset(draggableId)
+                    filterAsset(draggableId, destination.index)
                 }
             }
 
         } catch (error) { console.log(error) }
     };
 
+  
 
-    const filterAsset = async (id) => {
+
+    const filterAsset = async (id, index) => {
         try {
             let _presentation = await localforage.getItem('presentation');
             if (_presentation) {
-                let filteredItems = _presentation.assets.filter(item => item.id === id);
-                if (filteredItems.length > 0) {
-                    let items = filteredItems[0].items;
-                    if (filteredItems[0].items && filteredItems[0].items.length > 0) {
-                        addToPresentation(items)
-                    } else {
-                        addToPresentation([filteredItems[0]])
-                    }
+                let assetItems = _presentation.assets.filter(item => item.id === id);
+                
+                if (assetItems.length > 0) {
+                    let presentationItems = _presentation.items;
                     
+                    let items = assetItems[0].items;
+                    if (assetItems[0].items && assetItems[0].items.length > 0) {
+                        addToPresentation([
+                            ...presentationItems,
+                            ...items
+                        ])
+                    } else {
+                        if (presentationItems.length > 0) {
+                            
+                            presentationItems.splice(index, 0, assetItems[0])
+                            addToPresentation(presentationItems)
+                        } else {
+                            addToPresentation([assetItems[0]])
+                        }
+                        
+                        
+                    }
                 } 
             }
         } catch (error) {
@@ -110,6 +145,7 @@ function ArticleEditor() {
 
 
     return (
+        <>
         <DragDropContext onDragEnd={onDragEnd}>
             <div className="editor">
                 <div className="flex fixed w-full border-b border-gray-100 px-4 flex-row justify-between py-2 z-50 bg-gray-50 ">
@@ -140,9 +176,9 @@ function ArticleEditor() {
 
                     {isLeftSidebarOpen ? <SideBarLeft /> : null}
 
-                    <div className={`bg-white h-screen flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
+                    <div className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
 
-                        <div className="container px-4 overscroll-contain mx-auto pb-24" style={{ paddingTop: workspace === 'presentation' ? 60 : 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 1024 }} >
+                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: workspace === 'presentation' ? 60 : 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 1024 }} >
                             <Droppable
                                 key={0}
                                 ignoreContainerClipping={true}
@@ -197,6 +233,8 @@ function ArticleEditor() {
 
             </div>
         </DragDropContext>
+        <InsModal />
+        </>
     )
 }
 export default ArticleEditor

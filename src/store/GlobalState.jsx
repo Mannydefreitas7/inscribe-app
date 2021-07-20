@@ -11,7 +11,10 @@ import {
     TOGGLE_RIGHT_SIDEBAR,
     LOAD_PRESENTATION,
     ADD_ASSET,
-    ADD_TO_PRESENTATION
+    ADD_TO_PRESENTATION,
+    SELECT_ITEM,
+    OPEN_MODAL,
+    CLOSE_MODAL
 } from './ActionTypes';
 
 
@@ -30,7 +33,12 @@ const initialState = {
    changeBreakpoint: null,
    breakpoint: 'desktop',
    openDropdown: null,
-   addToPresentation: null
+   addToPresentation: null,
+   selectedItem: null,
+   selectItem: null,
+   modalChildren: null,
+   openModal: null,
+   isModalOpen: false
 }
 
 export const GlobalContext = createContext(initialState)
@@ -134,7 +142,6 @@ export const GlobalProvider = (props) => {
         let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
             _presentation.items = [
-                ..._presentation.items,
                 ...items
             ]
             await localforage.setItem('presentation', _presentation)
@@ -142,6 +149,33 @@ export const GlobalProvider = (props) => {
         dispatch({
             type: ADD_TO_PRESENTATION,
             payload: _presentation
+        })
+    }
+
+    const openModal = (children) => {
+        dispatch({
+            type: OPEN_MODAL,
+            payload: {
+                isModalOpen: true,
+                modalChildren: children,
+            }
+        })
+    }
+
+    const closeModal = (children) => {
+        dispatch({
+            type: CLOSE_MODAL,
+            payload: {
+                isModalOpen: false,
+                modalChildren: null,
+            }
+        })
+    }
+
+    const selectItem = (item) => {
+        dispatch({
+            type: SELECT_ITEM,
+            payload: item
         })
     }
 
@@ -162,7 +196,13 @@ export const GlobalProvider = (props) => {
            toggleRightSidebar,
            toggleLeftSidebar,
            changeWorkspace,
-           addToPresentation
+           openModal,
+           addToPresentation,
+           isModalOpen: state.isModalOpen,
+           selectItem,
+           closeModal,
+           modalChildren: state.modalChildren,
+           selectedItem: state.selectedItem
         }}>
             {props.children}
         </GlobalContext.Provider>

@@ -55,6 +55,23 @@ const reducer = (
          ...state,
          isRightSidebarOpen: action.payload
       };
+      case actionTypes.OPEN_MODAL:
+      return {
+         ...state,
+         isModalOpen: action.payload.isModalOpen,
+         modalChildren: action.payload.modalChildren
+      };
+      case actionTypes.CLOSE_MODAL:
+      return {
+         ...state,
+         isModalOpen: action.payload.isModalOpen,
+         modalChildren: action.payload.modalChildren
+      };
+      case actionTypes.SELECT_ITEM:
+      return {
+         ...state,
+         selectedItem: action.payload
+      };
       default:
          return state
    }
