@@ -7,7 +7,7 @@ import DragDropIcon from "./../assets/icons/drag.svg";
 // const XMLParser = require('react-xml-parser');
 // const axios = require('axios');
 
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 function DropZoneFile(props) {
 
   const { addAsset } = useContext(GlobalContext);
@@ -26,29 +26,45 @@ function DropZoneFile(props) {
   useEffect(() => {
 
     acceptedFiles.map(file => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      
-    })
+    
       if (file.type === 'image/jpeg') {
-        file.arrayBuffer().then(data => {
-          
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
           let asset = {
-            id: uuid(),
+            id: v4(),
             date: new Date().toLocaleString(),
             extension: 'JPEG',
             classlist:[],
+            description: 'image',
             type: 'image',
             size: `${file.size}KB`,
             data: file.name,
             name: file.name,
-            blob: data
+            blob: reader.result
           }
-          console.log(asset)
           addAsset(asset)
-        })
+         // console.log(reader.result)
+        }
       }
+        
+        // file.arrayBuffer().then(data => {
+          
+        //   let asset = {
+        //     id: uuid(),
+        //     date: new Date().toLocaleString(),
+        //     extension: 'JPEG',
+        //     classlist:[],
+        //     type: 'image',
+        //     size: `${file.size}KB`,
+        //     data: file.name,
+        //     name: file.name,
+        //     blob: data
+        //   }
+        //   console.log(asset)
+        //   addAsset(asset)
+        // })
+
 
       if (file.type === 'application/json') {
         file.text().then(article => {

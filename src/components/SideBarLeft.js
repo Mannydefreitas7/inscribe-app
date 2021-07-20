@@ -8,13 +8,14 @@ import {
     Droppable,
     Draggable
 } from "react-beautiful-dnd";
+import OutlineCollapsible from './OutlineCollapsible';
 
 export default function SideBarLeft() {
    
     const { presentation } = useContext(GlobalContext);
 
     return (
-            <div className="fixed h-full z-10 bg-gray-50 border-r border-gray-100" 
+            <div className="fixed h-full overflow-scroll z-10 bg-gray-50 border-r border-gray-100" 
             style={{ width: 350, paddingTop: 60 }}>
                
                 <Collaspible title="Assets" >
@@ -46,7 +47,27 @@ export default function SideBarLeft() {
                     </div>
                 </Collaspible>
                 <Collaspible title="Outline" >
-                    <span>Outline</span>
+                    {
+                        presentation && presentation.items.length > 0 && presentation.items.map((a, index) => {
+                            return <OutlineCollapsible key={index} item={a} >
+                                {
+                                    a.children && a.children.length > 0 && a.children.map((b, i) => {
+                                       return <OutlineCollapsible 
+                                       item={b}
+                                       key={i}>
+                                           {
+                                               b.children && b.children.length > 0 && b.children.map((c, x) => {
+                                                return <OutlineCollapsible 
+                                                item={c}
+                                                key={x}></OutlineCollapsible>
+                                               })
+                                           }
+                                       </OutlineCollapsible>
+                                    })
+                                }
+                            </OutlineCollapsible>
+                        })
+                    }
                 </Collaspible> 
             </div>
         

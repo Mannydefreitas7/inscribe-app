@@ -59,8 +59,13 @@ function ArticleEditor() {
                 let filteredItems = _presentation.assets.filter(item => item.id === id);
                 if (filteredItems.length > 0) {
                     let items = filteredItems[0].items;
-                    addToPresentation(items)
-                }
+                    if (filteredItems[0].items && filteredItems[0].items.length > 0) {
+                        addToPresentation(items)
+                    } else {
+                        addToPresentation([filteredItems[0]])
+                    }
+                    
+                } 
             }
         } catch (error) {
             console.log(error)
@@ -135,9 +140,9 @@ function ArticleEditor() {
 
                     {isLeftSidebarOpen ? <SideBarLeft /> : null}
 
-                    <div className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
+                    <div className={`bg-white h-screen flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
 
-                        <div className="container px-4 overscroll-contain mx-auto pb-24" style={{ paddingTop: workspace === 'presentation' ? 60 : 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 767 }} >
+                        <div className="container px-4 overscroll-contain mx-auto pb-24" style={{ paddingTop: workspace === 'presentation' ? 60 : 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 1024 }} >
                             <Droppable
                                 key={0}
                                 ignoreContainerClipping={true}

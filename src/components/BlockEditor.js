@@ -19,6 +19,8 @@ export default function BlockEditor(props) {
                     onChange={(e) => console.log(e)} 
                     onBlur={() => {}}
                 />
+            case 'image':
+                return <img contentEditable={true} className={props.block.classlist.toString().replace(',', ' ')} alt={props.block.name} src={props.block.blob} />
             case 'container':
                 return <div className={props.block.classlist.toString().replace(',', ' ')}>{
                 props.block.children.map(item => {
