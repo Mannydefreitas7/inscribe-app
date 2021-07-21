@@ -38,6 +38,9 @@ const initialState = {
    selectItem: null,
    modalChildren: null,
    openModal: null,
+   closeModal: null,
+   setImageCrop: null,
+   setImageBlob: null,
    isModalOpen: false
 }
 
@@ -162,7 +165,7 @@ export const GlobalProvider = (props) => {
         })
     }
 
-    const closeModal = (children) => {
+    const closeModal = () => {
         dispatch({
             type: CLOSE_MODAL,
             payload: {
@@ -170,6 +173,75 @@ export const GlobalProvider = (props) => {
                 modalChildren: null,
             }
         })
+    }
+
+
+    const setImageCrop = async (item, crop, cropId) => {
+        let _presentation = await localforage.getItem('presentation');
+        if (_presentation) {
+            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
+            if (imageItems.length > 0) {
+                let imageItem = imageItems[0];
+                let crops = imageItem.crops.filter(c => c.id === cropId);
+                if (crops.length > 0) {
+                    let imageCrop = {
+                        ...crops[0],
+                        x: crop.x,
+                        y: crop.y
+                    }
+                    let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
+                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+
+                    imageItem.crops[imageCropIndex] = imageCrop;
+                    _presentation.items[itemIndex] = imageItem;
+                    await localforage.setItem('presentation', _presentation);
+
+                    dispatch({
+                        type: LOAD_PRESENTATION,
+                        payload: _presentation
+                    })
+
+                    dispatch({
+                        type: SELECT_ITEM,
+                        payload: imageItem
+                    })
+                }
+            }
+            
+        }
+    }
+
+    const setImageBlob = async (item, blob, cropId) => {
+        let _presentation = await localforage.getItem('presentation');
+        if (_presentation) {
+            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
+            if (imageItems.length > 0) {
+                let imageItem = imageItems[0];
+                let crops = imageItem.crops.filter(c => c.id === cropId);
+                if (crops.length > 0) {
+                    let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
+                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+                    imageItem.blob = blob;
+                    imageItem.crops[imageCropIndex] = {
+                        ...imageItem.crops[imageCropIndex],
+                        blob: blob
+                    }
+                    _presentation.items[itemIndex] = imageItem;
+                    await localforage.setItem('presentation', _presentation);
+
+                    dispatch({
+                        type: LOAD_PRESENTATION,
+                        payload: _presentation
+                    })
+
+                    dispatch({
+                        type: SELECT_ITEM,
+                        payload: imageItem
+                    })
+                }
+            }
+            
+        }
     }
 
     const selectItem = (item) => {
@@ -189,6 +261,7 @@ export const GlobalProvider = (props) => {
            isLeftSidebarOpen: state.isLeftSidebarOpen,
            isRightSidebarOpen: state.isRightSidebarOpen,
            loadPresentation,
+           setImageCrop,
            addAsset,
            openDropdown,
            changeBreakpoint,
@@ -197,6 +270,7 @@ export const GlobalProvider = (props) => {
            toggleLeftSidebar,
            changeWorkspace,
            openModal,
+           setImageBlob,
            addToPresentation,
            isModalOpen: state.isModalOpen,
            selectItem,

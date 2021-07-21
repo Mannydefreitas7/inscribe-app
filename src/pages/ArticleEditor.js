@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ArticleToolbar from '../components/topbar/ArticleToolbar'
 import { ReactSVG } from "react-svg";
 import './ArticleEditor.css';
 import SideLeftIcon from './../assets/icons/side-left.svg';
 import SideRightIcon from './../assets/icons/side-right.svg';
-import ContentEditable from "react-contenteditable";
+
 import InsMenu from '../components/InsMenu';
 import InscribeIcon from './../assets/icons/inscribe.svg';
 import PageFlowIcon from './../assets/icons/pageflow.svg';
@@ -23,7 +23,7 @@ import InsModal from '../components/InsModal';
 
 function ArticleEditor() {
 
-    const { workspace, changeWorkspace, breakpoint, toggleLeftSidebar, toggleRightSidebar, loadPresentation, presentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation } = useContext(GlobalContext);
+    const { workspace, changeWorkspace, breakpoint, toggleLeftSidebar, toggleRightSidebar, loadPresentation, presentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation, isModalOpen } = useContext(GlobalContext);
 
     useEffect(() => {
         localforage.config({
@@ -178,7 +178,7 @@ function ArticleEditor() {
 
                     <div className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
 
-                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: workspace === 'presentation' ? 60 : 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 1024 }} >
+                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 1024 }} >
                             <Droppable
                                 key={0}
                                 ignoreContainerClipping={true}
@@ -233,7 +233,9 @@ function ArticleEditor() {
 
             </div>
         </DragDropContext>
-        <InsModal />
+        {
+            isModalOpen ? <InsModal /> : null
+        }
         </>
     )
 }

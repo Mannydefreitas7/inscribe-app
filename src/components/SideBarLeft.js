@@ -1,5 +1,5 @@
 
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { GlobalContext } from '../store/GlobalState';
 import Collaspible from './Collaspible';
 import DropZoneFile from './DropZoneFile';
@@ -32,7 +32,7 @@ export default function SideBarLeft() {
                                             return <Draggable key={index} draggableId={`${asset.id}`} index={index}>
                                             {(provided, snapshot) => (
                                             
-                                            <div className={`${snapshot.isDragging ? 'shadow-lg rounded bg-gray-50' : ''}`} ref={provided.innerRef}
+                                            <div className={`${snapshot.isDragging ? 'shadow-lg rounded bg-gray-50' : ''}cursor-move`} ref={provided.innerRef}
                                              {...provided.draggableProps}
                                              {...provided.dragHandleProps}><RecentFile type={asset.extension} name={asset.name} date={asset.date} /></div>
                                             )}</Draggable>

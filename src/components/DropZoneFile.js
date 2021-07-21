@@ -3,9 +3,6 @@ import { useContext } from "react";
 import { useDropzone } from "react-dropzone";
 import { GlobalContext } from "../store/GlobalState";
 import DragDropIcon from "./../assets/icons/drag.svg";
-// import article from "./../assets/articles/Article.xml"
-// const XMLParser = require('react-xml-parser');
-// const axios = require('axios');
 
 import { v4 } from 'uuid';
 function DropZoneFile(props) {
@@ -17,8 +14,6 @@ function DropZoneFile(props) {
     getInputProps,
     acceptedFiles,
     isDragActive,
-    isDragAccept,
-    isDragReject,
   } = useDropzone();
 
   
@@ -41,29 +36,45 @@ function DropZoneFile(props) {
             size: `${file.size}KB`,
             data: file.name,
             name: file.name,
-            blob: reader.result
+            raw: reader.result,
+            blob: reader.result,
+            crops: [
+              {
+                blob: null,
+                id: v4(),
+                name: 'SQR',
+                height: 224,
+                width: 224,
+                unit: "px",
+                x: 0,
+                y: 0
+              },
+              {
+                blob: null,
+                id: v4(),
+                name: 'PNR',
+                height: 267,
+                width: 801,
+                unit: "px",
+                x: 0,
+                y: 0
+              },
+              {
+                id: v4(),
+                blob: null,
+                name: 'LSR',
+                height: 400,
+                width: 800,
+                unit: "px",
+                x: 0,
+                y: 0
+              },
+            ]
           }
           addAsset(asset)
          // console.log(reader.result)
         }
       }
-        
-        // file.arrayBuffer().then(data => {
-          
-        //   let asset = {
-        //     id: uuid(),
-        //     date: new Date().toLocaleString(),
-        //     extension: 'JPEG',
-        //     classlist:[],
-        //     type: 'image',
-        //     size: `${file.size}KB`,
-        //     data: file.name,
-        //     name: file.name,
-        //     blob: data
-        //   }
-        //   console.log(asset)
-        //   addAsset(asset)
-        // })
 
 
       if (file.type === 'application/json') {
@@ -74,6 +85,7 @@ function DropZoneFile(props) {
             }
         })
       }
+      return null
     });
   }, [acceptedFiles])
 

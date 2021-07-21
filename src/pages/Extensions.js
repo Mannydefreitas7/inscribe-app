@@ -30,6 +30,7 @@ function Extensions() {
                     size={extension.size}
                   />
                 );
+                return null
             })}
         </div>
       </div>
@@ -51,6 +52,7 @@ function Extensions() {
                     size={extension.size}
                   />
                 );
+                return null
             })}
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import DropZoneFile from '../components/DropZoneFile'
 import RecentContainer from '../components/RecentContainer'
-import TemplatesBar from '../components/sidebar/TemplatesBar'
 
 function Home() {
     return (

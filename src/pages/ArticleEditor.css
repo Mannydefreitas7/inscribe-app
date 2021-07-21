@@ -9,7 +9,7 @@
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+    background: transparent;
 }
 
 *::selection {
@@ -17,7 +17,7 @@
 }
 
 .editor a {
-    color: #0140b6;
+    color: #345996;
     text-decoration: none;
 }
 
