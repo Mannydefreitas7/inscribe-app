@@ -41,7 +41,9 @@ const initialState = {
    closeModal: null,
    setImageCrop: null,
    setImageBlob: null,
-   isModalOpen: false
+   isModalOpen: false,
+   removeItem: null,
+   removeClass: null
 }
 
 export const GlobalContext = createContext(initialState)
@@ -139,6 +141,21 @@ export const GlobalProvider = (props) => {
         })
     }
 
+    const removeClass = async (item, className) => {
+        let _presentation = await localforage.getItem('presentation');
+        if (_presentation) {
+            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+            let newClassList = item.classlist.filter(c => c !== className);
+            item.classlist = newClassList;
+            _presentation.items[itemIndex] = item;
+            await localforage.setItem('presentation', _presentation);
+            dispatch({
+                type: LOAD_PRESENTATION,
+                payload: _presentation
+            })
+        }
+    }
+
 
     const addToPresentation = async (items) => {
 
@@ -151,6 +168,20 @@ export const GlobalProvider = (props) => {
         }
         dispatch({
             type: ADD_TO_PRESENTATION,
+            payload: _presentation
+        })
+    }
+
+    const removeItem = async (item) => {
+        let _presentation = await localforage.getItem('presentation');
+        if (_presentation) {
+            _presentation.items = [
+                ..._presentation.items.filter(el => el.id !== item.id)
+            ]
+            await localforage.setItem('presentation', _presentation)
+        }
+        dispatch({
+            type: LOAD_PRESENTATION,
             payload: _presentation
         })
     }
@@ -275,8 +306,10 @@ export const GlobalProvider = (props) => {
            isModalOpen: state.isModalOpen,
            selectItem,
            closeModal,
+           removeItem,
            modalChildren: state.modalChildren,
-           selectedItem: state.selectedItem
+           selectedItem: state.selectedItem,
+           removeClass
         }}>
             {props.children}
         </GlobalContext.Provider>

@@ -4,7 +4,7 @@ import ArrowDown from './../assets/icons/arrow-down.svg'
 
 export default function Collaspible(props) {
 
-const [isOpen, setIsOpen] = useState(false)
+const [isOpen, setIsOpen] = useState(true)
 
     return (
         <div>

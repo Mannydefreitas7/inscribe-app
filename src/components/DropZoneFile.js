@@ -5,10 +5,12 @@ import { GlobalContext } from "../store/GlobalState";
 import DragDropIcon from "./../assets/icons/drag.svg";
 
 import { v4 } from 'uuid';
+import { useHistory, useLocation } from "react-router-dom";
 function DropZoneFile(props) {
 
-  const { addAsset } = useContext(GlobalContext);
-
+  const { addAsset, toggleLeftSidebar } = useContext(GlobalContext);
+  const location = useLocation();
+  const history = useHistory();
   const {
     getRootProps,
     getInputProps,
@@ -81,7 +83,17 @@ function DropZoneFile(props) {
         file.text().then(article => {
           let file = JSON.parse(article);
             if (file && file.extension === 'MEPSA') {
-              addAsset(file)
+              
+              if (location.pathname === '/home') {
+                history.push('/editor')
+                setTimeout(() => {
+                  addAsset(file)
+                  toggleLeftSidebar(true)
+                }, 1000)
+
+              } else {
+                addAsset(file)
+              }
             }
         })
       }
@@ -90,7 +102,7 @@ function DropZoneFile(props) {
   }, [acceptedFiles])
 
   return (
-    <div className="flex justify-center content-center">
+    <div className="flex justify-center content-center" {...props}>
       <div
         {...getRootProps({
           onDrop: event => {

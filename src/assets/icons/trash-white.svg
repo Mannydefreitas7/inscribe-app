@@ -1,0 +1,28 @@
+<svg id="Component_55" data-name="Component 55" xmlns="http://www.w3.org/2000/svg" width="15.805" height="15.809" viewBox="0 0 15.805 15.809">
+  <g id="Canvas_Marker" data-name="Canvas Marker">
+    <path id="Path_8079" data-name="Path 8079" d="M74-74" transform="translate(-74 74)" fill="#fff"/>
+    <path id="Path_8080" data-name="Path 8080" d="M74-50" transform="translate(-74 65.809)" fill="#fff"/>
+    <path id="Path_8081" data-name="Path 8081" d="M98-50" transform="translate(-82.195 65.809)" fill="#fff"/>
+    <path id="Path_8082" data-name="Path 8082" d="M98-74" transform="translate(-82.195 74)" fill="#fff"/>
+  </g>
+  <g id="Expanded" transform="translate(1.317)">
+    <g id="Group_5029" data-name="Group 5029" transform="translate(0 2.635)">
+      <path id="Path_8083" data-name="Path 8083" d="M88.842-69.341H76.329A.329.329,0,0,1,76-69.671.329.329,0,0,1,76.329-70H88.842a.329.329,0,0,1,.329.329A.329.329,0,0,1,88.842-69.341Z" transform="translate(-76 70)" fill="#fff"/>
+    </g>
+    <g id="Group_5030" data-name="Group 5030" transform="translate(1.976 3.952)">
+      <path id="Path_8084" data-name="Path 8084" d="M86.573-56.144H80.646A1.735,1.735,0,0,1,79-57.79v-9.88A.329.329,0,0,1,79.329-68a.329.329,0,0,1,.329.329v9.88a1.086,1.086,0,0,0,.988.988h5.927a1.086,1.086,0,0,0,.988-.988v-9.88A.329.329,0,0,1,87.89-68a.329.329,0,0,1,.329.329v9.88A1.735,1.735,0,0,1,86.573-56.144Z" transform="translate(-79 68)" fill="#fff"/>
+    </g>
+    <g id="Group_5031" data-name="Group 5031" transform="translate(4.281 4.611)">
+      <path id="Path_8085" data-name="Path 8085" d="M82.829-57.778a.329.329,0,0,1-.329-.329v-8.563A.329.329,0,0,1,82.829-67a.329.329,0,0,1,.329.329v8.563A.329.329,0,0,1,82.829-57.778Z" transform="translate(-82.5 67)" fill="#fff"/>
+    </g>
+    <g id="Group_5032" data-name="Group 5032" transform="translate(6.256 4.611)">
+      <path id="Path_8086" data-name="Path 8086" d="M85.829-57.778a.329.329,0,0,1-.329-.329v-8.563A.329.329,0,0,1,85.829-67a.329.329,0,0,1,.329.329v8.563A.329.329,0,0,1,85.829-57.778Z" transform="translate(-85.5 67)" fill="#fff"/>
+    </g>
+    <g id="Group_5033" data-name="Group 5033" transform="translate(8.232 4.611)">
+      <path id="Path_8087" data-name="Path 8087" d="M88.829-57.778a.329.329,0,0,1-.329-.329v-8.563A.329.329,0,0,1,88.829-67a.329.329,0,0,1,.329.329v8.563A.329.329,0,0,1,88.829-57.778Z" transform="translate(-88.5 67)" fill="#fff"/>
+    </g>
+    <g id="Group_5034" data-name="Group 5034" transform="translate(3.951)">
+      <path id="Path_8088" data-name="Path 8088" d="M86.939-72.024a.329.329,0,0,1-.329-.329v-.988H82.659v.988a.329.329,0,0,1-.329.329A.329.329,0,0,1,82-72.353v-1.317A.329.329,0,0,1,82.329-74h4.61a.329.329,0,0,1,.329.329v1.317A.329.329,0,0,1,86.939-72.024Z" transform="translate(-82 74)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -178,7 +178,7 @@ function ArticleEditor() {
 
                     <div className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
 
-                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 600 : 1024 }} >
+                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 800 : 1024 }} >
                             <Droppable
                                 key={0}
                                 ignoreContainerClipping={true}
@@ -189,7 +189,7 @@ function ArticleEditor() {
                                 {(provided, snapshot) => (
 
                                     <div
-                                        className={`${snapshot.isDraggingOver ? 'bg-indigo-50 rounded-sm' : ''}`}
+                                        className={`${snapshot.isDraggingOver ? 'bg-indigo-50 rounded-sm border border-dotted border-indigo-400' : ''}`}
                                         style={{ minHeight: presentation && presentation.items.length > 0 ? 'auto' : 800 }}
                                         ref={provided.innerRef}
                                     >

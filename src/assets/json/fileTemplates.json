@@ -1,20 +1,14 @@
 [
     {
         "id": "1",
-        "name": "Watchtower Study Article",
-        "path": "new-wt-article",
-        "image": "wt-template.jpg"
+        "name": "Blank Article",
+        "path": "/editor",
+        "image": "blank-article-template.jpg"
     },
     {
         "id": "2",
-        "name": "Web Article",
-        "path": "new-web-article",
-        "image": "web-article-template.jpg"
-    },
-    {
-        "id": "3",
-        "name": "Public Talk Outline",
-        "path": "new-talk-outline",
-        "image": "talk-template.jpg"
+        "name": "Blank Presentation",
+        "path": "/editor",
+        "image": "blank-presentation-template.jpg"
     }
 ]

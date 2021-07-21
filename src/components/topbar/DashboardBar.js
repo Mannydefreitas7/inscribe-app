@@ -6,11 +6,13 @@ import InsMenu from '../InsMenu';
 import InscribeIcon from './../../assets/icons/inscribe.svg';
 import PageFlowIcon from './../../assets/icons/pageflow.svg';
 import { useHistory } from "react-router-dom";
+import { useContext } from 'react';
+import { GlobalContext } from '../../store/GlobalState';
 
 function DashboardBar() {
 
   let history = useHistory();
-
+  const { closeDropdown } = useContext(GlobalContext);
 
   const items = [
     {
@@ -24,7 +26,10 @@ function DashboardBar() {
       id: 1, 
       icon: <img className="mr-3" width="20" src={PageFlowIcon} alt="" />,
       text: 'Presentation',
-      action: () => history.push("/editor/presentation/"), 
+      action: () => { 
+        closeDropdown()
+        history.push("/editor/") 
+      }, 
       disabled: false,
       description: 'Digital content layout and presentation tools.'
     },

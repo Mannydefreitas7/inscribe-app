@@ -12,7 +12,7 @@ import OutlineCollapsible from './OutlineCollapsible';
 
 export default function SideBarLeft() {
    
-    const { presentation } = useContext(GlobalContext);
+    const { presentation, selectItem } = useContext(GlobalContext);
 
     return (
             <div className="fixed h-full overflow-scroll z-10 bg-gray-50 border-r border-gray-100" 
@@ -49,7 +49,7 @@ export default function SideBarLeft() {
                 <Collaspible title="Outline" >
                     {
                         presentation && presentation.items.length > 0 && presentation.items.map((a, index) => {
-                            return <OutlineCollapsible key={index} item={a} >
+                            return <OutlineCollapsible key={index} item={a} onClick={() => selectItem(a)}>
                                 {
                                     a.children && a.children.length > 0 && a.children.map((b, i) => {
                                        return <OutlineCollapsible 

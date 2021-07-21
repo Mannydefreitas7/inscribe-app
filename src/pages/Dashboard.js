@@ -14,16 +14,19 @@ import Home from './Home';
 function Dashboard() {
     return (
     <Router>
+      <GlobalProvider>
       <div>
         <Switch>
         <Route path="/" exact>
             <Redirect to="/home" />
           </Route>
         <Route path="/home">
-        <DashboardBar />
-        <div className="pt-10">
-            <Home />
+        {/* <GlobalProvider> */}
+            <DashboardBar />
+            <div className="pt-10">
+              <Home />
             </div>
+            {/* </GlobalProvider> */}
           </Route>
           <Route path="/extensions">
           <DashboardBar />
@@ -31,20 +34,14 @@ function Dashboard() {
             <Extensions />
             </div>
           </Route>
-          <Route path="/editor/article" >
-          <GlobalProvider>
+          <Route path="/editor">
+            {/* <GlobalProvider> */}
               <ArticleEditor />
-            </GlobalProvider>
-          </Route>
-
-          <Route path="/editor/presentation" >
-            <GlobalProvider>
-              <ArticleEditor />
-            </GlobalProvider>
-              
+            {/* </GlobalProvider> */}
           </Route>
         </Switch>
       </div>
+      </GlobalProvider>
     </Router>
     )
 }
