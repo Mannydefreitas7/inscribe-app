@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { GlobalContext } from '../store/GlobalState';
+import useQuery from '../utils/functions';
 import BlockEditor from './BlockEditor'
 
 export default function PresentationEditor() {
 
     const { presentation, breakpoint } = useContext(GlobalContext);
+    let query = useQuery();
     const setBreakPointWidth = () => {
         switch (breakpoint) {
             case "desktop":
@@ -37,7 +39,7 @@ export default function PresentationEditor() {
                             ref={_provided.innerRef}
                         >
                             {
-                                presentation && presentation.items.map((item, index) => {
+                                !query.get('articleId') && presentation && presentation.items.map((item, index) => {
                                     return <Draggable
                                         key={index}
                                         draggableId={`${item.id}`}
@@ -47,12 +49,28 @@ export default function PresentationEditor() {
                                                 ref={provided.innerRef}
                                                 {...provided.draggableProps}
                                                 {...provided.dragHandleProps}
-
                                             >
                                                 <BlockEditor snapshot={snapshot} block={item} />
-
                                             </div>
+                                        )}
+                                    </Draggable>
+                                })
+                            }
 
+                        {
+                                query.get('articleId') && presentation && presentation.toc.filter(article => article.id === query.get('articleId')).length > 0 && presentation.toc.filter(article => article.id === query.get('articleId'))[0].items.map((item, index) => {
+                                    return <Draggable
+                                        key={index}
+                                        draggableId={`${item.id}`}
+                                        index={index}>
+                                        {(provided, snapshot) => (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                            >
+                                                <BlockEditor snapshot={snapshot} block={item} />
+                                            </div>
                                         )}
                                     </Draggable>
                                 })
