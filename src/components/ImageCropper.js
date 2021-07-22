@@ -3,7 +3,9 @@ import ReactCrop from 'react-image-crop';
 import { GlobalContext } from '../store/GlobalState';
 import 'react-image-crop/dist/ReactCrop.css';
 import { useEffect } from 'react';
-
+import { ReactSVG } from 'react-svg';
+import CloseIcon from './../assets/icons/close.svg';
+import HeaderTitle from './HeaderTitle';
 
 
 export default function ImageCropper() {
@@ -26,19 +28,24 @@ export default function ImageCropper() {
             width: selectedItem.crops[cropIndex].width,
             height: selectedItem.crops[cropIndex].height,
         })
-        console.log(currentCrop)
+        
     }, [cropIndex])
 
-    return (
-        <div className="p-4">
+    return (<>
+        <HeaderTitle title="Image Crop">
+        <button
+            onClick={() => closeModal()}
+            className="p-2 hover:bg-gray-100 rounded">
+            <ReactSVG src={CloseIcon} />
+        </button>
+        </HeaderTitle>
+        <div className="p-4 w-full">
             {
                 selectedItem && selectedItem.raw ?
                     <ReactCrop
-                        className="rounded"
+                        className="rounded w-full"
                         locked={true}
                         ref={elementRef}
-                        maxWidth={selectedItem.raw.width}
-                        maxHeight={selectedItem.raw.height}
                         src={selectedItem.raw}
                         crop={currentCrop}
                         onComplete={(crop, percent) => {
@@ -56,7 +63,7 @@ export default function ImageCropper() {
 
                         }} /> : null
             }
-            <div className="py-2 flex justify-between">
+            <div className="py-2 flex justify-between" style={{ minWidth: 900, maxWidth: '100%' }}>
                 <div className="flex">
                     {
                         selectedItem && selectedItem.crops.map((_crop, i) => {
@@ -89,10 +96,8 @@ export default function ImageCropper() {
                         className="px-2 py-1 bg-indigo-700 text-gray-50 rounded-sm">Select Crop</button>
                 </div>
             </div>
-
-
-
         </div>
+        </>
     )
 }
 function getCroppedImg(_image, crop, fileName) {

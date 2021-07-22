@@ -161,15 +161,20 @@ export const GlobalProvider = (props) => {
 
         let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
-            _presentation.items = [
-                ...items
-            ]
-            await localforage.setItem('presentation', _presentation)
+            if (_presentation.items.length > 0 && _presentation.items[0].id === items[0].id) {
+                openModal(<h1>Already exists!</h1>)
+            } else {
+                _presentation.items = [
+                    ...items
+                ]
+                await localforage.setItem('presentation', _presentation)
+                dispatch({
+                    type: ADD_TO_PRESENTATION,
+                    payload: _presentation
+                })
+            }
         }
-        dispatch({
-            type: ADD_TO_PRESENTATION,
-            payload: _presentation
-        })
+        
     }
 
     const removeItem = async (item) => {

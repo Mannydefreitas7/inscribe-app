@@ -20,10 +20,11 @@ import {
     Draggable
 } from "react-beautiful-dnd";
 import InsModal from '../components/InsModal';
+import AddView from '../components/AddView';
 
 function ArticleEditor() {
 
-    const { workspace, changeWorkspace, breakpoint, toggleLeftSidebar, toggleRightSidebar, loadPresentation, presentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation, isModalOpen } = useContext(GlobalContext);
+    const { workspace, changeWorkspace, breakpoint, toggleLeftSidebar, toggleRightSidebar, loadPresentation, presentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation, isModalOpen, openModal } = useContext(GlobalContext);
 
     useEffect(() => {
         localforage.config({
@@ -161,10 +162,8 @@ function ArticleEditor() {
                                 <img style={{ float: 'left' }} src={workspace === "presentation" ? PageFlowIcon : InscribeIcon} alt="" />
                             </div>
                         </InsMenu>
-                        <button className="p-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
-                            <ReactSVG
-                                src="/images/add.svg"
-                            />
+                        <button className="p-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5" onClick={() => openModal(<AddView />)}>
+                            <ReactSVG src="/images/add.svg"/>
                         </button>
                         <button className={`p-2 mr-2 rounded bg-gray-900 ${isRightSidebarOpen ? 'bg-opacity-5' : 'bg-opacity-0'}  hover:bg-opacity-5`} onClick={() => toggleRightSidebar(isRightSidebarOpen)}>
                             <ReactSVG src={SideRightIcon} />
@@ -178,7 +177,7 @@ function ArticleEditor() {
 
                     <div className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
 
-                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 800 : 1024 }} >
+                        <div className="container px-4 h-screen overflow-auto mx-auto pb-24" style={{ paddingTop: 100, maxWidth: isLeftSidebarOpen || isRightSidebarOpen ? 800 : 1024, marginRight: isRightSidebarOpen ? 400 : 'inherit' }} >
                             <Droppable
                                 key={0}
                                 ignoreContainerClipping={true}

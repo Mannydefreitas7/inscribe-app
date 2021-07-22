@@ -57,7 +57,7 @@ function DropZoneFile(props) {
                 name: 'PNR',
                 height: 267,
                 width: 801,
-                unit: "px",
+                unit: "%",
                 x: 0,
                 y: 0
               },
@@ -102,7 +102,7 @@ function DropZoneFile(props) {
   }, [acceptedFiles])
 
   return (
-    <div className="flex justify-center content-center" {...props}>
+    <div className="flex justify-center content-center mb-4" {...props}>
       <div
         {...getRootProps({
           onDrop: event => {
@@ -126,8 +126,10 @@ function DropZoneFile(props) {
               isDragActive ? "text-indigo-300" : "text-gray-300"
             } self-center text-gray-300  text-center`}
           >
-            Drag and drop file here.
+            Drag and drop file here. <br />
+            <button className="px-2 py-1 text-gray-400 bg-gray-50 rounded-sm border mt-2 border-gray-100 mr-1 text-sm hover:bg-gray-100">Upload</button>
           </p>
+          
         </div>
       </div>
     </div>

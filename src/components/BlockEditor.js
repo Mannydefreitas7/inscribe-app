@@ -8,6 +8,7 @@ import TrashIcon from './../assets/icons/trash-white.svg';
 import DragIcon from './../assets/icons/drag-white.svg';
 import { GlobalContext } from '../store/GlobalState';
 import ImageCropper from './ImageCropper';
+import AddView from './AddView';
 
 export default function BlockEditor(props) {
 
@@ -79,7 +80,7 @@ export default function BlockEditor(props) {
                 {
                     selectedItem && selectedItem.id === props.block.id ?
                     <div className="absolute -bottom-4 left-1/2 p-1 transform -translate-x-1/2 bg-indigo-600 rounded inline-flex items-center justify-center z-20">
-                        <button className="p-1 hover:bg-indigo-700 rounded">
+                        <button className="p-1 hover:bg-indigo-700 rounded" onClick={() => openModal(<AddView />)}>
                             <ReactSVG src={PlusIcon} />
                         </button>
                         {

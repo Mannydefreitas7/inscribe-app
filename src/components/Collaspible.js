@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import ArrowDown from './../assets/icons/arrow-down.svg'
 
 export default function Collaspible(props) {
 
-const [isOpen, setIsOpen] = useState(true)
+const [isOpen, setIsOpen] = useState(true);
+useEffect(() => {
+    if (props.isOpen) {
+        console.log(props.isOpen)
+        setIsOpen(props.isOpen)
+    }
+}, [props.isOpen])
 
     return (
         <div>
