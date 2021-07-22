@@ -14,7 +14,7 @@ export default function AddView() {
             <HeaderTitle title="Add">
                 <button
                     onClick={() => closeModal()}
-                    className="p-2 hover:bg-gray-100 rounded">
+                    className="p-2 hover:bg-gray-900 rounded">
                     <ReactSVG src={CloseIcon} />
                 </button>
             </HeaderTitle>

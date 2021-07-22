@@ -9,6 +9,7 @@ import {
     Draggable
 } from "react-beautiful-dnd";
 import OutlineCollapsible from './OutlineCollapsible';
+import TOCView from './TOCView';
 
 export default function SideBarLeft() {
    
@@ -16,7 +17,12 @@ export default function SideBarLeft() {
 
     return (
             <div className="fixed h-full overflow-scroll z-10 bg-gray-50 border-r border-gray-100" 
-            style={{ width: 350, paddingTop: 60 }}>
+            style={{ width: 400, paddingTop: 60 }}>
+
+                {
+                    presentation && presentation.toc.length > 0 ? <TOCView /> : null
+                }
+                
                
                 <Collaspible title="Assets" >
 
@@ -24,21 +30,21 @@ export default function SideBarLeft() {
                     <div className="py-1"> 
 
                     <Droppable key={0} droppableId={`droppable-assets`} isDropDisabled={true}>
-                            {(provided, snapshot) => (
-                                <div className="" ref={provided.innerRef}>
+                            {(_provided, _snapshot) => (
+                                <div className="" ref={_provided.innerRef}>
                                     {
                                         presentation && presentation.assets.map((asset, index) => {
 
                                             return <Draggable key={index} draggableId={`${asset.id}`} index={index}>
                                             {(provided, snapshot) => (
                                             
-                                            <div className={`${snapshot.isDragging ? 'shadow-lg rounded bg-gray-50' : ''}cursor-move`} ref={provided.innerRef}
+                                            <div className={` bg-gray-50 ${snapshot.isDragging ? 'shadow-lg rounded' : ''}cursor-move w-full`} ref={provided.innerRef}
                                              {...provided.draggableProps}
                                              {...provided.dragHandleProps}><RecentFile type={asset.extension} name={asset.name} date={asset.date} /></div>
                                             )}</Draggable>
                                         })
                                     }
-                                     {provided.placeholder}
+                                     {_provided.placeholder}
                                </div>             
                                             
                             )} 

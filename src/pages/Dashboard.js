@@ -21,12 +21,10 @@ function Dashboard() {
             <Redirect to="/home" />
           </Route>
         <Route path="/home">
-        {/* <GlobalProvider> */}
             <DashboardBar />
             <div className="pt-10">
               <Home />
             </div>
-            {/* </GlobalProvider> */}
           </Route>
           <Route path="/extensions">
           <DashboardBar />
@@ -34,10 +32,8 @@ function Dashboard() {
             <Extensions />
             </div>
           </Route>
-          <Route path="/editor">
-            {/* <GlobalProvider> */}
-              <ArticleEditor />
-            {/* </GlobalProvider> */}
+          <Route path="/editor" exact>
+            <ArticleEditor />
           </Route>
         </Switch>
       </div>

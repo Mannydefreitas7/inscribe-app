@@ -14,7 +14,7 @@ const { selectedItem } = useContext(GlobalContext)
             <div className="p-2 flex justify-between">
                 <div className="leading-4">
                     <span className="text-gray-700 text-sm">{props.item.data}</span> <br />
-                    <span className="text-gray-500 text-xs">{props.item.description}</span>
+                    <span className="text-gray-300 text-xs">{props.item.description}</span>
                 </div>
                 {
                     props.item.type === 'container' || props.item.type === 'columns' ?

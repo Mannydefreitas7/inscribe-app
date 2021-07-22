@@ -108,7 +108,8 @@ export const GlobalProvider = (props) => {
                     size: "329KB",
                     date: new Date().toLocaleString(),
                     items: [],
-                    assets: []
+                    assets: [],
+                    toc: []
                 }
                 await localforage.setItem('presentation', data)
                 dispatch({
@@ -133,6 +134,13 @@ export const GlobalProvider = (props) => {
         let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
             _presentation.assets.push(data)
+            if (data.extension === 'MEPSA') {
+                let filteredTOCArticles = _presentation.toc.filter(article => article.id === data.id);
+                if (filteredTOCArticles.length > 0) {
+                  return alert("Already exists")
+                }
+                _presentation.toc.push(data)
+            }
             await localforage.setItem('presentation', _presentation)
         }
         dispatch({
@@ -161,7 +169,8 @@ export const GlobalProvider = (props) => {
 
         let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
-            if (_presentation.items.length > 0 && _presentation.items[0].id === items[0].id) {
+            let filteredItems = _presentation.items.filter(el => el.id === items[0].id);
+            if (filteredItems.length > 0) {
                 openModal(<h1>Already exists!</h1>)
             } else {
                 _presentation.items = [
@@ -174,8 +183,27 @@ export const GlobalProvider = (props) => {
                 })
             }
         }
-        
     }
+
+    // const addToPresentationFile = async (asset) => {
+
+    //     let _presentation = await localforage.getItem('presentation');
+    //     if (_presentation) {
+    //         let filteredItems = _presentation.items.filter(el => el.id === items[0].id);
+    //         if (filteredItems.length > 0) {
+    //             openModal(<h1>Already exists!</h1>)
+    //         } else {
+    //             _presentation.items = [
+    //                 ...items
+    //             ]
+    //             await localforage.setItem('presentation', _presentation)
+    //             dispatch({
+    //                 type: ADD_TO_PRESENTATION,
+    //                 payload: _presentation
+    //             })
+    //         }
+    //     }
+    // }
 
     const removeItem = async (item) => {
         let _presentation = await localforage.getItem('presentation');

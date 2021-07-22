@@ -3,14 +3,19 @@ import React, { useContext } from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { GlobalContext } from '../store/GlobalState';
+import HeaderTitle from './HeaderTitle';
 
 const StyledMenu = withStyles({
     paper: {
-      border: '1px solid #DEDEDE',
+     // border: '1px solid #DEDEDE',
       minWidth: 300,
+      
       backgroundColor: '#F1F1F1',
        boxShadow: '3px 6px 16px #0000001c'
     },
+    list: {
+      paddingTop: 0,
+    }
   })((props) => (
     <Menu
       elevation={0}
@@ -58,9 +63,10 @@ export default function InsMenu(props) {
             open={Boolean(isDropdownOpen)}
             onClose={closeDropdown}
         >
-            <div className="pb-3 pt-1 px-4 border-b border-gray-100">
+            {/* <div className="pb-3 pt-1 px-4 border-b border-gray-100">
                 <div className="text-gray-400 font-semibold">{props.title}</div>
-            </div>
+            </div> */}
+            <HeaderTitle title={props.title} />
             {
                 props.items && props.items.map(item => {
                     return <StyledMenuItem 
@@ -68,7 +74,7 @@ export default function InsMenu(props) {
                     onClick={item.action}
                     key={item.id}>
                         {item.icon ? item.icon : null}
-                        <div className="text-gray-600 font-semibold">
+                        <div className="text-gray-600 font-medium">
                             {item.text}<br />
                             {item.description ? <span className="text-sm font-normal text-gray-300">{item.description}</span> : null}
                         </div>

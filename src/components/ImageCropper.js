@@ -35,7 +35,7 @@ export default function ImageCropper() {
         <HeaderTitle title="Image Crop">
         <button
             onClick={() => closeModal()}
-            className="p-2 hover:bg-gray-100 rounded">
+            className="p-2 hover:bg-gray-900 rounded">
             <ReactSVG src={CloseIcon} />
         </button>
         </HeaderTitle>
@@ -84,7 +84,7 @@ export default function ImageCropper() {
                     }
                 </div>
                 <div className="flex">
-                    <button className="px-2 py-1 text-gray-400 bg-gray-50 rounded-sm border border-gray-100 mr-1" onClick={() => closeModal()}>Cancel</button>
+                    <button className="px-4 py-2 text-gray-500 bg-gray-50 hover:bg-gray-100 rounded border-2 border-gray-100 mr-1" onClick={() => closeModal()}>Cancel</button>
                     <button
                         onClick={() => {
                             getCroppedImg(elementRef.current.imageRef, selectedItem.crops[cropIndex])
@@ -93,7 +93,7 @@ export default function ImageCropper() {
                                 })
                                 .then(() => closeModal())
                         }}
-                        className="px-2 py-1 bg-indigo-700 text-gray-50 rounded-sm">Select Crop</button>
+                        className="px-4 py-2 bg-indigo-700 text-gray-100 font-medium rounded">Select Crop</button>
                 </div>
             </div>
         </div>

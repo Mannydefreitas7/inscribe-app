@@ -43,7 +43,7 @@ function DashboardBar() {
 
               <a className="py-4 px-4 text-gray-500" href="/">Open...</a>
               <NavLink to="/home" activeClassName="border-b-4 border-indigo-500 text-indigo-500" className="px-4 py-4 text-gray-500">Home</NavLink>
-              {/* <NavLink to="/extensions" activeClassName="border-b-4 border-indigo-500  text-indigo-500" className="px-4 py-4 text-gray-500">Extensions</NavLink> */}
+              <NavLink to="/extensions" activeClassName="border-b-4 border-indigo-500  text-indigo-500" className="px-4 py-4 text-gray-500">Extensions</NavLink>
 
           </div>
       {/* <UserInfo /> */}

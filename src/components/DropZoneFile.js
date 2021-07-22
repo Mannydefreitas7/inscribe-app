@@ -57,7 +57,7 @@ function DropZoneFile(props) {
                 name: 'PNR',
                 height: 267,
                 width: 801,
-                unit: "%",
+                unit: "px",
                 x: 0,
                 y: 0
               },
@@ -118,7 +118,7 @@ function DropZoneFile(props) {
       >
         <input  {...getInputProps({className: "min-w-full" })} />
         <div className="flex justify-center flex-wrap self-center">
-            <img src={DragDropIcon} width="32" className="my-4 opacity-50" alt="" />
+            <img src={DragDropIcon} width="32" className="my-4 opacity-30" alt="" />
         </div>
         <div className="mx-auto flex justify-center flex-wrap self-center">
           <p
@@ -127,7 +127,7 @@ function DropZoneFile(props) {
             } self-center text-gray-300  text-center`}
           >
             Drag and drop file here. <br />
-            <button className="px-2 py-1 text-gray-400 bg-gray-50 rounded-sm border mt-2 border-gray-100 mr-1 text-sm hover:bg-gray-100">Upload</button>
+            <button className="px-2 py-1 text-gray-400 rounded border mt-2 border-gray-100 mr-1 text-sm hover:bg-gray-100">Upload</button>
           </p>
           
         </div>
