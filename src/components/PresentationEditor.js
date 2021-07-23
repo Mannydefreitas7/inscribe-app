@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
 import { GlobalContext } from '../store/GlobalState';
-import useQuery from '../utils/functions';
+import useQuery from '../utils/useQuery';
 import BlockEditor from './BlockEditor'
 
 export default function PresentationEditor() {
