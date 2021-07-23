@@ -16,8 +16,8 @@ export default function SideBarLeft() {
     const { presentation, selectItem } = useContext(GlobalContext);
 
     return (
-            <div className="fixed h-full overflow-scroll z-10 bg-gray-50 border-r border-gray-100" 
-            style={{ width: 400, paddingTop: 60 }}>
+            <div className="fixed h-full overflow-y-scroll z-10 bg-gray-50 border-r border-gray-100 overflow-x-hidden" 
+            style={{ width: 350, paddingTop: 60 }}>
 
                 {
                     presentation && presentation.toc.length > 0 ? <TOCView /> : null

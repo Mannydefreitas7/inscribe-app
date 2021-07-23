@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import reducer from './AppReducer';
 import localforage from 'localforage';
+import useQuery from '../utils/useQuery';
 
 import {
     CHANGE_WORKSPACE,
@@ -50,7 +51,7 @@ export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-
+    let query = useQuery();
 
     const changeWorkspace = (workspace) => {
         dispatch({
@@ -117,7 +118,6 @@ export const GlobalProvider = (props) => {
                     payload: data
                 })
             } else {
-                console.log(presentation)
                 dispatch({
                     type: LOAD_PRESENTATION,
                     payload: presentation
@@ -151,7 +151,19 @@ export const GlobalProvider = (props) => {
 
     const removeClass = async (item, className) => {
         let _presentation = await localforage.getItem('presentation');
-        if (_presentation) {
+        let articleId = query.get('articleId');
+        if (_presentation && articleId && _presentation.toc.filter(article => article.id === articleId).length > 0 ) {
+
+            let itemIndex = _presentation.toc.filter(article => article.id === articleId)[0].items.findIndex(el => el.id === item.id);
+            let newClassList = item.classlist.filter(c => c !== className);
+            item.classlist = newClassList;
+            _presentation.toc.filter(article => article.id === articleId)[0].items[itemIndex] = item;
+            await localforage.setItem('presentation', _presentation);
+            dispatch({
+                type: LOAD_PRESENTATION,
+                payload: _presentation
+            })
+        } else if (_presentation) {
             let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
             let newClassList = item.classlist.filter(c => c !== className);
             item.classlist = newClassList;
@@ -185,25 +197,6 @@ export const GlobalProvider = (props) => {
         }
     }
 
-    // const addToPresentationFile = async (asset) => {
-
-    //     let _presentation = await localforage.getItem('presentation');
-    //     if (_presentation) {
-    //         let filteredItems = _presentation.items.filter(el => el.id === items[0].id);
-    //         if (filteredItems.length > 0) {
-    //             openModal(<h1>Already exists!</h1>)
-    //         } else {
-    //             _presentation.items = [
-    //                 ...items
-    //             ]
-    //             await localforage.setItem('presentation', _presentation)
-    //             dispatch({
-    //                 type: ADD_TO_PRESENTATION,
-    //                 payload: _presentation
-    //             })
-    //         }
-    //     }
-    // }
 
     const removeItem = async (item) => {
         let _presentation = await localforage.getItem('presentation');
