@@ -16,7 +16,7 @@ import {
     OPEN_MODAL,
     CLOSE_MODAL
 } from './ActionTypes';
-
+ 
 
 const initialState = {
    workspace: 'presentation',
