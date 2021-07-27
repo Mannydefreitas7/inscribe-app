@@ -7,7 +7,7 @@ import CloseIcon from './../assets/icons/close.svg';
 import { GlobalContext } from '../store/GlobalState';
 export default function AddView() {
 
-    const { closeModal} = useContext(GlobalContext)
+    const { closeModal, isLeftSidebarOpen } = useContext(GlobalContext)
 
     return (
         <div>
@@ -19,7 +19,7 @@ export default function AddView() {
                 </button>
             </HeaderTitle>
             <div className="overscroll-contain">
-                <AssetPicker />
+                { !isLeftSidebarOpen ? <AssetPicker /> : null}
                 <Components />
             </div>
         </div>

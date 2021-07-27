@@ -51,6 +51,7 @@ export default function BlockEditor(props) {
                     })
                 }
                 </div>
+                
             default:
                 break;
         }
@@ -73,7 +74,7 @@ export default function BlockEditor(props) {
 
                     </div> : null
             }
-            <div className={`border-indigo-500 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border-2 mb-3' : 'border-0 mb-0'} ${props.snapshot.isDragging ? 'shadow-lg' : ''}`}>
+            <div className={`border-indigo-300 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border-2 mb-3' : 'border-0 mb-0'} ${props.snapshot.isDragging ? 'shadow-lg' : ''}`}>
 
                 {blockType()}
 
@@ -104,9 +105,13 @@ export default function BlockEditor(props) {
                             </button> : 
                             null
                         }
-                        <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block)}>
-                            <ReactSVG src={TrashIcon} />
-                        </button>
+                        {
+                            props.block.type === 'image' ?  
+                            <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block)}>
+                                <ReactSVG src={TrashIcon} />
+                            </button> : null
+                        }
+                        
                         
                     </div> : null
                 }

@@ -10,6 +10,7 @@ import {
 import InsModal from '../components/InsModal';
 import TopBar from '../components/topbar/TopBar';
 import PresentationEditor from '../components/PresentationEditor';
+import PrototypeNav from '../components/topbar/PrototypeNav';
 
 function ArticleEditor() {
 
@@ -71,25 +72,9 @@ function ArticleEditor() {
                 let assetItems = _presentation.assets.filter(item => item.id === id);
 
                 if (assetItems.length > 0) {
-                    let presentationItems = _presentation.items;
 
-                    let items = assetItems[0].items;
-                    if (assetItems[0].items && assetItems[0].items.length > 0) {
-                        addToPresentation([
-                            ...presentationItems,
-                            ...items
-                        ])
-                    } else {
-                        if (presentationItems.length > 0) {
-
-                            presentationItems.splice(index, 0, assetItems[0])
-                            addToPresentation(presentationItems)
-                        } else {
-                            addToPresentation([assetItems[0]])
-                        }
-
-
-                    }
+                    let items = assetItems[0];
+                    addToPresentation(items, index)
                 }
             }
         } catch (error) {
@@ -99,6 +84,7 @@ function ArticleEditor() {
 
     return (
         <>
+        <PrototypeNav />
             <DragDropContext onDragEnd={onDragEnd}>
                 <div className="editor">
                     <TopBar />

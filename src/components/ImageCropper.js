@@ -84,7 +84,7 @@ export default function ImageCropper() {
                     }
                 </div>
                 <div className="flex">
-                    <button className="px-4 py-2 text-gray-500 bg-gray-50 hover:bg-gray-100 rounded border-2 border-gray-100 mr-1" onClick={() => closeModal()}>Cancel</button>
+                    <button className="px-4 py-2 text-gray-500 bg-gray-50 hover:bg-gray-100 rounded border border-gray-100 mr-1" onClick={() => closeModal()}>Cancel</button>
                     <button
                         onClick={() => {
                             getCroppedImg(elementRef.current.imageRef, selectedItem.crops[cropIndex])

@@ -3,12 +3,12 @@
         "id": "1",
         "name": "Blank Article",
         "path": "/editor",
-        "image": "blank-article-template.jpg"
+        "image": "article-template.jpg"
     },
     {
         "id": "2",
         "name": "Blank Presentation",
         "path": "/editor",
-        "image": "blank-presentation-template.jpg"
+        "image": "presentation-template.jpg"
     }
 ]

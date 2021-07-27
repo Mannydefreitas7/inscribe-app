@@ -10,11 +10,14 @@ import {
 } from "react-beautiful-dnd";
 import OutlineCollapsible from './OutlineCollapsible';
 import TOCView from './TOCView';
+import useQuery from '../utils/useQuery';
 
 export default function SideBarLeft() {
    
     const { presentation, selectItem } = useContext(GlobalContext);
-
+    let query = useQuery();
+    let articleId = query.get('articleId');
+    let filteredArticles = presentation && presentation.toc.filter(article => article.id === articleId);
     return (
             <div className="fixed h-full overflow-y-scroll z-10 bg-gray-50 border-r border-gray-100 overflow-x-hidden" 
             style={{ width: 350, paddingTop: 60 }}>
@@ -40,8 +43,11 @@ export default function SideBarLeft() {
                                             
                                             <div className={` bg-gray-50 ${snapshot.isDragging ? 'shadow-lg rounded' : ''}cursor-move w-full`} ref={provided.innerRef}
                                              {...provided.draggableProps}
-                                             {...provided.dragHandleProps}><RecentFile type={asset.extension} name={asset.name} date={asset.date} /></div>
-                                            )}</Draggable>
+                                             {...provided.dragHandleProps}><RecentFile type={asset.extension} name={asset.name} date={asset.date} />{provided.placeholder}</div>
+                                             
+                                            )}
+                                            
+                                            </Draggable>
                                         })
                                     }
                                      {_provided.placeholder}
@@ -54,7 +60,7 @@ export default function SideBarLeft() {
                 </Collaspible>
                 <Collaspible title="Outline" >
                     {
-                        presentation && presentation.items.length > 0 && presentation.items.map((a, index) => {
+                        presentation && articleId && filteredArticles && filteredArticles[0].items.length > 0 && filteredArticles[0].items.map((a, index) => {
                             return <OutlineCollapsible key={index} item={a} onClick={() => selectItem(a)}>
                                 {
                                     a.children && a.children.length > 0 && a.children.map((b, i) => {

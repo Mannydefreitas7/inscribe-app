@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 import reducer from './AppReducer';
 import localforage from 'localforage';
 import useQuery from '../utils/useQuery';
-
+import { v4 } from 'uuid';
 import {
     CHANGE_WORKSPACE,
     OPEN_DROPDOWN,
@@ -17,6 +17,89 @@ import {
     OPEN_MODAL,
     CLOSE_MODAL
 } from './ActionTypes';
+
+const components = [
+    {
+        id: v4(),
+        classlist: ["columns"],
+        data: "images/columns.jpg",
+        date: new Date().toDateString(),
+        name: "Columns",
+        description: 'Columns',
+        type: 'columns',
+        children: [
+            {
+                id: v4(),
+                index: 0,
+                name: "Column One",
+                description: "Column One",
+                classlist: ["oneHalf"],
+                type: 'column',
+                children: []
+            },
+            {
+                id: v4(),
+                index: 1,
+                name: "Column Two",
+                description: "Column Two",
+                classlist: ["oneHalf"],
+                type: 'column',
+                children: []
+            }
+        ]
+    },
+    {
+        id: v4(),
+        classlist: ["backgroundContainer"],
+        data: "images/background.jpg",
+        date: new Date().toDateString(),
+        name: "Background",
+        description: 'Background',
+        type: 'background',
+        children: [
+            {
+                id: v4(),
+                index: 0,
+                name: "Background Image",
+                description: "Background Image",
+                classlist: ["backgroundItem"],
+                data: null,
+                type: 'image'
+            },
+            {
+                id: v4(),
+                index: 1,
+                name: "Foreground",
+                description: "Foreground items",
+                classlist: ["foreground"],
+                type: 'container',
+                children: []
+            }
+        ]
+    },
+    {
+        id: v4(),
+        classlist: ["boxContainer"],
+        data: "images/box.jpg",
+        date: new Date().toDateString(),
+        name: "Box",
+        description: 'Box',
+        type: 'box',
+        title: null,
+        children: []
+    },
+    {
+        id: v4(),
+        classlist: ["boxContainer"],
+        data: "images/box.jpg",
+        date: new Date().toDateString(),
+        name: "Box",
+        description: 'Box',
+        type: 'box',
+        title: null,
+        children: []
+    }
+]
  
 
 const initialState = {
@@ -27,8 +110,8 @@ const initialState = {
    isDropdownOpen: null,
    closeDropdown: null,
    addAsset: null,
-   isLeftSidebarOpen: false,
-   isRightSidebarOpen: false,
+   isLeftSidebarOpen: true,
+   isRightSidebarOpen: true,
    toggleLeftSidebar: null,
    toggleRightSidebar: null,
    changeBreakpoint: null,
@@ -44,8 +127,12 @@ const initialState = {
    setImageBlob: null,
    isModalOpen: false,
    removeItem: null,
-   removeClass: null
+   removeClass: null,
+   addComponent: null,
+   components: components
 }
+
+
 
 export const GlobalContext = createContext(initialState)
 
@@ -152,6 +239,7 @@ export const GlobalProvider = (props) => {
     const removeClass = async (item, className) => {
         let _presentation = await localforage.getItem('presentation');
         let articleId = query.get('articleId');
+
         if (_presentation && articleId && _presentation.toc.filter(article => article.id === articleId).length > 0 ) {
 
             let itemIndex = _presentation.toc.filter(article => article.id === articleId)[0].items.findIndex(el => el.id === item.id);
@@ -163,46 +251,78 @@ export const GlobalProvider = (props) => {
                 type: LOAD_PRESENTATION,
                 payload: _presentation
             })
-        } else if (_presentation) {
-            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
-            let newClassList = item.classlist.filter(c => c !== className);
-            item.classlist = newClassList;
-            _presentation.items[itemIndex] = item;
-            await localforage.setItem('presentation', _presentation);
-            dispatch({
-                type: LOAD_PRESENTATION,
-                payload: _presentation
-            })
-        }
+
+        } 
+
     }
 
 
-    const addToPresentation = async (items) => {
+    const addToPresentation = async (item, index) => {
 
         let _presentation = await localforage.getItem('presentation');
-        if (_presentation) {
-            let filteredItems = _presentation.items.filter(el => el.id === items[0].id);
+        let articleId = query.get('articleId');
+
+        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
+        
+        if (_presentation && filteredArticles.length > 0) {
+
+        let filteredItems = filteredArticles[0].items.filter(el => el.id === item.id);
+
             if (filteredItems.length > 0) {
-                openModal(<h1>Already exists!</h1>)
+                alert("Already exists!")
             } else {
-                _presentation.items = [
-                    ...items
-                ]
+                filteredArticles[0].items.splice(index, 0, item)
+                
                 await localforage.setItem('presentation', _presentation)
                 dispatch({
                     type: ADD_TO_PRESENTATION,
                     payload: _presentation
                 })
             }
+
+        } 
+    }
+
+    const addComponent = async (component) => {
+
+        let _presentation = await localforage.getItem('presentation');
+        let articleId = query.get('articleId');
+        if (articleId) {
+            let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
+            if (_presentation && filteredArticles.length > 0) {
+
+                if (state.selectedItem) {
+                    let selectedIndex = filteredArticles[0].items.findIndex(el => el.id === state.selectedItem.id);  
+                    if (component.type === "columns") {
+                        component.children[0].children.push(state.selectedItem)
+                    }
+                    filteredArticles[0].items.splice(selectedIndex, 0, component)
+                    filteredArticles[0].items = [
+                        ...filteredArticles[0].items.filter(item => item.id !== state.selectedItem.id)
+                    ]
+                } else {
+                    filteredArticles[0].items.splice(0, 0, component)
+                }
+      
+                    await localforage.setItem('presentation', _presentation)
+                    dispatch({
+                        type: LOAD_PRESENTATION,
+                        payload: _presentation
+                    })
+                
+            } 
         }
+       
     }
 
 
     const removeItem = async (item) => {
         let _presentation = await localforage.getItem('presentation');
-        if (_presentation) {
-            _presentation.items = [
-                ..._presentation.items.filter(el => el.id !== item.id)
+        let articleId = query.get('articleId');
+        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
+        if (_presentation && articleId && filteredArticles.length > 0) {
+            filteredArticles[0].items = [
+                ...filteredArticles[0].items.filter(el => el.id !== item.id)
             ]
             await localforage.setItem('presentation', _presentation)
         }
@@ -235,8 +355,11 @@ export const GlobalProvider = (props) => {
 
     const setImageCrop = async (item, crop, cropId) => {
         let _presentation = await localforage.getItem('presentation');
-        if (_presentation) {
-            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
+        let articleId = query.get('articleId');
+        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
+        if (_presentation && articleId && filteredArticles.length > 0) {
+
+            let imageItems = filteredArticles[0].items.filter(_item => _item.id === item.id);
             if (imageItems.length > 0) {
                 let imageItem = imageItems[0];
                 let crops = imageItem.crops.filter(c => c.id === cropId);
@@ -247,10 +370,10 @@ export const GlobalProvider = (props) => {
                         y: crop.y
                     }
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+                    let itemIndex = filteredArticles[0].items.findIndex(el => el.id === item.id);
 
                     imageItem.crops[imageCropIndex] = imageCrop;
-                    _presentation.items[itemIndex] = imageItem;
+                    filteredArticles[0].items[itemIndex] = imageItem;
                     await localforage.setItem('presentation', _presentation);
 
                     dispatch({
@@ -270,20 +393,22 @@ export const GlobalProvider = (props) => {
 
     const setImageBlob = async (item, blob, cropId) => {
         let _presentation = await localforage.getItem('presentation');
-        if (_presentation) {
-            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
+        let articleId = query.get('articleId');
+        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
+        if (_presentation && articleId && filteredArticles.length > 0) {
+            let imageItems = filteredArticles[0].items.filter(_item => _item.id === item.id);
             if (imageItems.length > 0) {
                 let imageItem = imageItems[0];
                 let crops = imageItem.crops.filter(c => c.id === cropId);
                 if (crops.length > 0) {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+                    let itemIndex = filteredArticles[0].items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
                     imageItem.crops[imageCropIndex] = {
                         ...imageItem.crops[imageCropIndex],
                         blob: blob
                     }
-                    _presentation.items[itemIndex] = imageItem;
+                    filteredArticles[0].items[itemIndex] = imageItem;
                     await localforage.setItem('presentation', _presentation);
 
                     dispatch({
@@ -302,10 +427,12 @@ export const GlobalProvider = (props) => {
     }
 
     const selectItem = (item) => {
-        dispatch({
-            type: SELECT_ITEM,
-            payload: item
-        })
+        if (item) {
+            dispatch({
+                type: SELECT_ITEM,
+                payload: item
+            })
+        }
     }
 
 
@@ -335,7 +462,9 @@ export const GlobalProvider = (props) => {
            removeItem,
            modalChildren: state.modalChildren,
            selectedItem: state.selectedItem,
-           removeClass
+           removeClass,
+           addComponent,
+           components: state.components
         }}>
             {props.children}
         </GlobalContext.Provider>

@@ -113,7 +113,7 @@ function DropZoneFile(props) {
             isDragActive
               ? "bg-indigo-700 border-indigo-200"
               : "bg-gray-900 border-gray-100"
-          } bg-gray-100 p-3 flex-grow rounded-lg flex justify-center border-dotted border-4 focus:outline-none focus:border-4 focus:border-indigo-700 flex-col bg-opacity-5`,
+          } bg-gray-100 p-3 flex-grow rounded flex justify-center border-dashed border-2 focus:outline-none focus:border-4 focus:border-indigo-700 flex-col bg-opacity-5`,
         })}
       >
         <input  {...getInputProps({className: "min-w-full" })} />
