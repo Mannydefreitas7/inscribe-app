@@ -12,3 +12,9 @@ export const ADD_TO_PRESENTATION = "ADD_TO_PRESENTATION"
 export const SELECT_ITEM  = "SELECT_ITEM"
 export const OPEN_MODAL = 'OPEN_MODAL'
 export const CLOSE_MODAL = 'CLOSE_MODAL'
+export const TOGGLE_DRAGGING = "TOGGLE_DRAGGING"
+export const ON_DRAG = "ON_DRAG"
+export const ON_DROP = "ON_DROP"
+
+export const SELECT_ASSET = "SELECT_ASSET"
+export const SELECT_COMPONENT = "SELECT_COMPONENT"

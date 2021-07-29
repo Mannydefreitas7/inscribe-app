@@ -15,7 +15,12 @@ import {
     ADD_TO_PRESENTATION,
     SELECT_ITEM,
     OPEN_MODAL,
-    CLOSE_MODAL
+    CLOSE_MODAL,
+    TOGGLE_DRAGGING,
+    ON_DRAG,
+    ON_DROP,
+    SELECT_ASSET,
+    SELECT_COMPONENT
 } from './ActionTypes';
 
 const components = [
@@ -129,7 +134,17 @@ const initialState = {
    removeItem: null,
    removeClass: null,
    addComponent: null,
-   components: components
+   toggleDragging: null,
+   components: components,
+   isDragging: false,
+   dragEvent: null,
+   dropEvent: null,
+   handleOnDrag: null,
+   handleOnDrop: null,
+   component: null,
+   asset: null,
+   selectAsset: null,
+   selectComponent: null
 }
 
 
@@ -216,16 +231,44 @@ export const GlobalProvider = (props) => {
         }
     }
 
+    const toggleDragging = (boolean) => {
+        dispatch({
+            type: TOGGLE_DRAGGING,
+            payload: boolean
+        })
+    }
+
+    const handleOnDrag = (event) => {
+      
+        dispatch({
+            type: ON_DRAG,
+            payload: event
+        })
+    }
+
+    const handleOnDrop = (event) => {
+        console.log(event)
+        console.log(state.selectedItem)
+        dispatch({
+            type: ON_DROP,
+            payload: event
+        })
+    }
+
     const addAsset = async (data) => {
 
         let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
             _presentation.assets.push(data)
             if (data.extension === 'MEPSA') {
+                // TOC Concept
                 let filteredTOCArticles = _presentation.toc.filter(article => article.id === data.id);
                 if (filteredTOCArticles.length > 0) {
                   return alert("Already exists")
                 }
+
+
+
                 _presentation.toc.push(data)
             }
             await localforage.setItem('presentation', _presentation)
@@ -260,25 +303,40 @@ export const GlobalProvider = (props) => {
     const addToPresentation = async (item, index) => {
 
         let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
-
-        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
         
-        if (_presentation && filteredArticles.length > 0) {
+        if (_presentation) {
+            if (item.extension && item.extension === 'MEPSA') {
 
-        let filteredItems = filteredArticles[0].items.filter(el => el.id === item.id);
+                if (_presentation.items.filter(i => i.id === item.items[0].id).length > 0) {
+                  return alert('Already Exists')
+                } 
 
-            if (filteredItems.length > 0) {
-                alert("Already exists!")
-            } else {
-                filteredArticles[0].items.splice(index, 0, item)
+                if (_presentation.items.length > 0) {
+                    _presentation.items = [
+                        ..._presentation.items,
+                        ...item.items
+                    ]
+                } else {
+                    _presentation.items = [
+                        ...item.items
+                    ]
+                }
                 
+            } else {
+                if (index) {
+                    _presentation.items.splice(index, 0, item)
+                } else if (index === 0) {
+                    _presentation.items.unshift(item)
+                } else {
+                    _presentation.items.push(item)
+                }
+            }
+              
                 await localforage.setItem('presentation', _presentation)
                 dispatch({
                     type: ADD_TO_PRESENTATION,
                     payload: _presentation
                 })
-            }
 
         } 
     }
@@ -286,43 +344,39 @@ export const GlobalProvider = (props) => {
     const addComponent = async (component) => {
 
         let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
-        if (articleId) {
-            let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
-            if (_presentation && filteredArticles.length > 0) {
 
-                if (state.selectedItem) {
-                    let selectedIndex = filteredArticles[0].items.findIndex(el => el.id === state.selectedItem.id);  
+       
+            if (_presentation) {
+
+                if (_presentation.items.length > 0 && state.selectedItem && state.selectedItem.id !== 'placeholder') {
+                    let selectedIndex = _presentation.items.findIndex(el => el.id === state.selectedItem.id);  
                     if (component.type === "columns") {
                         component.children[0].children.push(state.selectedItem)
                     }
-                    filteredArticles[0].items.splice(selectedIndex, 0, component)
-                    filteredArticles[0].items = [
-                        ...filteredArticles[0].items.filter(item => item.id !== state.selectedItem.id)
+                    _presentation.items.splice(selectedIndex, 0, component)
+                    _presentation.items = [
+                        ..._presentation.items.filter(item => item.id !== state.selectedItem.id)
                     ]
                 } else {
-                    filteredArticles[0].items.splice(0, 0, component)
+                    _presentation.items.splice(0, 0, component)
                 }
-      
                     await localforage.setItem('presentation', _presentation)
                     dispatch({
                         type: LOAD_PRESENTATION,
                         payload: _presentation
                     })
-                
-            } 
-        }
+            }
        
     }
 
 
     const removeItem = async (item) => {
-        let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
-        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
-        if (_presentation && articleId && filteredArticles.length > 0) {
-            filteredArticles[0].items = [
-                ...filteredArticles[0].items.filter(el => el.id !== item.id)
+        
+        let _presentation = await localforage.getItem('presentation')
+       
+        if (_presentation && _presentation.items.length > 0) {
+            _presentation.items = [
+                ..._presentation.items.filter(el => el.id !== item.id)
             ]
             await localforage.setItem('presentation', _presentation)
         }
@@ -355,11 +409,9 @@ export const GlobalProvider = (props) => {
 
     const setImageCrop = async (item, crop, cropId) => {
         let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
-        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
-        if (_presentation && articleId && filteredArticles.length > 0) {
+        if (_presentation && _presentation.items.length > 0) {
 
-            let imageItems = filteredArticles[0].items.filter(_item => _item.id === item.id);
+            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
             if (imageItems.length > 0) {
                 let imageItem = imageItems[0];
                 let crops = imageItem.crops.filter(c => c.id === cropId);
@@ -370,10 +422,10 @@ export const GlobalProvider = (props) => {
                         y: crop.y
                     }
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                    let itemIndex = filteredArticles[0].items.findIndex(el => el.id === item.id);
+                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
 
                     imageItem.crops[imageCropIndex] = imageCrop;
-                    filteredArticles[0].items[itemIndex] = imageItem;
+                    _presentation.items[itemIndex] = imageItem;
                     await localforage.setItem('presentation', _presentation);
 
                     dispatch({
@@ -393,22 +445,21 @@ export const GlobalProvider = (props) => {
 
     const setImageBlob = async (item, blob, cropId) => {
         let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
-        let filteredArticles = _presentation.toc.filter(article => article.id === articleId);
-        if (_presentation && articleId && filteredArticles.length > 0) {
-            let imageItems = filteredArticles[0].items.filter(_item => _item.id === item.id);
+    
+        if (_presentation && _presentation.items.length > 0) {
+            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
             if (imageItems.length > 0) {
                 let imageItem = imageItems[0];
                 let crops = imageItem.crops.filter(c => c.id === cropId);
                 if (crops.length > 0) {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                    let itemIndex = filteredArticles[0].items.findIndex(el => el.id === item.id);
+                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
                     imageItem.crops[imageCropIndex] = {
                         ...imageItem.crops[imageCropIndex],
                         blob: blob
                     }
-                    filteredArticles[0].items[itemIndex] = imageItem;
+                    _presentation.items[itemIndex] = imageItem;
                     await localforage.setItem('presentation', _presentation);
 
                     dispatch({
@@ -427,10 +478,31 @@ export const GlobalProvider = (props) => {
     }
 
     const selectItem = (item) => {
+        console.log(item)
         if (item) {
             dispatch({
                 type: SELECT_ITEM,
                 payload: item
+            })
+        }
+    }
+
+    const selectComponent = (component) => {
+        console.log(component)
+        if (component) {
+            dispatch({
+                type: SELECT_COMPONENT,
+                payload: component
+            })
+        }
+    }
+
+    const selectAsset = (asset) => {
+        console.log(asset)
+        if (asset) {
+            dispatch({
+                type: SELECT_ASSET,
+                payload: asset
             })
         }
     }
@@ -464,7 +536,17 @@ export const GlobalProvider = (props) => {
            selectedItem: state.selectedItem,
            removeClass,
            addComponent,
-           components: state.components
+           toggleDragging,
+           components: state.components,
+           isDragging: state.isDragging,
+           handleOnDrop,
+           handleOnDrag,
+           dragEvent: state.dragEvent,
+           dropEvent: state.dropEvent,
+           selectComponent,
+           selectAsset,
+           component: state.component,
+           asset: state.asset
         }}>
             {props.children}
         </GlobalContext.Provider>

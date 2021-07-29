@@ -5,7 +5,7 @@ import { GlobalContext } from '../store/GlobalState';
 import ArrowDown from './../assets/icons/arrow-down.svg'
 import DraggableItem from './DraggableItem';
 
-export default function OutlineCollapsible(props) {
+export default function AssetCollapsible(props) {
 
 const [isOpen, setIsOpen] = useState(false);
 const { selectedItem, selectItem, handleOnDrag } = useContext(GlobalContext)
@@ -20,7 +20,7 @@ const { selectedItem, selectItem, handleOnDrag } = useContext(GlobalContext)
             if (!isOpen) {
                 selectItem(props.item)
             }
-        }} key={props.index} draggable={false} className={`bg-gray-50 w-full`}>
+        }} key={props.index} draggable={!isOpen} className={`bg-gray-50 ${isOpen ? 'cursor-pointer' : 'cursor-move'} w-full`}>
         <div className={`pl-2 rounded ${isOpen ? '' : 'hover:bg-gray-100 hover:bg-opacity-60'}  ${selectedItem && props.item.id === selectedItem.id && !isOpen ? 'bg-gray-100' : ''} bg-opacity-60`} {...props}>
             <div className="p-2 flex justify-between">
                 <div className="leading-4">

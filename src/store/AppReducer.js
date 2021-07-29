@@ -72,6 +72,31 @@ const reducer = (
          ...state,
          selectedItem: action.payload
       };
+      case actionTypes.SELECT_ASSET:
+      return {
+         ...state,
+         asset: action.payload
+      };
+      case actionTypes.SELECT_COMPONENT:
+      return {
+         ...state,
+         component: action.payload
+      };
+      case actionTypes.TOGGLE_DRAGGING:
+      return {
+         ...state,
+         isDragging: action.payload
+      };
+      case actionTypes.ON_DRAG:
+      return {
+         ...state,
+         dragEvent: action.payload
+      };
+      case actionTypes.ON_DROP:
+      return {
+         ...state,
+         dropEvent: action.payload
+      };
       default:
          return state
    }

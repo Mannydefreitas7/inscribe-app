@@ -14,7 +14,7 @@ import PageFlowIcon from './../../assets/icons/pageflow.svg';
 
 export default function TopBar() {
 
-    const { workspace, toggleLeftSidebar, changeWorkspace, toggleRightSidebar, isLeftSidebarOpen, isRightSidebarOpen, openModal } = useContext(GlobalContext);
+    const { workspace, selectItem, toggleLeftSidebar, changeWorkspace, toggleRightSidebar, isLeftSidebarOpen, isRightSidebarOpen, openModal } = useContext(GlobalContext);
 
 
     const items = [
@@ -37,7 +37,7 @@ export default function TopBar() {
     ]
 
     return (
-        <div className="flex fixed w-full border-b border-gray-100 px-4 flex-row justify-between py-2 z-50 bg-gray-50 ">
+        <div onClick={() => selectItem(null)} className="flex fixed w-full border-b border-gray-100 px-4 flex-row justify-between py-2 z-50 bg-gray-50 ">
                     <button className={`p-2 rounded bg-gray-900 ${isLeftSidebarOpen ? 'bg-opacity-5' : 'bg-opacity-0'}  hover:bg-opacity-5`} onClick={() => toggleLeftSidebar(isLeftSidebarOpen)}>
                         <ReactSVG src={SideLeftIcon} />
                     </button>

@@ -7,14 +7,16 @@ import localforage from 'localforage';
 import {
     DragDropContext,
 } from "react-beautiful-dnd";
+import { DndProvider } from 'react-dnd'
 import InsModal from '../components/InsModal';
 import TopBar from '../components/topbar/TopBar';
 import PresentationEditor from '../components/PresentationEditor';
 import PrototypeNav from '../components/topbar/PrototypeNav';
-
+import { HTML5Backend } from 'react-dnd-html5-backend'
 function ArticleEditor() {
 
-    const { loadPresentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation, isModalOpen, removeItem, selectedItem } = useContext(GlobalContext);
+    const { loadPresentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation, isModalOpen, removeItem, selectedItem, toggleDragging } = useContext(GlobalContext);
+   
 
     useEffect(() => {
         localforage.config({
@@ -85,8 +87,9 @@ function ArticleEditor() {
     return (
         <>
         <PrototypeNav />
+
             <DragDropContext onDragEnd={onDragEnd}>
-                <div className="editor">
+                <div className="editor" onDragStart={() => toggleDragging(true)} onDragEnd={() => toggleDragging(false) } >
                     <TopBar />
                     <div className="flex justify-between bg-gray-500 overflow-hidden">
 
@@ -99,6 +102,7 @@ function ArticleEditor() {
                     </div>
                 </div>
             </DragDropContext>
+          
             {
                 isModalOpen ? <InsModal /> : null
             }
