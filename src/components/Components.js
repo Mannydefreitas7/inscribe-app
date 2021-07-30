@@ -15,14 +15,14 @@ export default function Components() {
             classlist: ["columns"],
             data: "images/columns.jpg",
             date: new Date().toDateString(),
-            name: "Columns",
+            text: "Columns",
             description: 'Columns',
             type: 'columns',
             children: [
                 {
                     id: v4(),
                     index: 0,
-                    name: "Column One",
+                    text: "Column One",
                     description: "Column One",
                     classlist: ["oneHalf"],
                     type: 'column',
@@ -31,7 +31,7 @@ export default function Components() {
                 {
                     id: v4(),
                     index: 1,
-                    name: "Column Two",
+                    text: "Column Two",
                     description: "Column Two",
                     classlist: ["oneHalf"],
                     type: 'column',
@@ -44,14 +44,14 @@ export default function Components() {
             classlist: ["backgroundContainer"],
             data: "images/background.jpg",
             date: new Date().toDateString(),
-            name: "Background",
+            text: "Background",
             description: 'Background',
             type: 'background',
             children: [
                 {
                     id: v4(),
                     index: 0,
-                    name: "Background Image",
+                    text: "Background Image",
                     description: "Background Image",
                     classlist: ["backgroundItem"],
                     data: null,
@@ -60,7 +60,7 @@ export default function Components() {
                 {
                     id: v4(),
                     index: 1,
-                    name: "Foreground",
+                    text: "Foreground",
                     description: "Foreground items",
                     classlist: ["foreground"],
                     type: 'container',
@@ -73,7 +73,7 @@ export default function Components() {
             classlist: ["boxContainer"],
             data: "images/box.jpg",
             date: new Date().toDateString(),
-            name: "Box",
+            text: "Box",
             description: 'Box',
             type: 'box',
             title: null,
@@ -84,7 +84,7 @@ export default function Components() {
             classlist: ["boxContainer"],
             data: "images/box.jpg",
             date: new Date().toDateString(),
-            name: "Box",
+            text: "Box",
             description: 'Box',
             type: 'box',
             title: null,
@@ -94,7 +94,7 @@ export default function Components() {
 
     return (
         <Collaspible title="Components">
-            <div className="grid grid-cols-3 gap-1">
+            <div text="grid grid-cols-3 gap-1">
                 {
                     components && components.map(component => {
                         return <Component 

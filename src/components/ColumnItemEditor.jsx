@@ -10,7 +10,7 @@ import ImageCropper from './ImageCropper';
 import AddView from './AddView';
 import { useDrag } from 'react-dnd'
 
-export default function BlockEditor(props) {
+export default function ColumnItemEditor(props) {
 
     const { selectItem, selectedItem, openModal, removeItem, removeClass } = useContext(GlobalContext);
 
@@ -73,15 +73,6 @@ export default function BlockEditor(props) {
 
 
                 <div className={`border-indigo-300 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border mb-3' : 'border-0 mb-0 p-0'} `}>{blockType()}
-                
-                    {
-                        selectedItem && selectedItem.id === props.block.id ?
-                            <div className="absolute -bottom-4 left-1/2 p-1 transform -translate-x-1/2 bg-indigo-600 rounded inline-flex items-center justify-center z-20">
-                                <button className="p-1 hover:bg-indigo-700 rounded" onClick={() => openModal(<AddView />)}>
-                                    <ReactSVG src={PlusIcon} />
-                                </button>
-                            </div> : null
-                    }
 
                     {
                         selectedItem && selectedItem.id === props.block.id ?
@@ -102,9 +93,9 @@ export default function BlockEditor(props) {
                                         null
                                 }
 
-                                <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded cursor-move ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block)}>
+                                {/* <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded cursor-move ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block)}>
                                     <ReactSVG src={TrashIcon} />
-                                </button>
+                                </button> */}
                                 
 
                             </div> : null

@@ -200,9 +200,9 @@ export const GlobalProvider = (props) => {
         })
     }
 
-    const loadPresentation = async () => {
+    const loadPresentation = async (presentation) => {
         try {
-            let presentation = await localforage.getItem('presentation');
+         
             if (!presentation) {
                 const data = {
                     id: "2e38c05f-e466-4536-889b-12d62a8a63a4",
@@ -220,6 +220,7 @@ export const GlobalProvider = (props) => {
                     payload: data
                 })
             } else {
+                await localforage.setItem('presentation', presentation)
                 dispatch({
                     type: LOAD_PRESENTATION,
                     payload: presentation
@@ -299,11 +300,34 @@ export const GlobalProvider = (props) => {
 
     }
 
+    // Array.prototype.swapItems = function(a, b){
+    //     this[a] = this.splice(b, 1, this[a])[0];
+    //     return this;
+    // }
 
-    const addToPresentation = async (item, index) => {
+    // const swapElements = (array, indexA, indexB) => {
+    //     var temp = array[indexA];
+    //     array[indexA] = array[indexB];
+    //     array[indexB] = temp;
+    //     return array;
+    //   };
+
+      function array_move(arr, old_index, new_index) {
+        if (new_index >= arr.length) {
+            var k = new_index - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        return arr; // for testing
+    };
+
+
+    const addToPresentation = async (item, srcIndex, targetIndex) => {
 
         let _presentation = await localforage.getItem('presentation');
-        
+
         if (_presentation) {
             if (item.extension && item.extension === 'MEPSA') {
 
@@ -323,14 +347,15 @@ export const GlobalProvider = (props) => {
                 }
                 
             } else {
-                if (index) {
-                    _presentation.items.splice(index, 0, item)
-                } else if (index === 0) {
-                    _presentation.items.unshift(item)
-                } else {
-                    _presentation.items.push(item)
+                    if (srcIndex !== null && targetIndex !== null) {
+                        array_move(_presentation.items, srcIndex, targetIndex)
+                    } else if (srcIndex !== null) {
+                        _presentation.items[srcIndex] = item
+                    } else {
+                        _presentation.items.push(item)
+                    }
                 }
-            }
+            
               
                 await localforage.setItem('presentation', _presentation)
                 dispatch({
@@ -375,6 +400,16 @@ export const GlobalProvider = (props) => {
         let _presentation = await localforage.getItem('presentation')
        
         if (_presentation && _presentation.items.length > 0) {
+            if (item.type === 'columns') {
+                let index = _presentation.items.findIndex(el => el.id === item.id);
+                if (item.children[0].children.length > 0 && item.children[0].children.length > 0) {
+                    _presentation.items.splice(index, 0, ...item.children[0].children, ...item.children[1].children)
+                } else if (item.children[0].children.length > 0) {
+                    _presentation.items.splice(index, 0, ...item.children[0].children)
+                } else if (item.children[1].children.length > 0) {
+                    _presentation.items.splice(index, 0, ...item.children[1].children)
+                }
+            }
             _presentation.items = [
                 ..._presentation.items.filter(el => el.id !== item.id)
             ]

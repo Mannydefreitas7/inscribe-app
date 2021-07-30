@@ -36,7 +36,7 @@ function DropZoneFile(props) {
             description: 'image',
             type: 'image',
             size: `${file.size}KB`,
-            data: file.name,
+            text: file.name,
             name: file.name,
             raw: reader.result,
             blob: reader.result,
