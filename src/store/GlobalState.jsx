@@ -478,7 +478,7 @@ export const GlobalProvider = (props) => {
     }
 
     const selectItem = (item) => {
-        console.log(item)
+        
         if (item) {
             dispatch({
                 type: SELECT_ITEM,

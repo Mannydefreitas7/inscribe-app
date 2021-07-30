@@ -18,6 +18,7 @@ export default function BlockEditor(props) {
     const [dragEvent, setDragEvent] = useState(null);
 
     const handleDragOver = (event) => {
+        
         event.preventDefault()
         if (event) {
             setDragEvent(event)
@@ -54,7 +55,7 @@ export default function BlockEditor(props) {
     const blockType = () => {
         switch (props.block.type) {
             case 'text':
-                return <div id={props.block.id} className={props.block.classlist.toString().replace(',', ' ')}>{props.block.data}</div>
+                return <div id={props.block.id} className={props.block.classlist && props.block.classlist.toString().replace(',', ' ')}>{props.block.data}</div>
                 // <ContentEditable
                 //     tagName="div"
                 //     id={props.block.id}
@@ -64,10 +65,10 @@ export default function BlockEditor(props) {
 
                 // />
             case 'image':
-                return <img  contentEditable={true} className={props.block.classlist.toString().replace(',', ' ')} alt={props.block.name} src={props.block.blob} />
+                return <img contentEditable={true} className={props.block.classlist && props.block.classlist.toString().replace(',', ' ')} alt={props.block.name} src={props.block.blob} />
             case 'container':
-                return <div  id={props.block.id} className={props.block.classlist.toString().replace(',', ' ')}>{
-                    props.block.children.map((item, i) => {
+                return <div  id={props.block.id} className={ props.block.classlist && props.block.classlist.toString().replace(',', ' ')}>{
+                    props.block && props.block.children && props.block.children.map((item, i) => {
                         if (item.type === 'text') {
                             // return <ContentEditable
                             //     tagName="span"
@@ -93,7 +94,7 @@ export default function BlockEditor(props) {
     }
 
     return (
-        <div id={props.block.id} onDragOver={handleDragOver} onDragLeave={handleDragLeave}>
+        <div id={props.block.id} onDragOver={handleDragOver} onDragLeave={handleDragLeave} >
 
             {
                 isDragging ? <div onDrop={handleOnDrop} id={`placeholder-${props.block.id}`}
@@ -117,7 +118,7 @@ export default function BlockEditor(props) {
                 }
 
 
-                <div className={`border-indigo-300 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border mb-3' : 'border-0 mb-0 p-0'} `} draggable>{blockType()}
+                <div className={`border-indigo-300 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border mb-3 cursor-move' : 'border-0 mb-0 p-0'} `} >{blockType()}
                 
                     {
                         selectedItem && selectedItem.id === props.block.id ?

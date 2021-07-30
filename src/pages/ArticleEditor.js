@@ -15,7 +15,7 @@ import PrototypeNav from '../components/topbar/PrototypeNav';
 import { HTML5Backend } from 'react-dnd-html5-backend'
 function ArticleEditor() {
 
-    const { loadPresentation, isLeftSidebarOpen, isRightSidebarOpen, addToPresentation, isModalOpen, removeItem, selectedItem, toggleDragging } = useContext(GlobalContext);
+    const { loadPresentation, isLeftSidebarOpen,  presentation, isRightSidebarOpen, addToPresentation, isModalOpen, removeItem, selectedItem, toggleDragging } = useContext(GlobalContext);
    
 
     useEffect(() => {
@@ -65,6 +65,53 @@ function ArticleEditor() {
     };
 
 
+    const handleOnDrop = async (event) => {
+        //  event.preventDefault()
+
+        console.log(event)
+        var _presentation,
+        id,
+        item;
+
+        _presentation = await localforage.getItem('presentation')
+        id = event.target.id;
+        item = JSON.parse(event.dataTransfer.getData('application/json'));
+
+        if (_presentation && item) {
+
+            if (event.dataTransfer.dropEffect === 'move') {
+                if (_presentation && _presentation.items.length > 0) {
+                    _presentation.items = [
+                        ..._presentation.items.filter(el => el.id !== item.id)
+                    ]
+                }
+            }
+
+            if (id === 'placeholder') {
+                _presentation.items.push(item);
+                localforage.setItem('presentation', _presentation);
+                return loadPresentation()
+            } 
+            if (id.includes('block-placeholder')) {
+                
+                let blockId = event.target.id.split('block-placeholder-')[1];
+                let index = presentation.items.findIndex(el => el.id === blockId);
+                if (item) {  
+                    setTimeout(() => addToPresentation(item, index), 200);
+                }
+        
+            }
+
+            if (id.includes('column')) {
+                let columnId = event.target.id.split('column-')[1];
+
+            }
+
+        }
+    
+          
+      }
+
 
 
     const filterAsset = async (id, index) => {
@@ -74,7 +121,6 @@ function ArticleEditor() {
                 let assetItems = _presentation.assets.filter(item => item.id === id);
 
                 if (assetItems.length > 0) {
-
                     let items = assetItems[0];
                     addToPresentation(items, index)
                 }
@@ -88,11 +134,17 @@ function ArticleEditor() {
         <>
         <PrototypeNav />
 
-            <DragDropContext onDragEnd={onDragEnd}>
-                <div className="editor" onDragStart={() => toggleDragging(true)} onDragEnd={() => toggleDragging(false) } >
+            {/* <DragDropContext onDragEnd={onDragEnd}> */}
+                <div className="editor" 
+                onDragStart={(event) => {
+                    event.dataTransfer.setData('application/json', JSON.stringify(selectedItem))
+                    toggleDragging(true)
+                    }} 
+                    onDrop={handleOnDrop}
+                onDragEnd={() => toggleDragging(false) }>
+
                     <TopBar />
                     <div className="flex justify-between bg-gray-500 overflow-hidden">
-
                         {isLeftSidebarOpen ? <SideBarLeft /> : null}
                         {isLeftSidebarOpen ? <div style={{ width: 350 }}></div> : null}
                         <PresentationEditor />
@@ -101,7 +153,7 @@ function ArticleEditor() {
 
                     </div>
                 </div>
-            </DragDropContext>
+            {/* </DragDropContext> */}
           
             {
                 isModalOpen ? <InsModal /> : null

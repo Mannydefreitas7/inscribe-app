@@ -7,7 +7,7 @@ import PlaceholderEditor from './PlaceholderEditor';
 
 export default function PresentationEditor() {
 
-    const { presentation, breakpoint, handleOnDrag, toggleDragging } = useContext(GlobalContext);
+    const { presentation, breakpoint, handleOnDrag, toggleDragging, selectItem, selectComponent } = useContext(GlobalContext);
  
     const setBreakPointWidth = () => {
         switch (breakpoint) {
@@ -26,20 +26,23 @@ export default function PresentationEditor() {
     return (
         <div 
         onDragOver={handleOnDrag}
-       
+        onClick={(event) => {
+            if (event.target.id === 'canvas')
+            selectItem({id: ""})
+        }}
+        id="canvas"
         className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
             <div className="container px-4 h-screen overflow-auto pb-24 mx-auto" style={{ paddingTop: 100, maxWidth: 1024 }}  >
-                        {
-                            presentation && presentation.items.map((item, index) => {  
-
-                                return item.type === 'columns' ? <ColumnsEditor key={index} item={item} /> : <BlockEditor key={index} block={item} index={index} />
-                                    
-                            
-                            })
-                        }
-
-                        <PlaceholderEditor />
-                            
+                {
+                    presentation && presentation.items.map((item, index) => {  
+                        return <div key={index} draggable={item.type === 'columns' ? false : true}>
+                            {
+                                item.type === 'columns' ? <ColumnsEditor item={item} /> : <BlockEditor block={item} index={index} />
+                            }
+                        </div>
+                    })
+                }
+                <PlaceholderEditor />   
             </div>
         </div>
     )

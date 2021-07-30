@@ -51,23 +51,23 @@ export default function SideBarLeft() {
                 presentation && presentation.items.length > 0 ? <Collaspible title="Outline">
                     {
                         presentation && presentation.items.length > 0 && presentation.items.map((a, index) => {
-                            return <OutlineCollapsible key={index} item={a}>
+                            return <AssetCollapsible key={index} item={a}>
                                 {
                                     a.children && a.children.length > 0 && a.children.map((b, i) => {
-                                        return <OutlineCollapsible
+                                        return <AssetCollapsible
                                             item={b}
                                             key={i}>
                                             {
                                                 b.children && b.children.length > 0 && b.children.map((c, x) => {
-                                                    return <OutlineCollapsible
+                                                    return <AssetCollapsible
                                                         item={c}
-                                                        key={x}></OutlineCollapsible>
+                                                        key={x}></AssetCollapsible>
                                                 })
                                             }
-                                        </OutlineCollapsible>
+                                        </AssetCollapsible>
                                     })
                                 }
-                            </OutlineCollapsible>
+                            </AssetCollapsible>
                         })
                     }
                 </Collaspible> : null

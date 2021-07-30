@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useContext } from 'react'
-import { SELECT_COMPONENT } from '../store/ActionTypes'
+
 import { GlobalContext } from '../store/GlobalState'
 import BlockEditor from './BlockEditor'
 
@@ -21,18 +21,22 @@ export default function ColumnsEditor(props) {
 
     const handleOnDrop = (event) => {
         event.preventDefault()
-        if (event && event.target.id.includes('placeholder') && selectedItem) {
-            let id = event.target.id.split('placeholder-')[1];
-            let index = presentation.items.findIndex(el => el.id === id);
-            console.log(index)
-            addToPresentation(selectedItem, index);
+        if (event && selectedItem) {
+            if (event.target.id.includes('placeholder')) {
+                let id = event.target.id.split('placeholder-')[1];
+                let childIndex = presentation.items.findIndex(el => el.id === id);
+                
+            }
+           
+            console.log(event)
+           
         }
     }
    
 
     return (
         <div id={props.item.id} onDragOver={handleOnDragOver} onDragLeave={handleOnDragLeave}>
-
+        
             {
                 isDragging ? <div onDrop={handleOnDrop} id={`placeholder-${props.item.id}`}
                     className={`bg-indigo-100 ${dragEvent ? 'bg-opacity-10 border' : 'bg-opacity-0 border-0'} border-indigo-100 border-dashed`} style={{
@@ -52,12 +56,13 @@ export default function ColumnsEditor(props) {
                         return <div 
                             key={index} 
                             id={column.id} 
+                            onDrop={handleOnDrop} 
                             className={`border border-gray-100 border-dashed ${column.classlist} ${dragEvent && dragEvent.target.id === column.id ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''}`} 
                             onDragOver={(event) => handleOnDragOver(event, column.id)} 
                             onDragLeave={handleOnDragLeave} style={{ minHeight: column.children.length > 0 ? 'auto' : 200 }} >
                                 {
                                     column.children && column.children.length > 0 && column.children.map((child, i) => {
-                                        return <BlockEditor block={child} index={i} />
+                                        return <BlockEditor key={i} block={child} index={i} />
                                     })
                                 }
                         </div>

@@ -15,22 +15,10 @@ export default function PlaceholderEditor() {
         setDragEvent(null)
     }
 
-    const handleOnDrop = (event) => {
-      //  event.preventDefault()
-        
-        if (selectedItem) {
-            if (presentation && presentation.items.filter(el => el.id === selectedItem.id).length > 0) {
-                console.log(event)
-                removeItem(selectedItem);
-            } 
-            setTimeout(() => addToPresentation(selectedItem), 200);
-        }
-    }
-
     
     return (
         <div> 
-                <div onClick={() => selectItem({id: 'placeholder'})} onDragOver={handleOnDragOver} onDragLeave={handleOnDragLeave} id="placeholder" onDrop={handleOnDrop} className={`relative border border-gray-100 border-dashed ${dragEvent && dragEvent.target.id === 'placeholder' ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''} h-32 ${selectedItem && selectedItem.id === "placeholder" ? 'border-2 mb-3 border-indigo-300' : 'border-0 mb-0'}`} >
+                <div onClick={() => selectItem({id: 'placeholder'})} onDragOver={handleOnDragOver} onDragLeave={handleOnDragLeave} id="placeholder" className={`relative border border-gray-100 border-dashed ${dragEvent && dragEvent.target.id === 'placeholder' ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''} h-32 ${selectedItem && selectedItem.id === "placeholder" ? 'border-2 mb-3 border-indigo-300' : 'border-0 mb-0'}`} >
                     {
                     selectedItem && selectedItem.id === "placeholder" ?
                         <div className="absolute bottom-1/2 left-1/2 p-1 transform -translate-x-1/2 translate-y-1/2 bg-indigo-600 rounded inline-flex items-center justify-center z-20">
