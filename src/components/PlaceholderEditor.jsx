@@ -6,7 +6,7 @@ import { useDrop } from 'react-dnd'
 import PlusIcon from './../assets/icons/plus-white.svg';
 
 export default function PlaceholderEditor() {
-    const { selectedItem, openModal, selectItem, addToPresentation } = useContext(GlobalContext);
+    const { selectedItem, openModal, selectItem, addToPresentation, presentation, loadPresentation } = useContext(GlobalContext);
 
 
 
@@ -14,6 +14,7 @@ export default function PlaceholderEditor() {
        
         accept: 'ASSET',
         drop: (item, monitor) => {
+            
             return addToPresentation(item, 0)
         },
         collect: (monitor) => ({

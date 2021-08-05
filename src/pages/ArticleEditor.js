@@ -12,7 +12,7 @@ import PrototypeNav from '../components/topbar/PrototypeNav';
 import { HTML5Backend } from 'react-dnd-html5-backend'
 function ArticleEditor() {
 
-    const { loadPresentation, isLeftSidebarOpen, isRightSidebarOpen, isModalOpen, removeItem, selectedItem } = useContext(GlobalContext);
+    const { isLeftSidebarOpen, isRightSidebarOpen, isModalOpen, removeItem, selectedItem } = useContext(GlobalContext);
    
 
     useEffect(() => {
@@ -21,9 +21,7 @@ function ArticleEditor() {
             name: 'inscribe',
             version: 1.0,
         });
-        localforage.getItem('presentation').then(presentation => {
-            loadPresentation(presentation);
-        })
+       
         // shortcuts keys
         shortcurtMethods();
 
@@ -47,7 +45,7 @@ function ArticleEditor() {
 
     return (
         <>
-        <PrototypeNav />
+      
         <DndProvider backend={HTML5Backend} debugMode={true}>
             {/* <DragDropContext onDragEnd={onDragEnd}>  */}
                 <div className="editor" >
@@ -63,10 +61,12 @@ function ArticleEditor() {
                     </div>
                 </div>
              {/* </DragDropContext>  */}
-             </DndProvider>
             {
                 isModalOpen ? <InsModal /> : null
             }
+             </DndProvider>
+           
+              <PrototypeNav />
         </>
     )
 }

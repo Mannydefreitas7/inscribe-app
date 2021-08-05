@@ -4,10 +4,12 @@ import BlockEditor from './BlockEditor'
 import ColumnsEditor from './ColumnsEditor';
 import PlaceholderEditor from './PlaceholderEditor';
 import DroppableZone from './DroppableZone';
+import { useEffect } from 'react';
+import localforage from 'localforage';
 
 export default function PresentationEditor() {
 
-    const { presentation, breakpoint } = useContext(GlobalContext);
+    const { presentation, loadPresentation, breakpoint } = useContext(GlobalContext);
 
  
     const setBreakPointWidth = () => {
@@ -24,10 +26,18 @@ export default function PresentationEditor() {
                 return "100%";
         }
     }
+
+    useEffect(() => {
+        localforage.getItem('presentation')
+        .then(presentation => {
+            loadPresentation(presentation);
+        })
+    },[])
+
     return (
         <div 
         id="canvas"
-        className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth() }}>
+        className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth(), transition: 'max-width ease-in-out .2s' }}>
             <div className="container px-4 h-screen overflow-auto pb-24 mx-auto" style={{ paddingTop: 100, maxWidth: 1024 }}  >
                 <DroppableZone type="top"/>
            

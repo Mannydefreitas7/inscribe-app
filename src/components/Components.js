@@ -78,23 +78,12 @@ export default function Components() {
             type: 'box',
             title: null,
             children: []
-        },
-        {
-            id: v4(),
-            classlist: ["boxContainer"],
-            data: "images/box.jpg",
-            date: new Date().toDateString(),
-            text: "Box",
-            description: 'Box',
-            type: 'box',
-            title: null,
-            children: []
         }
     ]
 
     return (
         <Collaspible title="Components">
-            <div text="grid grid-cols-3 gap-1">
+            <div className="grid grid-cols-3 gap-1">
                 {
                     components && components.map(component => {
                         return <Component 

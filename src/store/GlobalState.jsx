@@ -282,14 +282,13 @@ export const GlobalProvider = (props) => {
 
     const removeClass = async (item, className) => {
         let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
 
-        if (_presentation && articleId && _presentation.toc.filter(article => article.id === articleId).length > 0 ) {
+        if (_presentation && _presentation.items.length > 0 ) {
 
-            let itemIndex = _presentation.toc.filter(article => article.id === articleId)[0].items.findIndex(el => el.id === item.id);
+            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
             let newClassList = item.classlist.filter(c => c !== className);
             item.classlist = newClassList;
-            _presentation.toc.filter(article => article.id === articleId)[0].items[itemIndex] = item;
+            _presentation.items[itemIndex] = item;
             await localforage.setItem('presentation', _presentation);
             dispatch({
                 type: LOAD_PRESENTATION,
@@ -370,21 +369,15 @@ export const GlobalProvider = (props) => {
 
         let _presentation = await localforage.getItem('presentation');
 
-       
             if (_presentation) {
 
-                if (_presentation.items.length > 0 && state.selectedItem && state.selectedItem.id !== 'placeholder') {
+                if (_presentation.items.length > 0 && state.selectedItem) {
                     let selectedIndex = _presentation.items.findIndex(el => el.id === state.selectedItem.id);  
-                    if (component.type === "columns") {
-                        component.children[0].children.push(state.selectedItem)
-                    }
-                    _presentation.items.splice(selectedIndex, 0, component)
-                    _presentation.items = [
-                        ..._presentation.items.filter(item => item.id !== state.selectedItem.id)
-                    ]
-                } else {
-                    _presentation.items.splice(0, 0, component)
-                }
+                    // if (component.type === "columns") {
+                    //     component.children[0].children.push(state.selectedItem)
+                    // }
+                    _presentation.items.splice(selectedIndex + 1, 0, component)
+                } 
                     await localforage.setItem('presentation', _presentation)
                     dispatch({
                         type: LOAD_PRESENTATION,
@@ -395,12 +388,14 @@ export const GlobalProvider = (props) => {
     }
 
 
-    const removeItem = async (item) => {
+    const removeItem = async (item, _presentation) => {
         
-        let _presentation = await localforage.getItem('presentation')
-       
+       // let _presentation = await localforage.getItem('presentation')
+        
         if (_presentation && _presentation.items.length > 0) {
+           
             if (item.type === 'columns') {
+               
                 let index = _presentation.items.findIndex(el => el.id === item.id);
                 if (item.children[0].children.length > 0 && item.children[0].children.length > 0) {
                     _presentation.items.splice(index, 0, ...item.children[0].children, ...item.children[1].children)
@@ -410,15 +405,15 @@ export const GlobalProvider = (props) => {
                     _presentation.items.splice(index, 0, ...item.children[1].children)
                 }
             }
-            _presentation.items = [
-                ..._presentation.items.filter(el => el.id !== item.id)
-            ]
+
+            _presentation.items = _presentation.items.filter(el => el.id !== item.id)
             await localforage.setItem('presentation', _presentation)
+            dispatch({
+                type: LOAD_PRESENTATION,
+                payload: _presentation
+            })
         }
-        dispatch({
-            type: LOAD_PRESENTATION,
-            payload: _presentation
-        })
+        
     }
 
     const openModal = (children) => {

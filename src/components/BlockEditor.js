@@ -12,7 +12,7 @@ import { useDrag } from 'react-dnd'
 
 export default function BlockEditor(props) {
 
-    const { selectItem, selectedItem, openModal, removeItem, removeClass } = useContext(GlobalContext);
+    const { selectItem, selectedItem, openModal, removeItem, removeClass, presentation } = useContext(GlobalContext);
 
 
     const blockType = () => {
@@ -102,7 +102,7 @@ export default function BlockEditor(props) {
                                         null
                                 }
 
-                                <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded cursor-move ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block)}>
+                                <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded cursor-pointer ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block, presentation)}>
                                     <ReactSVG src={TrashIcon} />
                                 </button>
                                 

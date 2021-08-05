@@ -57,6 +57,7 @@ export default function SideBarLeft() {
                         <Nestable
                             items={presentation.items}
                             collapsed={true}
+                            maxDepth={4}
                             onChange={({items}) => {
                                 presentation.items = items
                                 loadPresentation(presentation)

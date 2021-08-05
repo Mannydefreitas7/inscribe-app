@@ -19,7 +19,7 @@ export default function AssetCollapsible(props) {
 
     return (
   
-        <div className={`pl-2 rounded ${isOpen ? '' : 'hover:bg-gray-100 hover:bg-opacity-60'}  ${selectedItem && props.item.id === selectedItem.id && !isOpen ? 'bg-gray-100' : ''} bg-opacity-60`} {...props} ref={!isOpen ? drag : null}>
+        <div className={`pl-2 rounded ${isOpen ? '' : 'hover:bg-gray-100 hover:bg-opacity-60 cursor-move'}  ${selectedItem && props.item.id === selectedItem.id && !isOpen ? 'bg-gray-100' : ''} bg-opacity-60`} {...props} ref={!isOpen ? drag : null}>
             <div className="p-2 flex justify-between">
                 <div className="leading-4">
                     <span className="text-gray-700 text-sm">{props.item.text}</span> <br />

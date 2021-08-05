@@ -3,9 +3,8 @@ import { useDrop } from 'react-dnd';
 import {  useDragLayer } from 'react-dnd';
 import { useContext } from 'react';
 import { GlobalContext } from '../store/GlobalState';
-import { ReactSVG } from 'react-svg';
-import AddView from './AddView';
-import PlusIcon from './../assets/icons/plus-white.svg';
+import localforage from 'localforage';
+
 
 export default function DroppableZone(props) {
 
@@ -28,40 +27,45 @@ export default function DroppableZone(props) {
 
 
   const handleOnDrop = async (item, type) => {
-  
-    if (presentation && item) {
 
+    let _presentation = await localforage.getItem('presentation');
+
+    console.log(presentation)
+    if (_presentation && item) {
+      
         if (type === 'ASSET') { 
 
         if (props.type === 'block') {   
-            let targetIndex = presentation.items.findIndex(el => el.id === props.id);
-            presentation.items[targetIndex] = item;
-            return loadPresentation(presentation);
+            let targetIndex = _presentation.items.findIndex(el => el.id === props.id);
+            _presentation.items[targetIndex] = item;
+            loadPresentation(_presentation);
         }
 
         if (props.type === 'top') {
-
+          
           if (item.extension && item.extension === 'MEPSA') {
-              presentation.items = [
-                ...item.children,
-                ...presentation.items
+           
+            console.log(_presentation)
+            _presentation.items = [
+                ...item.items,
+                ..._presentation.items
               ]
+
           } else {
-              presentation.items = [
-                item,
-                ...presentation.items
-              ]
+            _presentation.items.unshift(item)
           }
-            return loadPresentation(presentation);
+            loadPresentation(_presentation);
         }
 
         if (props.type === 'bottom') {   
-            presentation.items = [
-              ...presentation.items,
+          _presentation.items = [
+              ..._presentation.items,
               item
             ]
-          return loadPresentation(presentation);
+          loadPresentation(_presentation);
         }
+
+
 
         // if (props.type === 'column' && props.parent) {
         //     let columnsIndex = presentation.items.findIndex(el => el.id === props.parent.id);
