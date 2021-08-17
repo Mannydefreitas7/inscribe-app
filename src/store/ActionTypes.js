@@ -18,3 +18,4 @@ export const ON_DROP = "ON_DROP"
 
 export const SELECT_ASSET = "SELECT_ASSET"
 export const SELECT_COMPONENT = "SELECT_COMPONENT"
+export const REMOVE_ITEM = "REMOVE_ITEM"

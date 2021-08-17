@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
-import { GlobalContext } from '../store/GlobalState'
-import AssetCollapsible from './AssetCollapsible'
-import Collaspible from './Collaspible'
-import DropZoneFile from './DropZoneFile'
-import RecentFile from './RecentFile'
+import { GlobalContext } from '../../store/GlobalState'
+import AssetCollapsible from '../AssetCollapsible'
+import Collaspible from '../Collaspible'
+import DropZoneFile from '../DropZoneFile'
 
 export default function AssetPicker() {
-    const { presentation } = useContext(GlobalContext)
+    const { presentation, addToPresentation, closeModal, selectedItem } = useContext(GlobalContext)
+
+
+
     return (
         <Collaspible title="Assets" isOpen={false}>
         <div>
@@ -16,7 +18,19 @@ export default function AssetPicker() {
                     {
                         presentation && presentation.assets.map((asset, index) => {
 
-                            return <AssetCollapsible key={index} item={asset} >
+                            return <AssetCollapsible 
+                            onDoubleClick={() => {
+                                if (selectedItem) {
+                                    let index = presentation.items.findIndex(i => i.id === selectedItem.id)
+                                    addToPresentation(asset, null, index + 1)
+                                } else {
+                                    addToPresentation(asset, null, null)
+                                }
+                                
+                                closeModal()
+                            }
+                        }
+                            key={index} item={asset} >
                                 {
                                     asset.items && asset.items.length > 0 && asset.items.map((b, i) => {
                                         return <AssetCollapsible

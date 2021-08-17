@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react';
-import { GlobalContext } from '../store/GlobalState';
-import Collaspible from './Collaspible';
+import { GlobalContext } from './../../store/GlobalState';
+import Collaspible from './../Collaspible';
 import Component from './Component';
 import { v4 } from 'uuid';
 
@@ -13,17 +13,17 @@ export default function Components() {
         {
             id: v4(),
             classlist: ["columns"],
-            data: "images/columns.jpg",
+            data: "./../images/columns.jpg",
             date: new Date().toDateString(),
             text: "Columns",
-            description: 'Columns',
+            description: 'Container',
             type: 'columns',
             children: [
                 {
                     id: v4(),
                     index: 0,
                     text: "Column One",
-                    description: "Column One",
+                    description: "Half",
                     classlist: ["oneHalf"],
                     type: 'column',
                     children: []
@@ -32,7 +32,7 @@ export default function Components() {
                     id: v4(),
                     index: 1,
                     text: "Column Two",
-                    description: "Column Two",
+                    description: "Half",
                     classlist: ["oneHalf"],
                     type: 'column',
                     children: []
@@ -42,7 +42,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: ["backgroundContainer"],
-            data: "images/background.jpg",
+            data: "./../images/background.jpg",
             date: new Date().toDateString(),
             text: "Background",
             description: 'Background',
@@ -71,7 +71,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: ["boxContainer"],
-            data: "images/box.jpg",
+            data: "./../images/box.jpg",
             date: new Date().toDateString(),
             text: "Box",
             description: 'Box',

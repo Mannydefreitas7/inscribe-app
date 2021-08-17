@@ -4,10 +4,10 @@ import PlusIcon from './../assets/icons/plus-white.svg';
 import CloseIcon from './../assets/icons/close-white.svg';
 import { ReactSVG } from 'react-svg';
 import CropIcon from './../assets/icons/crop.svg';
-import TrashIcon from './../assets/icons/trash-white.svg';
+import TrashIcon from './../assets/icons/trash.svg';
 import { GlobalContext } from '../store/GlobalState';
-import ImageCropper from './ImageCropper';
-import AddView from './AddView';
+import ImageCropper from './modal/ImageCropper';
+import AddView from './modal/AddView';
 import { useDrag } from 'react-dnd'
 
 export default function BlockEditor(props) {
@@ -18,7 +18,7 @@ export default function BlockEditor(props) {
     const blockType = () => {
         switch (props.block.type) {
             case 'text':
-                return <div id={props.block.id} className={props.block.classlist && props.block.classlist.toString().replace(',', ' ')}>{props.block.text}</div>
+                return <div id={props.block.id} className={props.block.classlist && props.block.classlist.join(' ')}>{props.block.text}</div>
                 // <ContentEditable
                 //     tagName="div"
                 //     id={props.block.id}
@@ -28,9 +28,10 @@ export default function BlockEditor(props) {
 
                 // />
             case 'image':
-                return <img contentEditable={true} className={props.block.classlist && props.block.classlist.toString().replace(',', ' ')} alt={props.block.name} src={props.block.blob} />
+                return <img contentEditable={true} className={props.block.classlist && props.block.classlist.join(' ')} alt={props.block.name} src={props.block.blob} />
             case 'container':
-                return <div  id={props.block.id} className={ props.block.classlist && props.block.classlist.toString().replace(',', ' ')}>{
+                
+                return <div  id={props.block.id} className={ props.block.classlist && props.block.classlist.join(' ')}>{
                     props.block && props.block.children && props.block.children.map((item, i) => {
                         if (item.type === 'text') {
                             // return <ContentEditable
@@ -41,10 +42,10 @@ export default function BlockEditor(props) {
                             //     html={item.data}
                             //     disabled={selectedItem && !selectedItem.id === props.block.id}
                             // />
-                            return <span key={i} className={item.classlist.toString().replace(',', ' ')}>{item.text}</span>
+                            return <span key={i} className={item.classlist.join(' ')}>{item.text}</span>
                         }
                         if (item.type === 'link') {
-                            return <a key={i} href={window.location.URL} id={props.block.id} className={item.classlist.toString().replace(',', ' ')}>{item.text}</a>
+                            return <a key={i} href={window.location.URL} id={props.block.id} className={item.classlist.join(' ')}>{item.text}</a>
                         }
                         return null
                     })
@@ -57,7 +58,7 @@ export default function BlockEditor(props) {
     }
 
     return (
-        <div id={props.block.id} >
+        <div id={props.block && props.block.id} >
             <div onClick={(e) => { selectItem(props.block) }}>
                 {
                     selectedItem && selectedItem.id === props.block.id ?
@@ -77,7 +78,7 @@ export default function BlockEditor(props) {
                     {
                         selectedItem && selectedItem.id === props.block.id ?
                             <div className="absolute -bottom-4 left-1/2 p-1 transform -translate-x-1/2 bg-indigo-600 rounded inline-flex items-center justify-center z-20">
-                                <button className="p-1 hover:bg-indigo-700 rounded" onClick={() => openModal(<AddView />)}>
+                                <button className="p-1 hover:bg-indigo-700 rounded" onClick={(e) => openModal(<AddView />, e.clientX - 300, '50%')}>
                                     <ReactSVG src={PlusIcon} />
                                 </button>
                             </div> : null
@@ -85,26 +86,28 @@ export default function BlockEditor(props) {
 
                     {
                         selectedItem && selectedItem.id === props.block.id ?
-                            <div className="absolute -right-4 top-1/2 p-1 transform -translate-y-1/2  rounded inline-flex flex-col items-center justify-center z-20">
+                            <div className="absolute -right-4 top-1/2 transform -translate-y-1/2  rounded inline-flex flex-col items-center justify-center z-20 bg-white  shadow">
                                 {
                                     props.block.type === 'image' ?
                                         <button
-                                            onClick={() => {
-                                                openModal(<ImageCropper />)
+                                            onClick={(e) => {
+                                                console.log(e)
+                                               
+                                                openModal(<ImageCropper />, 0, "0%")
                                             }}
-                                            className="p-2 bg-indigo-600 hover:bg-indigo-800 rounded">
+                                            className="p-2 hover:bg-gray-50 rounded">
                                             <ReactSVG src={CropIcon}
                                                 beforeInjection={(svg) => {
-                                                    svg.setAttribute('style', 'stroke: white; width: 18px; height: 18px;')
+                                                    svg.setAttribute('style', 'width: 16px; height: 16px;')
                                                 }}
                                             />
                                         </button> :
                                         null
                                 }
 
-                                <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded cursor-pointer ${props.block.type === 'image' ? 'mt-1' : ''}`} onClick={() => removeItem(props.block, presentation)}>
-                                    <ReactSVG src={TrashIcon} />
-                                </button>
+                            <button className={`p-2 hover:bg-gray-50 rounded cursor-pointer`} onClick={() => removeItem(props.block, presentation)}>
+                                <ReactSVG src={TrashIcon} />
+                            </button>
                                 
 
                             </div> : null

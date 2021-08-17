@@ -12,6 +12,14 @@ const reducer = (
          presentation: action.payload
       };
 
+      case actionTypes.REMOVE_ITEM:
+      return {
+         ...state,
+         selectedItem: null,
+         component: null,
+         presentation: action.payload
+      };
+
       case actionTypes.ADD_ASSET:
       return {
          ...state,
@@ -59,6 +67,7 @@ const reducer = (
       return {
          ...state,
          isModalOpen: action.payload.isModalOpen,
+         modalPosition: action.payload.modalPosition,
          modalChildren: action.payload.modalChildren
       };
       case actionTypes.CLOSE_MODAL:

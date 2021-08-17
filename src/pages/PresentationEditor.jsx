@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../store/GlobalState';
-import BlockEditor from './BlockEditor'
-import ColumnsEditor from './ColumnsEditor';
+import BlockEditor from '../components/BlockEditor'
+import ColumnsEditor from '../components/ColumnsEditor';
 import PlaceholderEditor from './PlaceholderEditor';
-import DroppableZone from './DroppableZone';
+import DroppableZone from '../components/DroppableZone';
 import { useEffect } from 'react';
 import localforage from 'localforage';
+import './PresentationEditor.css';
 
 export default function PresentationEditor() {
 
     const { presentation, loadPresentation, breakpoint } = useContext(GlobalContext);
-
  
     const setBreakPointWidth = () => {
         switch (breakpoint) {
@@ -45,7 +45,7 @@ export default function PresentationEditor() {
                     presentation && presentation.items.map((item, index) => {  
                         return <div key={index}>
                                 {
-                                    item.type === 'columns' ? 
+                                    item && item.type === 'columns' ? 
                                     <ColumnsEditor item={item} /> : 
                                     <BlockEditor block={item} index={index} />
                                 }

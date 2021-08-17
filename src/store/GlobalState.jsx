@@ -20,92 +20,10 @@ import {
     ON_DRAG,
     ON_DROP,
     SELECT_ASSET,
-    SELECT_COMPONENT
+    SELECT_COMPONENT,
+    REMOVE_ITEM
 } from './ActionTypes';
 
-const components = [
-    {
-        id: v4(),
-        classlist: ["columns"],
-        data: "images/columns.jpg",
-        date: new Date().toDateString(),
-        name: "Columns",
-        description: 'Columns',
-        type: 'columns',
-        children: [
-            {
-                id: v4(),
-                index: 0,
-                name: "Column One",
-                description: "Column One",
-                classlist: ["oneHalf"],
-                type: 'column',
-                children: []
-            },
-            {
-                id: v4(),
-                index: 1,
-                name: "Column Two",
-                description: "Column Two",
-                classlist: ["oneHalf"],
-                type: 'column',
-                children: []
-            }
-        ]
-    },
-    {
-        id: v4(),
-        classlist: ["backgroundContainer"],
-        data: "images/background.jpg",
-        date: new Date().toDateString(),
-        name: "Background",
-        description: 'Background',
-        type: 'background',
-        children: [
-            {
-                id: v4(),
-                index: 0,
-                name: "Background Image",
-                description: "Background Image",
-                classlist: ["backgroundItem"],
-                data: null,
-                type: 'image'
-            },
-            {
-                id: v4(),
-                index: 1,
-                name: "Foreground",
-                description: "Foreground items",
-                classlist: ["foreground"],
-                type: 'container',
-                children: []
-            }
-        ]
-    },
-    {
-        id: v4(),
-        classlist: ["boxContainer"],
-        data: "images/box.jpg",
-        date: new Date().toDateString(),
-        name: "Box",
-        description: 'Box',
-        type: 'box',
-        title: null,
-        children: []
-    },
-    {
-        id: v4(),
-        classlist: ["boxContainer"],
-        data: "images/box.jpg",
-        date: new Date().toDateString(),
-        name: "Box",
-        description: 'Box',
-        type: 'box',
-        title: null,
-        children: []
-    }
-]
- 
 
 const initialState = {
    workspace: 'presentation',
@@ -133,9 +51,9 @@ const initialState = {
    isModalOpen: false,
    removeItem: null,
    removeClass: null,
+   addClass: null,
    addComponent: null,
    toggleDragging: null,
-   components: components,
    isDragging: false,
    dragEvent: null,
    dropEvent: null,
@@ -144,6 +62,10 @@ const initialState = {
    component: null,
    asset: null,
    selectAsset: null,
+   modalPosition: {
+       x: null,
+       y: null
+   },
    selectComponent: null
 }
 
@@ -299,6 +221,24 @@ export const GlobalProvider = (props) => {
 
     }
 
+    const addClass = async (item, newClassList) => {
+        let _presentation = await localforage.getItem('presentation');
+
+        if (_presentation && _presentation.items.length > 0 ) {
+
+            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+            item.classlist = newClassList;
+            _presentation.items[itemIndex] = item;
+            await localforage.setItem('presentation', _presentation);
+            dispatch({
+                type: LOAD_PRESENTATION,
+                payload: _presentation
+            })
+
+        } 
+
+    }
+
     // Array.prototype.swapItems = function(a, b){
     //     this[a] = this.splice(b, 1, this[a])[0];
     //     return this;
@@ -346,11 +286,15 @@ export const GlobalProvider = (props) => {
                 }
                 
             } else {
+                
                     if (srcIndex !== null && targetIndex !== null) {
                         array_move(_presentation.items, srcIndex, targetIndex)
                     } else if (srcIndex !== null) {
                         _presentation.items[srcIndex] = item
-                    } else {
+                    } else if (targetIndex !== null) {
+                        _presentation.items.splice(targetIndex, 0, item)
+                    }  else {
+                        
                         _presentation.items.push(item)
                     }
                 }
@@ -373,9 +317,6 @@ export const GlobalProvider = (props) => {
 
                 if (_presentation.items.length > 0 && state.selectedItem) {
                     let selectedIndex = _presentation.items.findIndex(el => el.id === state.selectedItem.id);  
-                    // if (component.type === "columns") {
-                    //     component.children[0].children.push(state.selectedItem)
-                    // }
                     _presentation.items.splice(selectedIndex + 1, 0, component)
                 } 
                     await localforage.setItem('presentation', _presentation)
@@ -409,18 +350,20 @@ export const GlobalProvider = (props) => {
             _presentation.items = _presentation.items.filter(el => el.id !== item.id)
             await localforage.setItem('presentation', _presentation)
             dispatch({
-                type: LOAD_PRESENTATION,
+                type: REMOVE_ITEM,
                 payload: _presentation
             })
         }
         
     }
 
-    const openModal = (children) => {
+    const openModal = (children, x, y) => {
+        let _modalPosition = { x, y }
         dispatch({
             type: OPEN_MODAL,
             payload: {
                 isModalOpen: true,
+                modalPosition: _modalPosition,
                 modalChildren: children,
             }
         })
@@ -485,6 +428,15 @@ export const GlobalProvider = (props) => {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
                     let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
+
+                    imageItem.classlist.forEach((classKey, index) => {
+                        if (classKey.includes('img')) {
+                            imageItem.classlist.splice(index, 1);
+                        }
+                    })
+                    
+                    imageItem.classlist.push(`img_${imageItem.crops[imageCropIndex].name.toLowerCase()}`)  
+
                     imageItem.crops[imageCropIndex] = {
                         ...imageItem.crops[imageCropIndex],
                         blob: blob
@@ -564,7 +516,9 @@ export const GlobalProvider = (props) => {
            removeItem,
            modalChildren: state.modalChildren,
            selectedItem: state.selectedItem,
+           modalPosition: state.modalPosition,
            removeClass,
+           addClass,
            addComponent,
            toggleDragging,
            components: state.components,

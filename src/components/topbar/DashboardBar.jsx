@@ -2,7 +2,7 @@ import React from 'react'
 import {
     NavLink
   } from "react-router-dom";
-import InsMenu from '../InsMenu';
+import InsMenu from './../modal/InsMenu';
 import InscribeIcon from './../../assets/icons/inscribe.svg';
 import PageFlowIcon from './../../assets/icons/pageflow.svg';
 import { useHistory } from "react-router-dom";
@@ -19,7 +19,11 @@ function DashboardBar() {
       id: 0, 
       icon: <img className="mr-3" width="20" src={InscribeIcon} alt="" />,
       text: 'Article',
-      disabled: true,
+      action: () => { 
+        closeDropdown()
+        history.push("/article/") 
+      }, 
+      disabled: false,
       description: 'Includes article writing and editing tools'
     },
     {
@@ -28,7 +32,7 @@ function DashboardBar() {
       text: 'Presentation',
       action: () => { 
         closeDropdown()
-        history.push("/editor/") 
+        history.push("/presentation/") 
       }, 
       disabled: false,
       description: 'Digital content layout and presentation tools.'

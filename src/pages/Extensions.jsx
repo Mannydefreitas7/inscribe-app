@@ -1,6 +1,6 @@
 import React from "react";
-import DropZoneFile from "./../components/DropZoneFile";
-import extensions from "./../assets/json/extensions.json";
+import DropZoneFile from "../components/DropZoneFile";
+import extensions from "../assets/json/extensions.json";
 import ExtensionCard from "../components/ExtensionCard";
 
 function Extensions() {

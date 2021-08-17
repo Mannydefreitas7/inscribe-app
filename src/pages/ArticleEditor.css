@@ -1,83 +1,73 @@
-
 * {
-    caret-color:#6C6997;
+  caret-color: #6c6997;
 }
 
 ::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: transparent;
+  background: transparent;
 }
 
 *::selection {
-    background: #6c69972a;
+  background: #6c69972a;
 }
 
 .editor a {
-    color: #345996;
-    text-decoration: none;
+  color: #345996;
+  text-decoration: none;
 }
 
 .editor h1 {
-    font-weight: bold;
-    font-size: larger;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .title {
-    font-size:xx-large;
-    font-weight: bold;
-    line-height: normal;
-    margin-bottom: 1rem;
+  font-size: xx-large;
+  font-weight: bold;
+  line-height: normal;
+  margin-bottom: 1rem;
 }
 
 .subheading-1 {
-    font-size: 28px;
-    line-height: normal;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 28px;
+  line-height: normal;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .subheading-2 {
-    font-size: 24px;
-    line-height: normal;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 24px;
+  line-height: normal;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .subheading-3 {
-    font-size: 18px;
-    line-height: normal;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .subheading-4 {
-    font-size: 16px;
-    line-height: normal;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 .paragraph {
-    margin-bottom: 1rem;
-    font-size: 16px;
+  margin-bottom: 1rem;
+  font-size: 16px;
 }
 
 .opening {
-    font-size: 20px;
-    color: gray
-}
-
-.columns {
-    display: flex;
-}
-
-.oneHalf {
-    width: 50%;
+  font-size: 20px;
 }

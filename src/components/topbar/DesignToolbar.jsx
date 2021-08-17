@@ -13,20 +13,20 @@ function DesignToolbar() {
     return (
         <div id="toolbar" className="flex px-2 flex-row">
             <button className={`p-2 mx-1 ql-bold rounded bg-gray-900 ${ breakpoint === 'desktop' ? 'bg-opacity-5' : 'bg-opacity-0' }  hover:bg-opacity-5`} onClick={() => changeBreakpoint('desktop')}>
-                <img src={DesktopIcon} alt="button" style={{ height: 24 }}/>
+                <img src={DesktopIcon} alt="button" style={{ height: 20 }}/>
             </button>
 
             <button className={`p-2 mx-1 ql-bold rounded bg-gray-900 ${ breakpoint === 'tablet-landscape' ? 'bg-opacity-5' : 'bg-opacity-0' }  hover:bg-opacity-5`} onClick={() => changeBreakpoint('tablet-landscape')}>
-                <img src={TabletLandscapeIcon} alt="button" style={{ height: 24 }}/>
+                <img src={TabletLandscapeIcon} alt="button" style={{ height: 20 }}/>
             </button>
 
             <button className={`p-2 mx-1 ql-bold rounded bg-gray-900 ${ breakpoint === 'tablet-portrait' ? 'bg-opacity-5' : 'bg-opacity-0' }  hover:bg-opacity-5`} onClick={() => changeBreakpoint('tablet-portrait')}>
-                <img src={TabletPortraitIcon} alt="button" style={{ height: 24 }}/>
+                <img src={TabletPortraitIcon} alt="button" style={{ height: 20 }}/>
             </button>
 
             <button 
             className={`p-2 mx-1 ql-bold rounded bg-gray-900 ${ breakpoint === 'phone' ? 'bg-opacity-5' : 'bg-opacity-0' }  hover:bg-opacity-5`} onClick={() => changeBreakpoint('phone')}>
-                 <img src={PhoneIcon} alt="button" style={{ height: 24 }}/>
+                 <img src={PhoneIcon} alt="button" style={{ height: 20 }}/>
             </button>
         </div>
     )

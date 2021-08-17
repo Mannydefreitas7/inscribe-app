@@ -1,14 +1,11 @@
 import React, { useContext } from 'react'
 // import ContentEditable from 'react-contenteditable'
-import PlusIcon from './../assets/icons/plus-white.svg';
 import CloseIcon from './../assets/icons/close-white.svg';
 import { ReactSVG } from 'react-svg';
 import CropIcon from './../assets/icons/crop.svg';
-import TrashIcon from './../assets/icons/trash-white.svg';
 import { GlobalContext } from '../store/GlobalState';
-import ImageCropper from './ImageCropper';
-import AddView from './AddView';
-import { useDrag } from 'react-dnd'
+import ImageCropper from './modal/ImageCropper';
+
 
 export default function ColumnItemEditor(props) {
 

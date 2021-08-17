@@ -3,11 +3,8 @@ import { useContext } from 'react'
 import { ReactSVG } from 'react-svg'
 import { useDrop } from 'react-dnd'
 import { GlobalContext } from '../store/GlobalState'
-import BlockEditor from './BlockEditor'
 import ColumnItemEditor from './ColumnItemEditor'
-import DroppableZone from './DroppableZone'
-import TrashIcon from './../assets/icons/trash-white.svg';
-import PlaceholderEditor from './PlaceholderEditor'
+import TrashIcon from './../assets/icons/trash.svg';
 export default function ColumnsEditor(props) {
 
     const { selectComponent, component, removeItem, presentation } = useContext(GlobalContext)
@@ -44,14 +41,14 @@ export default function ColumnsEditor(props) {
 
             <div
                 onClick={() => selectComponent(props.item)}
-                className={`cursor-default relative w-full ${component && props.item.id === component.id ? 'border-2 border-indigo-300 border-dashed rounded-sm' : ''} `}>
+                className={`cursor-default relative w-full`}>
 
                 <div className={props.item.classlist}>
                     {
                         props.item.children && props.item.children.length > 0 && props.item.children.map((column, index) => {
 
                             return <div key={index} 
-                            className={`${column && column.classlist} border border-gray-100 border-dashed relative ${isOver ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''}`}  ref={drop} style={{ minHeight: column.children.length > 0 ? 'auto' : 200}}>
+                            className={`${column && column.classlist} border-2 border-gray-100 border-dashed relative ${component && props.item.id === component.id ? 'border-2 border-indigo-300' : ''} ${isOver ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''}`}  ref={drop} style={{ minHeight: column.children.length > 0 ? 'auto' : 200}}>
                                
                                     {
                                         column.children && column.children.length > 0 && column.children.map((child, i) => {
@@ -65,7 +62,10 @@ export default function ColumnsEditor(props) {
                     {
                         component && component.id === props.item.id ?
                         <div className="absolute -right-4 top-1/2 p-1 transform -translate-y-1/2  rounded inline-flex flex-col items-center justify-center z-20">
-                            <button className={`p-2 bg-indigo-600 hover:bg-indigo-700 rounded cursor-move`} onClick={() => removeItem(props.item, presentation)}>
+                            <button className={`p-2 bg-white hover:bg-gray-50 rounded cursor-pointer shadow`} onClick={() => {
+                                removeItem(props.item, presentation)
+                                
+                            }}>
                                 <ReactSVG src={TrashIcon} />
                             </button>
                         </div> :

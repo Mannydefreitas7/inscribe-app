@@ -1,20 +1,23 @@
 import React, { useContext } from 'react'
 import { ReactSVG } from 'react-svg';
 import { GlobalContext } from '../store/GlobalState';
-import AddView from './AddView';
+import AddView from './../components/modal/AddView';
 import { useDrop } from 'react-dnd'
 import PlusIcon from './../assets/icons/plus-white.svg';
+import { useEffect } from 'react';
 
 export default function PlaceholderEditor() {
     const { selectedItem, openModal, selectItem, addToPresentation, presentation, loadPresentation } = useContext(GlobalContext);
 
-
+    useEffect(() => {
+        if (!presentation) {
+            loadPresentation();
+        }
+    }, [])
 
     const [{ isOver }, drop] = useDrop(() => ({
-       
         accept: 'ASSET',
-        drop: (item, monitor) => {
-            
+        drop: (item, monitor) => {   
             return addToPresentation(item, 0)
         },
         collect: (monitor) => ({

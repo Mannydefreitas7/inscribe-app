@@ -1,10 +1,10 @@
 import React, { useContext, useRef, useState } from 'react'
 import ReactCrop from 'react-image-crop';
-import { GlobalContext } from '../store/GlobalState';
+import { GlobalContext } from '../../store/GlobalState';
 import 'react-image-crop/dist/ReactCrop.css';
 import { useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
-import CloseIcon from './../assets/icons/close.svg';
+import CloseIcon from './../../assets/icons/close.svg';
 import HeaderTitle from './HeaderTitle';
 
 
@@ -31,7 +31,8 @@ export default function ImageCropper() {
         
     }, [cropIndex])
 
-    return (<>
+    return (
+    <div style={{ maxWidth: window.screen.width / 1.5 }}>
         <HeaderTitle title="Image Crop">
         <button
             onClick={() => closeModal()}
@@ -97,7 +98,7 @@ export default function ImageCropper() {
                 </div>
             </div>
         </div>
-        </>
+        </div>
     )
 }
 function getCroppedImg(_image, crop, fileName) {

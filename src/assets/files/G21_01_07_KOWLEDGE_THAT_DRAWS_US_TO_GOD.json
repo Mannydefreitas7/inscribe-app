@@ -64,7 +64,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["opening", "paragraph"],
+            "classlist": ["opening", "paragraph", "color-gray-500"],
             "properties": {}
         },
         {
