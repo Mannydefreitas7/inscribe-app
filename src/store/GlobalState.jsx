@@ -1,8 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import reducer from './AppReducer';
 import localforage from 'localforage';
-import useQuery from '../utils/useQuery';
-import { v4 } from 'uuid';
+
 import {
     CHANGE_WORKSPACE,
     OPEN_DROPDOWN,
@@ -75,7 +74,7 @@ export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    let query = useQuery();
+  
 
     const changeWorkspace = (workspace) => {
         dispatch({

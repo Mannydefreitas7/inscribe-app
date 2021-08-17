@@ -7,7 +7,7 @@ import CloseIcon from './../../assets/icons/close.svg';
 import { GlobalContext } from './../../store/GlobalState';
 export default function AddView() {
 
-    const { closeModal, isLeftSidebarOpen, selectAsset, selectComponent } = useContext(GlobalContext)
+    const { closeModal, selectAsset, selectComponent } = useContext(GlobalContext)
 
     useEffect(() => {
         selectAsset(null)

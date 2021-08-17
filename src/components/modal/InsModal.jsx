@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import { useContext } from 'react'
 import { GlobalContext } from './../../store/GlobalState'
 import Draggable from 'react-draggable';

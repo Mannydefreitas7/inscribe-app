@@ -10,7 +10,7 @@ export default function AssetCollapsible(props) {
 
     const [isOpen, setIsOpen] = useState(false);
     const { selectedItem  } = useContext(GlobalContext);
-    const [{ isDragging }, drag] = useDrag(() => ({
+    const [drag] = useDrag(() => ({
         type: 'ASSET',
         item: props.item,
         collect: (monitor) => ({

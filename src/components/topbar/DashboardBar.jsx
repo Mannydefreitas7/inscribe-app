@@ -44,8 +44,11 @@ function DashboardBar() {
             <InsMenu items={items} title="Project">
               <div className="py-4 px-4 text-gray-500 hasDropdown cursor-pointer">New</div>
             </InsMenu>
-
-              <a className="py-4 px-4 text-gray-500" href="/">Open...</a>
+              
+                <div class="choose_file">
+                  <button type="button" className="py-4 px-4 text-gray-500" >Choose Image</button>
+                  <input name="img" type="file" style={{ display: 'none' }} />
+              </div>
               <NavLink to="/home" activeClassName="border-b-4 border-indigo-500 text-indigo-500" className="px-4 py-4 text-gray-500">Home</NavLink>
               <NavLink to="/extensions" activeClassName="border-b-4 border-indigo-500  text-indigo-500" className="px-4 py-4 text-gray-500">Extensions</NavLink>
 

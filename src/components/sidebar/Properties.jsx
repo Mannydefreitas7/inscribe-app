@@ -8,7 +8,7 @@ import { GlobalContext } from './../../store/GlobalState';
 
 export default function Properties() {
 
-    const { selectedItem, component, openModal } = useContext(GlobalContext)
+    const { component, openModal } = useContext(GlobalContext)
 
     const textProperties = {
         title: 'Text',

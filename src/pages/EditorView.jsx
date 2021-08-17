@@ -6,7 +6,6 @@ import SideBarRight from '../components/sidebar/SideBarRight';
 import { DndProvider } from 'react-dnd'
 import InsModal from './../components/modal/InsModal';
 import TopBar from '../components/topbar/TopBar';
-import PresentationEditor from './PresentationEditor';
 import PrototypeNav from '../components/topbar/PrototypeNav';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 

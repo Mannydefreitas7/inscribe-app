@@ -10,7 +10,7 @@ import SideRightIcon from './../../assets/icons/side-right.svg';
 
 export default function TopBar() {
 
-    const { workspace, selectItem, toggleLeftSidebar, changeWorkspace, toggleRightSidebar, isLeftSidebarOpen, isRightSidebarOpen, openModal } = useContext(GlobalContext);
+    const { workspace, selectItem, toggleLeftSidebar, toggleRightSidebar, isLeftSidebarOpen, isRightSidebarOpen, openModal } = useContext(GlobalContext);
 
 
     // const items = [

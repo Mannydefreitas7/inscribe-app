@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { GlobalContext } from '../store/GlobalState';
 import BlockEditor from '../components/BlockEditor'
 import ColumnsEditor from '../components/ColumnsEditor';
-import PlaceholderEditor from './PlaceholderEditor';
 import DroppableZone from '../components/DroppableZone';
 import { useEffect } from 'react';
 import localforage from 'localforage';
@@ -10,7 +9,7 @@ import './PresentationEditor.css';
 
 export default function PresentationEditor() {
 
-    const { presentation, loadPresentation, breakpoint } = useContext(GlobalContext);
+    const { presentation, loadPresentation, breakpoint, changeWorkspace } = useContext(GlobalContext);
  
     const setBreakPointWidth = () => {
         switch (breakpoint) {
@@ -28,12 +27,17 @@ export default function PresentationEditor() {
     }
 
     useEffect(() => {
-        localforage.getItem('presentation')
-        .then(presentation => {
-            loadPresentation(presentation);
-        })
+        changeWorkspace('presentation')
+        if (!presentation){
+            localforage.getItem('presentation')
+                .then(presentation => {
+                    loadPresentation(presentation);
+                })
+        }
     },[])
 
+ 
+    
     return (
         <div 
         id="canvas"

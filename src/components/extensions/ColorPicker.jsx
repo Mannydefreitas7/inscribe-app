@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import Collaspible from '../Collaspible';
 import HeaderTitle from './../modal/HeaderTitle';
 import colors from '../../assets/json/colors.json';
 import tokens from '../../assets/json/tokens.json';

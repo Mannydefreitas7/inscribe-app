@@ -2,16 +2,15 @@ import React from 'react'
 import { useContext } from 'react';
 import { useState } from 'react'
 import { GlobalContext } from '../store/GlobalState';
-import ArrowDown from './../assets/icons/arrow-down.svg';
 import ColumnsIcon from './../assets/icons/column.svg';
 import ImageIcon from './../assets/icons/image.svg';
 import TextIcon from './../assets/icons/text-block.svg';
-import DraggableItem from './DraggableItem';
+
 
 export default function OutlineCollapsible(props) {
 
-const [isOpen, setIsOpen] = useState(false);
-const { selectedItem, selectItem, handleOnDrag } = useContext(GlobalContext)
+const [isOpen] = useState(false);
+const { selectedItem } = useContext(GlobalContext)
 
     return (
      

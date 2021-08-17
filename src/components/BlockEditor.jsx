@@ -8,7 +8,7 @@ import TrashIcon from './../assets/icons/trash.svg';
 import { GlobalContext } from '../store/GlobalState';
 import ImageCropper from './modal/ImageCropper';
 import AddView from './modal/AddView';
-import { useDrag } from 'react-dnd'
+
 
 export default function BlockEditor(props) {
 

@@ -10,7 +10,7 @@ import PresentationOutline from './PresentationOutline';
 
 export default function SideBarLeft() {
 
-    const { presentation, loadPresentation, workspace } = useContext(GlobalContext);
+    const { presentation, workspace } = useContext(GlobalContext);
 
 
     return (

@@ -7,13 +7,8 @@ import PlusIcon from './../assets/icons/plus-white.svg';
 import { useEffect } from 'react';
 
 export default function PlaceholderEditor() {
-    const { selectedItem, openModal, selectItem, addToPresentation, presentation, loadPresentation } = useContext(GlobalContext);
+    const { selectedItem, openModal, selectItem, addToPresentation } = useContext(GlobalContext);
 
-    useEffect(() => {
-        if (!presentation) {
-            loadPresentation();
-        }
-    }, [])
 
     const [{ isOver }, drop] = useDrop(() => ({
         accept: 'ASSET',

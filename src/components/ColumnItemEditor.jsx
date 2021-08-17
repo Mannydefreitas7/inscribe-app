@@ -9,7 +9,7 @@ import ImageCropper from './modal/ImageCropper';
 
 export default function ColumnItemEditor(props) {
 
-    const { selectItem, selectedItem, openModal, removeItem, removeClass } = useContext(GlobalContext);
+    const { selectItem, selectedItem, openModal, removeClass } = useContext(GlobalContext);
 
 
     const blockType = () => {
