@@ -10,7 +10,7 @@ export default function AssetCollapsible(props) {
 
     const [isOpen, setIsOpen] = useState(false);
     const { selectedItem  } = useContext(GlobalContext);
-    const [drag] = useDrag(() => ({
+    const [{ opacity }, dragRef] = useDrag(() => ({
         type: 'ASSET',
         item: props.item,
         collect: (monitor) => ({
@@ -21,7 +21,7 @@ export default function AssetCollapsible(props) {
 
     return (
   
-        <div className={`pl-2 rounded ${isOpen ? '' : 'hover:bg-gray-100 hover:bg-opacity-60'}  ${selectedItem && props.item.id === selectedItem.id && !isOpen ? 'bg-gray-100' : ''} bg-opacity-60`} {...props} ref={!isOpen ? drag : null}>
+        <div className={`pl-2 rounded ${isOpen ? '' : 'hover:bg-gray-100 hover:bg-opacity-60'}  ${selectedItem && props.item.id === selectedItem.id && !isOpen ? 'bg-gray-100' : ''} bg-opacity-60`} {...props} ref={!isOpen ? dragRef : null}>
             <div className="p-2 flex justify-between">
 
             <div className="inline-flex items-center">

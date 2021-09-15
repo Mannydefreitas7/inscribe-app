@@ -32,7 +32,7 @@ export default function BlockEditor(props) {
             case 'container':
                 
                 return <div  id={props.block.id} className={ props.block.classlist && props.block.classlist.join(' ')}>{
-                    props.block && props.block.children && props.block.children.map((item, i) => {
+                    props.block && props.block.items && props.block.items.map((item, i) => {
                         if (item.type === 'text') {
                             // return <ContentEditable
                             //     tagName="span"

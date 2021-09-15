@@ -45,13 +45,13 @@ export default function ColumnsEditor(props) {
 
                 <div className={props.item.classlist}>
                     {
-                        props.item.children && props.item.children.length > 0 && props.item.children.map((column, index) => {
+                        props.item.items && props.item.children.length > 0 && props.item.children.map((column, index) => {
 
                             return <div key={index} 
-                            className={`${column && column.classlist} border-2 border-gray-100 border-dashed relative ${component && props.item.id === component.id ? 'border-2 border-indigo-300' : ''} ${isOver ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''}`}  ref={drop} style={{ minHeight: column.children.length > 0 ? 'auto' : 200}}>
+                            className={`${column && column.classlist} border-2 border-gray-100 border-dashed relative ${component && props.item.id === component.id ? 'border-2 border-indigo-300' : ''} ${isOver ? 'bg-indigo-100 bg-opacity-20 border-indigo-100': ''}`}  ref={drop} style={{ minHeight: column.items && column.items.length > 0 ? 'auto' : 200}}>
                                
                                     {
-                                        column.children && column.children.length > 0 && column.children.map((child, i) => {
+                                        column.items && column.items.length > 0 && column.items.map((child, i) => {
                                             return <ColumnItemEditor key={i} block={child} index={i} />
                                         })
                                     }

@@ -48,7 +48,7 @@ function ColorButton({ value, name, color }) {
                 }
                 
             }}
-            className="px-3 py-1 text-left text-sm border border-gray-200 font-semibold"
+            className="px-3 py-1 text-left text-sm border-2 border-gray-200 font-semibold"
             style={{ backgroundColor: value, color: name === 'Black' || Number(name) > 400 ? 'white' : 'black' }}
         >{name}</button>
     )

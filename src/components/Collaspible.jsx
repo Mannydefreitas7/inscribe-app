@@ -14,7 +14,7 @@ useEffect(() => {
 
     return (
         <div>
-            <div className="border-b border-gray-100 pl-4 pr-3 py-3 flex justify-between">
+            <div className="border-b-2 border-gray-100 pl-4 pr-3 py-3 flex justify-between">
                 <span className="text-gray-300 font-medium">{props.title}</span>
                 <button onClick={() => setIsOpen(!isOpen)}>
                     <img src={ArrowDown} alt="" style={{ 

@@ -28,7 +28,7 @@ export default function ColumnItemEditor(props) {
                 return <img contentEditable={true} className={props.block.classlist && props.block.classlist.toString().replace(',', ' ')} alt={props.block.name} src={props.block.blob} />
             case 'container':
                 return <div  id={props.block.id} className={ props.block.classlist && props.block.classlist.toString().replace(',', ' ')}>{
-                    props.block && props.block.children && props.block.children.map((item, i) => {
+                    props.block && props.block.items && props.block.items.map((item, i) => {
                         if (item.type === 'text') {
                             // return <ContentEditable
                             //     tagName="span"
@@ -69,7 +69,7 @@ export default function ColumnItemEditor(props) {
                 }
 
 
-                <div className={`border-indigo-300 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border mb-3' : 'border-0 mb-0 p-0'} `}>{blockType()}
+                <div className={`border-indigo-300 bg-white border-dashed rounded-sm relative w-full ${selectedItem && selectedItem.id === props.block.id ? 'border-2 mb-3' : 'border-0 mb-0 p-0'} `}>{blockType()}
 
                     {
                         selectedItem && selectedItem.id === props.block.id ?

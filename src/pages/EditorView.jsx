@@ -19,12 +19,11 @@ function EditorView(props) {
                 <div className="editor" >
                     <TopBar />
                     <div className="flex justify-between bg-gray-500 overflow-hidden">
-                        {isLeftSidebarOpen ? <SideBarLeft /> : null}
-                        {isLeftSidebarOpen ? <div style={{ minWidth: 320 }}></div> : null}
-                        {props.children}
-                        {isRightSidebarOpen ? <div style={{ minWidth: 320 }}></div> : null}
-                        {isRightSidebarOpen ? <SideBarRight /> : null}
-
+                    {isLeftSidebarOpen ? <SideBarLeft /> : null}
+                    {isLeftSidebarOpen ? <div style={{ width: 320 }}></div> : null}
+                    {props.children}
+                    {isRightSidebarOpen ? <div style={{ width: 320 }}></div> : null}
+                    {isRightSidebarOpen ? <SideBarRight /> : null}
                     </div>
                 </div>
             {

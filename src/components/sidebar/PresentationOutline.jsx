@@ -10,6 +10,30 @@ function PresentationOutline() {
     const { presentation, loadPresentation } = useContext(GlobalContext);
 
 
+    const parseItems = () => {
+        let text = ""
+        let _items = presentation.items
+      return _items.map(item => {
+            if (item.children && item.children.length > 0) {
+                text = item.children.map(node => {
+                    return node.text
+                }).join('')
+                item.children = [
+                    {
+                        id: "56c3139f-f2ff-4b34-909c-fc8644881e74",
+                        index: 0,
+                        type: item.type,
+                        description: item.description,
+                        text: text
+                    }
+                ]
+            } 
+            return item
+        })
+    }
+
+
+
     return (
         <div>
             {

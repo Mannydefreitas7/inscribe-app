@@ -80,7 +80,7 @@ export default function ImageCropper() {
                                     })
                                 }}
                                 key={i}
-                                className={`px-2 py-1 rounded-sm ${cropIndex === i ? 'bg-gray-700 text-gray-50' : 'text-gray-400 bg-gray-50'} border border-gray-100 mr-1`}>{_crop.name}</button>
+                                className={`px-2 py-1 rounded-sm ${cropIndex === i ? 'bg-gray-700 text-gray-50' : 'text-gray-400 bg-gray-50'} border-2 border-gray-100 mr-1`}>{_crop.name}</button>
                         })
                     }
                 </div>

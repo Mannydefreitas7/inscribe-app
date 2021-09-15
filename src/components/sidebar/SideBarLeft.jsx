@@ -14,8 +14,8 @@ export default function SideBarLeft() {
 
 
     return (
-        <div className="fixed h-full z-10 bg-gray-50 border-r border-gray-100 overflow-x-hidden"
-            style={{ minWidth: 320, paddingTop: 60 }}>
+        <div className="fixed h-full z-10 bg-gray-50 border-r-2 border-gray-100 overflow-x-hidden"
+            style={{ width: 320, paddingTop: 60 }}>
             
             {
                 workspace === 'presentation' ?
@@ -34,7 +34,7 @@ export default function SideBarLeft() {
                                             item={b}
                                             key={i}>
                                             {
-                                                b.children && b.children.length > 0 && b.children.map((c, x) => {
+                                                b.items && b.items.length > 0 && b.items.map((c, x) => {
                                                     return <AssetCollapsible
                                                         item={c}
                                                         key={x}></AssetCollapsible>

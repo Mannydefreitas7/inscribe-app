@@ -15,7 +15,7 @@ const history = useHistory();
             <Collaspible title="Table of Contents" >
                 {
                     presentation && presentation.toc.map((article, index) => {
-                        return <div key={index} className="flex justify-between  items-center p-2 border-b border-gray-50 hover:bg-gray-100 rounded hover:bg-opacity-30 my-1" onClick={() => history.push('/editor?articleId=' + article.id)}>
+                        return <div key={index} className="flex justify-between  items-center p-2 border-b-2 border-gray-50 hover:bg-gray-100 rounded hover:bg-opacity-30 my-1" onClick={() => history.push('/editor?articleId=' + article.id)}>
                         <div className="inline-flex items-center">
                             <div className="leading-3">
                                  <span className="font-normal text-sm text-gray-600">{article.title}</span>

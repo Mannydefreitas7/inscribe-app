@@ -39,7 +39,7 @@ function DashboardBar() {
     },
   ]
     return (
-        <div className="flex px-4 border-b border-gray-100 justify-between fixed w-full" style={{backgroundColor: '#F8F8F8' }}>
+        <div className="flex px-4 border-b-2 border-gray-100 justify-between fixed w-full" style={{backgroundColor: '#F8F8F8' }}>
           <div className="flex flex-row">
             <InsMenu items={items} title="Project">
               <div className="py-4 px-4 text-gray-500 hasDropdown cursor-pointer">New</div>

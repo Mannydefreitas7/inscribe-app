@@ -97,13 +97,13 @@ export default function DroppableZone(props) {
               ref={drop}
               id={`${props.type}-${props.id}`} 
               style={{ height: isOver ? 200 : 'auto', transition: 'all ease-in-out .2s' }}
-              className={`${isDragging ? 'border' : ''} ${isOver ? 'bg-indigo-50 bg-opacity-50' : ''}  border-indigo-100 border-dashed`}
+              className={`${isDragging ? 'border-2' : ''} ${isOver ? 'bg-indigo-50 bg-opacity-50' : ''}  border-indigo-100 border-dashed`}
             >{props.children}</div> :
             <div 
                 ref={drop}
                 id={`${props.type}-placeholder`} 
                 style={{ minHeight: isDragging ? 50 : 0, height: isOver ? 150 : 'auto', transition: 'all ease-in-out .2s' }}
-                className={`relative ${isDragging ? 'border' : ''} ${isOver ? 'bg-indigo-50 bg-opacity-50' : ''}  border-indigo-100 border-dashed`}
+                className={`relative ${isDragging ? 'border-2' : ''} ${isOver ? 'bg-indigo-50 bg-opacity-50' : ''}  border-indigo-100 border-dashed`}
             ></div>
         }
     </>

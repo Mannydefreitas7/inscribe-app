@@ -9,7 +9,7 @@ function RecentContainer() {
 
     return (
         <div className="mt-4">
-        <div className="flex py-3 justify-between w-full border-t border-gray-100">
+        <div className="flex py-3 justify-between w-full border-t-2 border-gray-100">
             <h4 className="font-bold text-gray-500">Recent</h4>
             <div className="flex">
                 <div className="appearance-none p-2 focus:outline">

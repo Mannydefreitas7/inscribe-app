@@ -28,14 +28,18 @@ export default function PresentationEditor() {
 
     useEffect(() => {
         changeWorkspace('presentation')
-        if (!presentation){
-            localforage.getItem('presentation')
-                .then(presentation => {
-                    loadPresentation(presentation);
-                })
-        }
+        load()
     },[])
 
+    const load = async () => {
+        try {
+            let presentation = await localforage.getItem('presentation');
+            loadPresentation(presentation)
+            console.log(presentation)
+        } catch (error) {
+            console.log(error)
+        } 
+    }
  
     
     return (

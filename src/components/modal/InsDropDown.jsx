@@ -49,7 +49,7 @@ export default function InsDropDown(props) {
             open={Boolean(isDropdownOpen)}
             onClose={closeDropdown}
         >
-            <div className="pb-3 pt-1 px-4 border-b border-gray-100">
+            <div className="pb-3 pt-1 px-4 border-b-2 border-gray-100">
                 <div className="text-gray-400 font-semibold">{props.title}</div>
             </div>
             {

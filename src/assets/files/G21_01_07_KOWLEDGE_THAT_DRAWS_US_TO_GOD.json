@@ -25,7 +25,7 @@
             "index": 2,
             "text": "Our Creator is not merely a force. He...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "56c3139f-f2ff-4b34-909c-fc8644881e74",
                     "index": 0,
@@ -81,7 +81,7 @@
             "index": 4,
             "text": "“May people know that you, whose...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "2c6fa4db-b42c-4049-8822-43b6d94feed2",
                     "index": 0,
@@ -110,7 +110,7 @@
             "index": 5,
             "text": "The Bible teaches that Jehovah is...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "c8e384f7-4af8-4929-b3fb-f0a508c8ddd5",
                     "index": 0,
@@ -148,7 +148,7 @@
             "index": 7,
             "type": "container",
             "text": "“God is love.”​—1 JOHN 4:8.",
-            "children": [
+            "items": [
                 {
                     "id": "cee72034-a510-44a4-aaf7-489a61879502",
                     "index": 0,
@@ -177,7 +177,7 @@
             "index": 8,
             "text": "By means of the Bible and the...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "65604742-5a66-4c2b-b1a2-828e21259678",
                     "index": 0,
@@ -206,7 +206,7 @@
             "index": 10,
             "text": "“You are a God ready to forgive...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "b3c11db6-2be6-4dac-b5e2-31aee0776e55",
                     "index": 0,
@@ -235,7 +235,7 @@
             "index": 11,
             "text": "Jehovah knows that we are imperfect...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "d7479c36-2326-4a3c-8b1a-3dc3b656d430",
                     "index": 0,
@@ -273,7 +273,7 @@
             "index": 13,
             "text": "“Jehovah is near to all those...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "9481b855-5d3b-41d4-98b3-299fdea0069e",
                     "index": 0,
@@ -302,13 +302,13 @@
             "index": 14,
             "text": "Jehovah requires no special rituals...",
             "type": "container",
-            "children": [
+            "items": [
                 {
                     "id": "aeb5d2e1-c653-4013-bf40-f198effa353c",
                     "index": 0,
                     "type": "text",
                     "description": "fragment",
-                    "text": "Jehovah requires no special rituals or religious objects in his worship. He listens to our prayers just as loving parents listen to their dear children.",
+                    "text": "Jehovah requires no special rituals or religious objects in his worship. He listens to our prayers just as loving parents listen to their dear items.",
                     "classlist": [],
                     "properties": {}
                 }
