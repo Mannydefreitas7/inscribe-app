@@ -1,8 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import reducer from './AppReducer';
 import localforage from 'localforage';
-import useQuery from '../utils/useQuery';
-import { v4 } from 'uuid';
+
 import {
     CHANGE_WORKSPACE,
     OPEN_DROPDOWN,
@@ -20,92 +19,10 @@ import {
     ON_DRAG,
     ON_DROP,
     SELECT_ASSET,
-    SELECT_COMPONENT
+    SELECT_COMPONENT,
+    REMOVE_ITEM
 } from './ActionTypes';
 
-const components = [
-    {
-        id: v4(),
-        classlist: ["columns"],
-        data: "images/columns.jpg",
-        date: new Date().toDateString(),
-        name: "Columns",
-        description: 'Columns',
-        type: 'columns',
-        children: [
-            {
-                id: v4(),
-                index: 0,
-                name: "Column One",
-                description: "Column One",
-                classlist: ["oneHalf"],
-                type: 'column',
-                children: []
-            },
-            {
-                id: v4(),
-                index: 1,
-                name: "Column Two",
-                description: "Column Two",
-                classlist: ["oneHalf"],
-                type: 'column',
-                children: []
-            }
-        ]
-    },
-    {
-        id: v4(),
-        classlist: ["backgroundContainer"],
-        data: "images/background.jpg",
-        date: new Date().toDateString(),
-        name: "Background",
-        description: 'Background',
-        type: 'background',
-        children: [
-            {
-                id: v4(),
-                index: 0,
-                name: "Background Image",
-                description: "Background Image",
-                classlist: ["backgroundItem"],
-                data: null,
-                type: 'image'
-            },
-            {
-                id: v4(),
-                index: 1,
-                name: "Foreground",
-                description: "Foreground items",
-                classlist: ["foreground"],
-                type: 'container',
-                children: []
-            }
-        ]
-    },
-    {
-        id: v4(),
-        classlist: ["boxContainer"],
-        data: "images/box.jpg",
-        date: new Date().toDateString(),
-        name: "Box",
-        description: 'Box',
-        type: 'box',
-        title: null,
-        children: []
-    },
-    {
-        id: v4(),
-        classlist: ["boxContainer"],
-        data: "images/box.jpg",
-        date: new Date().toDateString(),
-        name: "Box",
-        description: 'Box',
-        type: 'box',
-        title: null,
-        children: []
-    }
-]
- 
 
 const initialState = {
    workspace: 'presentation',
@@ -133,9 +50,9 @@ const initialState = {
    isModalOpen: false,
    removeItem: null,
    removeClass: null,
+   addClass: null,
    addComponent: null,
    toggleDragging: null,
-   components: components,
    isDragging: false,
    dragEvent: null,
    dropEvent: null,
@@ -144,6 +61,10 @@ const initialState = {
    component: null,
    asset: null,
    selectAsset: null,
+   modalPosition: {
+       x: null,
+       y: null
+   },
    selectComponent: null
 }
 
@@ -153,7 +74,7 @@ export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    let query = useQuery();
+  
 
     const changeWorkspace = (workspace) => {
         dispatch({
@@ -200,9 +121,9 @@ export const GlobalProvider = (props) => {
         })
     }
 
-    const loadPresentation = async () => {
+    const loadPresentation = async (presentation) => {
         try {
-            let presentation = await localforage.getItem('presentation');
+         
             if (!presentation) {
                 const data = {
                     id: "2e38c05f-e466-4536-889b-12d62a8a63a4",
@@ -220,6 +141,7 @@ export const GlobalProvider = (props) => {
                     payload: data
                 })
             } else {
+                await localforage.setItem('presentation', presentation)
                 dispatch({
                     type: LOAD_PRESENTATION,
                     payload: presentation
@@ -281,14 +203,13 @@ export const GlobalProvider = (props) => {
 
     const removeClass = async (item, className) => {
         let _presentation = await localforage.getItem('presentation');
-        let articleId = query.get('articleId');
 
-        if (_presentation && articleId && _presentation.toc.filter(article => article.id === articleId).length > 0 ) {
+        if (_presentation && _presentation.items.length > 0 ) {
 
-            let itemIndex = _presentation.toc.filter(article => article.id === articleId)[0].items.findIndex(el => el.id === item.id);
+            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
             let newClassList = item.classlist.filter(c => c !== className);
             item.classlist = newClassList;
-            _presentation.toc.filter(article => article.id === articleId)[0].items[itemIndex] = item;
+            _presentation.items[itemIndex] = item;
             await localforage.setItem('presentation', _presentation);
             dispatch({
                 type: LOAD_PRESENTATION,
@@ -299,11 +220,52 @@ export const GlobalProvider = (props) => {
 
     }
 
+    const addClass = async (item, newClassList) => {
+        let _presentation = await localforage.getItem('presentation');
 
-    const addToPresentation = async (item, index) => {
+        if (_presentation && _presentation.items.length > 0 ) {
+
+            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+            item.classlist = newClassList;
+            _presentation.items[itemIndex] = item;
+            await localforage.setItem('presentation', _presentation);
+            dispatch({
+                type: LOAD_PRESENTATION,
+                payload: _presentation
+            })
+
+        } 
+
+    }
+
+    // Array.prototype.swapItems = function(a, b){
+    //     this[a] = this.splice(b, 1, this[a])[0];
+    //     return this;
+    // }
+
+    // const swapElements = (array, indexA, indexB) => {
+    //     var temp = array[indexA];
+    //     array[indexA] = array[indexB];
+    //     array[indexB] = temp;
+    //     return array;
+    //   };
+
+      function array_move(arr, old_index, new_index) {
+        if (new_index >= arr.length) {
+            var k = new_index - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        return arr; // for testing
+    };
+
+
+    const addToPresentation = async (item, srcIndex, targetIndex) => {
 
         let _presentation = await localforage.getItem('presentation');
-        
+
         if (_presentation) {
             if (item.extension && item.extension === 'MEPSA') {
 
@@ -323,14 +285,19 @@ export const GlobalProvider = (props) => {
                 }
                 
             } else {
-                if (index) {
-                    _presentation.items.splice(index, 0, item)
-                } else if (index === 0) {
-                    _presentation.items.unshift(item)
-                } else {
-                    _presentation.items.push(item)
+                
+                    if (srcIndex !== null && targetIndex !== null) {
+                        array_move(_presentation.items, srcIndex, targetIndex)
+                    } else if (srcIndex !== null) {
+                        _presentation.items[srcIndex] = item
+                    } else if (targetIndex !== null) {
+                        _presentation.items.splice(targetIndex, 0, item)
+                    }  else {
+                        
+                        _presentation.items.push(item)
+                    }
                 }
-            }
+            
               
                 await localforage.setItem('presentation', _presentation)
                 dispatch({
@@ -345,21 +312,12 @@ export const GlobalProvider = (props) => {
 
         let _presentation = await localforage.getItem('presentation');
 
-       
             if (_presentation) {
 
-                if (_presentation.items.length > 0 && state.selectedItem && state.selectedItem.id !== 'placeholder') {
+                if (_presentation.items.length > 0 && state.selectedItem) {
                     let selectedIndex = _presentation.items.findIndex(el => el.id === state.selectedItem.id);  
-                    if (component.type === "columns") {
-                        component.children[0].children.push(state.selectedItem)
-                    }
-                    _presentation.items.splice(selectedIndex, 0, component)
-                    _presentation.items = [
-                        ..._presentation.items.filter(item => item.id !== state.selectedItem.id)
-                    ]
-                } else {
-                    _presentation.items.splice(0, 0, component)
-                }
+                    _presentation.items.splice(selectedIndex + 1, 0, component)
+                } 
                     await localforage.setItem('presentation', _presentation)
                     dispatch({
                         type: LOAD_PRESENTATION,
@@ -370,27 +328,41 @@ export const GlobalProvider = (props) => {
     }
 
 
-    const removeItem = async (item) => {
+    const removeItem = async (item, _presentation) => {
         
-        let _presentation = await localforage.getItem('presentation')
-       
+       // let _presentation = await localforage.getItem('presentation')
+        
         if (_presentation && _presentation.items.length > 0) {
-            _presentation.items = [
-                ..._presentation.items.filter(el => el.id !== item.id)
-            ]
+           
+            if (item.type === 'columns') {
+               
+                let index = _presentation.items.findIndex(el => el.id === item.id);
+                if (item.children[0].children.length > 0 && item.children[0].children.length > 0) {
+                    _presentation.items.splice(index, 0, ...item.children[0].children, ...item.children[1].children)
+                } else if (item.children[0].children.length > 0) {
+                    _presentation.items.splice(index, 0, ...item.children[0].children)
+                } else if (item.children[1].children.length > 0) {
+                    _presentation.items.splice(index, 0, ...item.children[1].children)
+                }
+            }
+
+            _presentation.items = _presentation.items.filter(el => el.id !== item.id)
             await localforage.setItem('presentation', _presentation)
+            dispatch({
+                type: REMOVE_ITEM,
+                payload: _presentation
+            })
         }
-        dispatch({
-            type: LOAD_PRESENTATION,
-            payload: _presentation
-        })
+        
     }
 
-    const openModal = (children) => {
+    const openModal = (children, x, y) => {
+        let _modalPosition = { x, y }
         dispatch({
             type: OPEN_MODAL,
             payload: {
                 isModalOpen: true,
+                modalPosition: _modalPosition,
                 modalChildren: children,
             }
         })
@@ -455,6 +427,15 @@ export const GlobalProvider = (props) => {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
                     let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
+
+                    imageItem.classlist.forEach((classKey, index) => {
+                        if (classKey.includes('img')) {
+                            imageItem.classlist.splice(index, 1);
+                        }
+                    })
+                    
+                    imageItem.classlist.push(`img_${imageItem.crops[imageCropIndex].name.toLowerCase()}`)  
+
                     imageItem.crops[imageCropIndex] = {
                         ...imageItem.crops[imageCropIndex],
                         blob: blob
@@ -534,7 +515,9 @@ export const GlobalProvider = (props) => {
            removeItem,
            modalChildren: state.modalChildren,
            selectedItem: state.selectedItem,
+           modalPosition: state.modalPosition,
            removeClass,
+           addClass,
            addComponent,
            toggleDragging,
            components: state.components,

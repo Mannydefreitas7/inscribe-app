@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'react-nestable/dist/styles/index.css';
 import reportWebVitals from './reportWebVitals';
-require('dotenv').config()
+require('dotenv').config();
+ 
+
 
 ReactDOM.render(
   <React.Fragment>

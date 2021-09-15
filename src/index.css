@@ -130,3 +130,14 @@
     font-display: swap;
 }
 
+.nestable-item.is-dragging:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #504d7c15 !important;
+    border: 1px dashed #37355593 !important;
+    border-radius: 4px;
+  }
