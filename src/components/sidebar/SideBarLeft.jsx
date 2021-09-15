@@ -15,7 +15,7 @@ export default function SideBarLeft() {
 
     return (
         <div className="fixed h-full z-10 bg-gray-50 border-r border-gray-100 overflow-x-hidden"
-            style={{ width: 350, paddingTop: 60 }}>
+            style={{ minWidth: 320, paddingTop: 60 }}>
             
             {
                 workspace === 'presentation' ?

@@ -14,15 +14,15 @@ function EditorView(props) {
     const { isLeftSidebarOpen, isRightSidebarOpen, isModalOpen } = useContext(GlobalContext);
 
     return (
-        <div>
+        <>
              <DndProvider backend={HTML5Backend}>
                 <div className="editor" >
                     <TopBar />
                     <div className="flex justify-between bg-gray-500 overflow-hidden">
                         {isLeftSidebarOpen ? <SideBarLeft /> : null}
-                        {isLeftSidebarOpen ? <div style={{ width: 350 }}></div> : null}
+                        {isLeftSidebarOpen ? <div style={{ minWidth: 320 }}></div> : null}
                         {props.children}
-                        {isRightSidebarOpen ? <div style={{ width: 350 }}></div> : null}
+                        {isRightSidebarOpen ? <div style={{ minWidth: 320 }}></div> : null}
                         {isRightSidebarOpen ? <SideBarRight /> : null}
 
                     </div>
@@ -32,7 +32,7 @@ function EditorView(props) {
             }
              </DndProvider>
               <PrototypeNav />
-        </div>
+        </>
     )
 }
 
