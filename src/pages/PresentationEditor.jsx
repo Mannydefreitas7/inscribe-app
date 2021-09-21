@@ -6,10 +6,11 @@ import DroppableZone from '../components/DroppableZone';
 import { useEffect } from 'react';
 import localforage from 'localforage';
 import './PresentationEditor.css';
+import useEventListener from '../utils/useEventListener';
 
 export default function PresentationEditor() {
 
-    const { presentation, loadPresentation, breakpoint, changeWorkspace } = useContext(GlobalContext);
+    const { presentation, loadPresentation, breakpoint, changeWorkspace, selectedItem } = useContext(GlobalContext);
  
     const setBreakPointWidth = () => {
         switch (breakpoint) {
@@ -25,17 +26,30 @@ export default function PresentationEditor() {
                 return "100%";
         }
     }
-
     useEffect(() => {
         changeWorkspace('presentation')
-        load()
+        load() 
+        // eslint-disable-next-line
     },[])
+
+    useEventListener('keydown', (event) => {
+        
+        switch (event.key) {
+            case 'Backspace': 
+                if (selectedItem) {
+                  //  removeItem(selectedItem, presentation)
+                }
+                break;
+            default:
+                break;
+        }
+    });
 
     const load = async () => {
         try {
             let presentation = await localforage.getItem('presentation');
             loadPresentation(presentation)
-            console.log(presentation)
+            
         } catch (error) {
             console.log(error)
         } 
@@ -45,19 +59,19 @@ export default function PresentationEditor() {
     return (
         <div 
         id="canvas"
-        className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'border-l-4 border-r-4 border-gray-200' : ''}`} style={{ maxWidth: setBreakPointWidth(), transition: 'max-width ease-in-out .2s' }}>
+        
+        className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'shadow-lg' : ''}`} style={{ maxWidth: setBreakPointWidth(), transition: 'max-width ease-in-out .2s' }}>
             <div className="container px-4 h-screen overflow-auto pb-24 mx-auto" style={{ paddingTop: 100, maxWidth: 1024 }}  >
                 <DroppableZone type="top"/>
            
                 {
                     presentation && presentation.items.map((item, index) => {  
-                        return <div key={index}>
-                                {
-                                    item && item.type === 'columns' ? 
-                                    <ColumnsEditor item={item} /> : 
-                                    <BlockEditor block={item} index={index} />
-                                }
-                            
+                        return <div key={item.id}>
+                            {
+                                item && item.type === 'columns' ? 
+                                <ColumnsEditor item={item} index={index} /> : 
+                                <BlockEditor block={item} index={index} />
+                            }
                         </div>
                     })
                 }

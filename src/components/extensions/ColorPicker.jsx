@@ -6,7 +6,7 @@ import _ from "lodash";
 import { GlobalContext } from '../../store/GlobalState';
 function ColorButton({ value, name, color }) {
 
-    const { selectedItem, addClass, closeModal } = useContext(GlobalContext)
+    const { selectedItem, addClass, closeModal, presentation } = useContext(GlobalContext)
 
     return (
         <button 
@@ -43,7 +43,7 @@ function ColorButton({ value, name, color }) {
 
                     classList = selectedItem.classlist;
                     
-                    addClass(selectedItem, classList);
+                    addClass(selectedItem, classList, presentation);
                     closeModal()
                 }
                 
@@ -73,11 +73,11 @@ function ColorPicker() {
 
    const groups = _.groupBy(newTokens, 'name')
     return (
-        <div>
+        <div style={{ minHeight: 400 }}>
            
             <HeaderTitle title="Color Palette" />
             
-            <div className="px-4 pt-4">
+            <div className="px-4 pt-4" >
                 <input className="px-2 w-full rounded py-1 border border-gray-300 appearance-none focus:outline-none focus:border-indigo-800" type="text" 
                  placeholder="Search Colors"onInput={e => setSearch(e.target.value)} />
             </div>

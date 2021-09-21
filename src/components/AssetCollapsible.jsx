@@ -10,6 +10,7 @@ export default function AssetCollapsible(props) {
 
     const [isOpen, setIsOpen] = useState(false);
     const { selectedItem  } = useContext(GlobalContext);
+    // eslint-disable-next-line
     const [{ opacity }, dragRef] = useDrag(() => ({
         type: 'ASSET',
         item: props.item,
@@ -17,7 +18,6 @@ export default function AssetCollapsible(props) {
             isDragging: monitor.isDragging()
         })
     }))
-
 
     return (
   

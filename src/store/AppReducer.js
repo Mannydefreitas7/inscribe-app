@@ -19,7 +19,11 @@ const reducer = (
          component: null,
          presentation: action.payload
       };
-
+      case actionTypes.ON_RESIZE:
+         return {
+            ...state,
+            width: action.payload
+         }
       case actionTypes.ADD_ASSET:
       return {
          ...state,
@@ -43,6 +47,11 @@ const reducer = (
          ...state,
          breakpoint: action.payload
       };
+      case actionTypes.TOGGLE_CONTEXT_MENU:
+         return {
+            ...state,
+            toggleContextMenu: action.payload
+         };
       case actionTypes.OPEN_DROPDOWN:
       return {
          ...state,

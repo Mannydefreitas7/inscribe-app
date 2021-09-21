@@ -6,6 +6,7 @@ import DragDropIcon from "./../assets/icons/drag.svg";
 
 import { v4 } from 'uuid';
 import { useHistory, useLocation } from "react-router-dom";
+import SecondaryButton from "./buttons/SecondaryButton";
 function DropZoneFile(props) {
 
   const { addAsset, toggleLeftSidebar } = useContext(GlobalContext);
@@ -34,12 +35,14 @@ function DropZoneFile(props) {
             extension: 'JPEG',
             classlist:[],
             description: 'image',
+            caption: null,
             type: 'image',
             size: `${file.size}KB`,
             text: file.name,
             name: file.name,
             raw: reader.result,
             blob: reader.result,
+            crop: null,
             crops: [
               {
                 blob: null,
@@ -74,12 +77,10 @@ function DropZoneFile(props) {
             ]
           }
           addAsset(asset)
-         // console.log(reader.result)
         }
       }
 
-
-      if (file.type === 'application/json') {
+      if (file.name.includes('MEPSA')) {
         file.text().then(article => {
           let file = JSON.parse(article);
             if (file && file.extension === 'MEPSA') {
@@ -99,6 +100,7 @@ function DropZoneFile(props) {
       }
       return null
     });
+    // eslint-disable-next-line
   }, [acceptedFiles])
 
   return (
@@ -121,14 +123,14 @@ function DropZoneFile(props) {
             <img src={DragDropIcon} width="32" className="my-4 opacity-30" alt="" />
         </div>
         <div className="mx-auto flex justify-center flex-wrap self-center">
-          <p
+          <div
             className={`${
               isDragActive ? "text-indigo-300" : "text-gray-300"
             } self-center text-gray-300  text-center`}
           >
-            Drag and drop file here. <br />
-            <button className="px-2 py-1 text-gray-400 rounded border mt-2 border-gray-100 mr-1 text-sm hover:bg-gray-100">Upload</button>
-          </p>
+            <span className="mb-2 block">Drag and drop file here.</span>
+            <SecondaryButton label="Upload" />
+          </div>
           
         </div>
       </div>

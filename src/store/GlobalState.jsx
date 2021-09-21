@@ -18,6 +18,8 @@ import {
     TOGGLE_DRAGGING,
     ON_DRAG,
     ON_DROP,
+    ON_RESIZE,
+    TOGGLE_CONTEXT_MENU,
     SELECT_ASSET,
     SELECT_COMPONENT,
     REMOVE_ITEM
@@ -60,12 +62,16 @@ const initialState = {
    handleOnDrop: null,
    component: null,
    asset: null,
+   width: '10%',
+   onResizeStop: null,
    selectAsset: null,
    modalPosition: {
        x: null,
        y: null
    },
-   selectComponent: null
+   selectComponent: null,
+   showContextMenu: null,
+   toggleContextMenu: false
 }
 
 
@@ -74,8 +80,6 @@ export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-  
-
     const changeWorkspace = (workspace) => {
         dispatch({
             type: CHANGE_WORKSPACE,
@@ -104,6 +108,20 @@ export const GlobalProvider = (props) => {
         dispatch({
             type: TOGGLE_LEFT_SIDEBAR,
             payload: !state.isLeftSidebarOpen
+        })
+    }
+
+    const showContextMenu = () => {
+        dispatch({
+            type: TOGGLE_CONTEXT_MENU,
+            payload: !state.toggleContextMenu
+        })
+    }
+
+    const onResizeStop = (width) => {
+        dispatch({
+            type: ON_RESIZE,
+            payload: width
         })
     }
 
@@ -169,8 +187,7 @@ export const GlobalProvider = (props) => {
     }
 
     const handleOnDrop = (event) => {
-        console.log(event)
-        console.log(state.selectedItem)
+
         dispatch({
             type: ON_DROP,
             payload: event
@@ -188,67 +205,40 @@ export const GlobalProvider = (props) => {
                 if (filteredTOCArticles.length > 0) {
                   return alert("Already exists")
                 }
-
-
-
                 _presentation.toc.push(data)
             }
+           
+            dispatch({
+                type: ADD_ASSET,
+                payload: _presentation
+            })
             await localforage.setItem('presentation', _presentation)
         }
-        dispatch({
-            type: ADD_ASSET,
-            payload: _presentation
-        })
     }
 
-    const removeClass = async (item, className) => {
-        let _presentation = await localforage.getItem('presentation');
-
+    const removeClass = async (item, className, _presentation) => {
         if (_presentation && _presentation.items.length > 0 ) {
-
-            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
             let newClassList = item.classlist.filter(c => c !== className);
             item.classlist = newClassList;
-            _presentation.items[itemIndex] = item;
             await localforage.setItem('presentation', _presentation);
             dispatch({
                 type: LOAD_PRESENTATION,
                 payload: _presentation
             })
-
         } 
-
     }
 
-    const addClass = async (item, newClassList) => {
-        let _presentation = await localforage.getItem('presentation');
-
+    const addClass = async (item, newClassList, _presentation) => {
         if (_presentation && _presentation.items.length > 0 ) {
-
-            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
             item.classlist = newClassList;
-            _presentation.items[itemIndex] = item;
             await localforage.setItem('presentation', _presentation);
             dispatch({
                 type: LOAD_PRESENTATION,
                 payload: _presentation
             })
-
         } 
-
     }
 
-    // Array.prototype.swapItems = function(a, b){
-    //     this[a] = this.splice(b, 1, this[a])[0];
-    //     return this;
-    // }
-
-    // const swapElements = (array, indexA, indexB) => {
-    //     var temp = array[indexA];
-    //     array[indexA] = array[indexB];
-    //     array[indexB] = temp;
-    //     return array;
-    //   };
 
       function array_move(arr, old_index, new_index) {
         if (new_index >= arr.length) {
@@ -308,16 +298,30 @@ export const GlobalProvider = (props) => {
         } 
     }
 
-    const addComponent = async (component) => {
-
-        let _presentation = await localforage.getItem('presentation');
+    const addComponent = async (component, _presentation) => {
 
             if (_presentation) {
 
                 if (_presentation.items.length > 0 && state.selectedItem) {
-                    let selectedIndex = _presentation.items.findIndex(el => el.id === state.selectedItem.id);  
-                    _presentation.items.splice(selectedIndex + 1, 0, component)
-                } 
+                    let selectedIndex = _presentation.items.findIndex(el => el.id === state.selectedItem.id); 
+                    switch (component.type) {
+                        case "columns":
+                            component.children[0].children.push(state.selectedItem)
+                            _presentation.items[selectedIndex] = component
+                            break;
+                        case "imageBox":
+                            _presentation.items.splice(selectedIndex + 1, 0, component)
+                            break;
+                        case "textbox":
+                            _presentation.items.splice(selectedIndex + 1, 0, component)
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                } else {
+                    _presentation.items.unshift(component)
+                }
                     await localforage.setItem('presentation', _presentation)
                     dispatch({
                         type: LOAD_PRESENTATION,
@@ -329,9 +333,7 @@ export const GlobalProvider = (props) => {
 
 
     const removeItem = async (item, _presentation) => {
-        
-       // let _presentation = await localforage.getItem('presentation')
-        
+
         if (_presentation && _presentation.items.length > 0) {
            
             if (item.type === 'columns') {
@@ -379,8 +381,9 @@ export const GlobalProvider = (props) => {
     }
 
 
-    const setImageCrop = async (item, crop, cropId) => {
-        let _presentation = await localforage.getItem('presentation');
+    const setImageCrop = async (item, crop, cropId, _presentation) => {
+      
+       // let _presentation = await localforage.getItem('presentation');
         if (_presentation && _presentation.items.length > 0) {
 
             let imageItems = _presentation.items.filter(_item => _item.id === item.id);
@@ -404,18 +407,13 @@ export const GlobalProvider = (props) => {
                         type: LOAD_PRESENTATION,
                         payload: _presentation
                     })
-
-                    dispatch({
-                        type: SELECT_ITEM,
-                        payload: imageItem
-                    })
                 }
             }
             
         }
     }
 
-    const setImageBlob = async (item, blob, cropId) => {
+    const setImageBlob = async (item, blob, cropId, cropName) => {
         let _presentation = await localforage.getItem('presentation');
     
         if (_presentation && _presentation.items.length > 0) {
@@ -427,7 +425,7 @@ export const GlobalProvider = (props) => {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
                     let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
-
+                    imageItem.crop = cropName;
                     imageItem.classlist.forEach((classKey, index) => {
                         if (classKey.includes('img')) {
                             imageItem.classlist.splice(index, 1);
@@ -469,7 +467,6 @@ export const GlobalProvider = (props) => {
     }
 
     const selectComponent = (component) => {
-        console.log(component)
         if (component) {
             dispatch({
                 type: SELECT_COMPONENT,
@@ -479,7 +476,7 @@ export const GlobalProvider = (props) => {
     }
 
     const selectAsset = (asset) => {
-        console.log(asset)
+       
         if (asset) {
             dispatch({
                 type: SELECT_ASSET,
@@ -510,6 +507,8 @@ export const GlobalProvider = (props) => {
            setImageBlob,
            addToPresentation,
            isModalOpen: state.isModalOpen,
+           showContextMenu,
+           toggleContextMenu: state.toggleContextMenu,
            selectItem,
            closeModal,
            removeItem,
@@ -524,12 +523,14 @@ export const GlobalProvider = (props) => {
            isDragging: state.isDragging,
            handleOnDrop,
            handleOnDrag,
+           onResizeStop,
            dragEvent: state.dragEvent,
            dropEvent: state.dropEvent,
            selectComponent,
            selectAsset,
            component: state.component,
-           asset: state.asset
+           asset: state.asset,
+           width: state.width
         }}>
             {props.children}
         </GlobalContext.Provider>

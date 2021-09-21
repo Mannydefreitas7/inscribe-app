@@ -1,6 +1,7 @@
 import React from 'react'
 import DropZoneFile from '../components/DropZoneFile'
-import TemplatesBar from '../components/sidebar/TemplatesBar';
+import TemplatesBar from '../components/sidebar/TemplatesBar'
+
 function Home() {
     return (
         <div className="flex flex-row">

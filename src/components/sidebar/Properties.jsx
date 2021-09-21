@@ -1,15 +1,23 @@
 import React from 'react'
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
 import Collaspible from '../Collaspible';
 import ColorPicker from './../extensions/ColorPicker';
 import ColorPickerButton from './../buttons/ColorPickerButton';
 import PropertyHeading from './../extensions/PropertyHeading';
 import { GlobalContext } from './../../store/GlobalState';
+import CropIcon from './../../assets/icons/crop.svg';
+import TextArea from '../inputs/TextArea';
+import ImageCropper from '../modal/ImageCropper';
+import SecondaryButton from '../buttons/SecondaryButton';
+import { NavLink } from 'react-router-dom';
+import localforage from 'localforage';
+import ColumnsResize from './ColumnsResize';
+
 
 export default function Properties() {
 
-    const { component, openModal } = useContext(GlobalContext)
-
+    const { component, openModal, selectedItem, presentation, loadPresentation } = useContext(GlobalContext)
+    const captionRef = useRef(null)
     const textProperties = {
         title: 'Text',
         properties: [
@@ -21,15 +29,31 @@ export default function Properties() {
             },
             {
                 name: 'Style',
-                children: <button>Bold</button>
+                children: <SecondaryButton label="Bold" />
             },
             {
                 name: 'Size',
-                children: <button>Small</button>
+                children: <SecondaryButton label="Small" />
+            }
+        ]
+    }
+
+    const prototypeProperties = {
+        title: 'Prototype',
+        properties: [
+            {
+                name: 'Navigate',
+                children: <NavLink to="/home" className="inline-flex items-center border-2 rounded-sm border-gray-100 hover:bg-gray-100 text-sm text-gray-500 px-2 py-1">Dashboard</NavLink>
             },
             {
-                name: 'Letter Spacing',
-                children: <button>Small</button>
+                name: 'Data',
+                children: <SecondaryButton label="Reset All" onClick={() => {
+                    localforage.clear((err) => {
+                        if (!err) {
+                            loadPresentation()
+                        }
+                    })
+                }} />
             }
         ]
     }
@@ -39,22 +63,19 @@ export default function Properties() {
         properties: [
             {
                 name: 'Color',
-                children: <button 
-                onClick={(e) => {
-                    openModal(<ColorPicker />, e.clientX, e.clientY)
-                }}>Test</button>
+                children: <SecondaryButton label="Black" />
             },
             {
                 name: 'Width',
-                children: <button>Bold</button>
+                children: <SecondaryButton label="Small" />
             },
             {
                 name: 'Style',
-                children: <button>Small</button>
+                children: <SecondaryButton label="Small" />
             },
             {
                 name: 'Sides',
-                children: <button>Small</button>
+                children: <SecondaryButton label="Start" />
             }
         ]
     }
@@ -63,10 +84,38 @@ export default function Properties() {
         title: 'Columns',
         properties: [
             {
-                children: <button>test</button>
+                children: <ColumnsResize />
             }
         ]
     }
+
+    const imageProperties = {
+        title: 'Image',
+        properties: [
+            {
+                name: 'Crop',
+                children:
+                <SecondaryButton 
+                    label={selectedItem && selectedItem.crop ? selectedItem.crop : 'Select'}
+                    icon={CropIcon}
+                    onClick={() => openModal(<ImageCropper selectedItem={selectedItem} />, 0, "0%")}
+                />
+            },
+            {
+                children: <TextArea
+                    innerRef={captionRef}
+                    label={'Caption'}
+                    defaultValue={selectedItem ? selectedItem.caption : ''}
+                    onChange={(event) => {
+                        selectedItem.caption = captionRef.current.value;
+                        loadPresentation(presentation)
+                    }}
+                    placeholder="Enter image caption..."
+                />
+            }
+        ]
+    }
+
 
     return (
         <Collaspible title="Properties" >
@@ -74,12 +123,17 @@ export default function Properties() {
             <PropertyHeading title={textProperties.title} properties={textProperties.properties} />
 
             <PropertyHeading title={borderProperties.title} properties={borderProperties.properties} />
-
+            <div></div>
             {
                 
                 component && component.type === 'columns' ?
                 <PropertyHeading title={columnsProperties.title} properties={columnsProperties.properties} /> : null
             }
+            {
+                selectedItem && selectedItem.type === 'image' ?
+                <PropertyHeading title={imageProperties.title} properties={imageProperties.properties} /> : null
+            }
+            <PropertyHeading title={prototypeProperties.title} properties={prototypeProperties.properties} />
 
         </Collaspible>
     )

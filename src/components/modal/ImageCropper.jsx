@@ -6,11 +6,14 @@ import { useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
 import CloseIcon from './../../assets/icons/close.svg';
 import HeaderTitle from './HeaderTitle';
+import Togglebuttons from '../buttons/Togglebuttons';
+import PrimaryButton from '../buttons/PrimaryButton';
+import SecondaryButton from '../buttons/SecondaryButton';
 
 
-export default function ImageCropper() {
+export default function ImageCropper({selectedItem}) {
 
-    const { selectedItem, setImageCrop, closeModal, setImageBlob } = useContext(GlobalContext);
+    const { setImageCrop, closeModal, setImageBlob, presentation } = useContext(GlobalContext);
     const [cropIndex, setCropIndex] = useState(0);
     const [currentCrop, setCurrentCrop] = useState({
         y: selectedItem.crops[cropIndex].y,
@@ -28,7 +31,7 @@ export default function ImageCropper() {
             width: selectedItem.crops[cropIndex].width,
             height: selectedItem.crops[cropIndex].height,
         })
-        
+        // eslint-disable-next-line
     }, [cropIndex])
 
     return (
@@ -36,7 +39,7 @@ export default function ImageCropper() {
         <HeaderTitle title="Image Crop">
         <button
             onClick={() => closeModal()}
-            className="p-2 hover:bg-gray-900 rounded">
+            className="p-2 hover:bg-gray-100 rounded">
             <ReactSVG src={CloseIcon} />
         </button>
         </HeaderTitle>
@@ -50,8 +53,7 @@ export default function ImageCropper() {
                         src={selectedItem.raw}
                         crop={currentCrop}
                         onComplete={(crop, percent) => {
-                            console.log(crop)
-                            setImageCrop(selectedItem, crop, currentCrop.id)
+                            setImageCrop(selectedItem, crop, selectedItem.crops[cropIndex].id, presentation)
                         }}
                         onChange={newCrop => {
                             setCurrentCrop({
@@ -64,12 +66,14 @@ export default function ImageCropper() {
 
                         }} /> : null
             }
-            <div className="py-2 flex justify-between" style={{ minWidth: 900, maxWidth: '100%' }}>
+            <div className="py-2 flex justify-between items-center" style={{ minWidth: 900, maxWidth: '100%' }}>
                 <div className="flex">
-                    {
-                        selectedItem && selectedItem.crops.map((_crop, i) => {
-                            return <button
-                                onClick={() => {
+                    <Togglebuttons 
+                    items={selectedItem.crops.map((_crop, i) => {
+                        return {
+                            id: _crop.id,
+                            name: _crop.name,
+                                onClick: () => {
                                     setCropIndex(i)
                                     setCurrentCrop({
                                         ...selectedItem.crops[i],
@@ -77,24 +81,32 @@ export default function ImageCropper() {
                                         x: selectedItem.crops[i].x,
                                         width: selectedItem.crops[i].width,
                                         height: selectedItem.crops[i].height,
-                                    })
-                                }}
-                                key={i}
-                                className={`px-2 py-1 rounded-sm ${cropIndex === i ? 'bg-gray-700 text-gray-50' : 'text-gray-400 bg-gray-50'} border-2 border-gray-100 mr-1`}>{_crop.name}</button>
-                        })
-                    }
+                                })
+                            }
+                        }
+                    })} 
+                    selection={selectedItem.crops[cropIndex]} 
+                    />
                 </div>
                 <div className="flex">
-                    <button className="px-4 py-2 text-gray-500 bg-gray-50 hover:bg-gray-100 rounded border border-gray-100 mr-1" onClick={() => closeModal()}>Cancel</button>
-                    <button
-                        onClick={() => {
-                            getCroppedImg(elementRef.current.imageRef, selectedItem.crops[cropIndex])
-                                .then(blob => {
-                                    setImageBlob(selectedItem, blob, selectedItem.crops[cropIndex].id)
-                                })
-                                .then(() => closeModal())
-                        }}
-                        className="px-4 py-2 bg-indigo-700 text-gray-100 font-medium rounded">Select Crop</button>
+                    <SecondaryButton
+                        label="Cancel"
+                        onClick={() => closeModal()}
+                    />
+                    <PrimaryButton
+                    label="Select Crop"
+                    bgColor="indigo"
+                    onClick={() => {
+                        getCroppedImg(elementRef.current.imageRef, selectedItem.crops[cropIndex])
+                            .then(blob => {
+                                
+                                setImageBlob(selectedItem, blob, selectedItem.crops[cropIndex].id, selectedItem.crops[cropIndex].name)
+                               
+                            })
+                            .then(() => closeModal())
+                    }}
+                    />
+
                 </div>
             </div>
         </div>

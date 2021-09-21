@@ -1,13 +1,96 @@
 
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../assets/fonts/NotoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../assets/fonts/NotoSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../assets/fonts/NotoSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./../assets/fonts/NotoSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+#canvas * {
+  font-family: 'Noto Sans' !important;
+}
+
 .columns {
     display: flex;
-    flex-wrap: wrap;
   }
   
-  .oneHalf {
+  .col-oneHalf {
     width: 49.5%;
   }
-  .oneHalf:first-child {
+  .col-oneHalf:first-child {
+    margin-right: 1%;
+  }
+
+  .col-sevenEight {
+    width: 87%;
+  }
+  .col-sevenEight:first-child {
+    margin-right: 1%;
+  }
+
+  .col-sixEight {
+    width: 74.5%;
+  }
+  .col-sixEight:first-child {
+    margin-right: 1%;
+  }
+
+  .col-fiveEight {
+    width: 62.5%;
+  }
+  .col-fiveEight:first-child {
+    margin-right: 1%;
+  }
+
+  .col-oneHalf {
+    width: 49.5%;
+  }
+  .col-oneHalf:first-child {
+    margin-right: 1%;
+  }
+
+  .col-threeEight {
+    width: 37.5%;
+  }
+  .col-threeEight:first-child {
+    margin-right: 1%;
+  }
+
+  .col-threeEight {
+    width: 24.5%;
+  }
+  .col-threeEight:first-child {
+    margin-right: 1%;
+  }
+
+  .col-twoEight {
+    width: 12%;
+  }
+  .col-threeEight:first-child {
     margin-right: 1%;
   }
   

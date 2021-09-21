@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
-import AssetPicker from './../extensions/AssetPicker';
 import Components  from './../extensions/Components';
 import HeaderTitle from './HeaderTitle';
 import CloseIcon from './../../assets/icons/close.svg';
@@ -16,15 +15,15 @@ export default function AddView() {
 
     return (
         <div style={{ maxWidth: 400 }}>
-            <HeaderTitle title="Add">
+            <HeaderTitle title="Components">
                 <button
                     onClick={() => closeModal()}
-                    className="p-2 hover:bg-gray-900 rounded">
+                    className="p-2 hover:bg-gray-100 rounded">
                     <ReactSVG src={CloseIcon} />
                 </button>
             </HeaderTitle>
-            <div className="overflow-scroll" style={{ maxHeight: 500, paddingBottom: 0 }}>
-                <AssetPicker />
+            <div className="overflow-scroll p-2" style={{ maxHeight: 500, minWidth: 400, paddingBottom: 0 }}>
+                {/* <AssetPicker /> */}
                 <Components />
                 </div>
         </div>

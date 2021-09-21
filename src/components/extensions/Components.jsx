@@ -1,22 +1,47 @@
 import React from 'react'
 import { useContext } from 'react';
 import { GlobalContext } from './../../store/GlobalState';
-import Collaspible from './../Collaspible';
 import Component from './Component';
 import { v4 } from 'uuid';
 
 export default function Components() {
 
-    const { addComponent, closeModal } = useContext(GlobalContext);
+    const { addComponent, closeModal, presentation } = useContext(GlobalContext);
 
     const components = [
+        {
+            id: v4(),
+            classlist: [],
+            data: "./../images/textbox.jpg",
+            date: new Date().toDateString(),
+            text: null,
+            description: "Text Box",
+            type: 'textbox'
+        },
+        {
+            id: v4(),
+            classlist: [],
+            data: "./../images/imagebox.jpg",
+            date: new Date().toDateString(),
+            text: null,
+            description: "Image",
+            type: 'imageBox',
+            blob: null,
+            height: null,
+            width: null,
+            extension: 'JPEG',
+            raw: null,
+            name: null,
+            size: null,
+            crops: []
+        },
         {
             id: v4(),
             classlist: ["columns"],
             data: "./../images/columns.jpg",
             date: new Date().toDateString(),
             text: "Columns",
-            description: 'Container',
+            description: 'Columns',
             type: 'columns',
             children: [
                 {
@@ -24,8 +49,11 @@ export default function Components() {
                     index: 0,
                     text: "Column One",
                     description: "Half",
-                    classlist: ["oneHalf"],
+                    classlist: ["col-oneHalf"],
                     type: 'column',
+                    properties: {
+                        width: '49%'
+                    },
                     children: []
                 },
                 {
@@ -33,7 +61,7 @@ export default function Components() {
                     index: 1,
                     text: "Column Two",
                     description: "Half",
-                    classlist: ["oneHalf"],
+                    classlist: ["col-oneHalf"],
                     type: 'column',
                     children: []
                 }
@@ -82,7 +110,7 @@ export default function Components() {
     ]
 
     return (
-        <Collaspible title="Components">
+     //   <Collaspible title="Components">
             <div className="grid grid-cols-3 gap-1">
                 {
                     components && components.map(component => {
@@ -90,12 +118,12 @@ export default function Components() {
                         key={component.id}
                         component={component} 
                         onClick={() => {
-                            addComponent(component)
+                            addComponent(component, presentation)
                             closeModal()
                         }}/>
                     })
                 }
             </div>
-        </Collaspible>
+     //   </Collaspible> 
     )
 }

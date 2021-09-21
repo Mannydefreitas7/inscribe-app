@@ -3,8 +3,8 @@ import {
     NavLink
   } from "react-router-dom";
 import InsMenu from './../modal/InsMenu';
-import InscribeIcon from './../../assets/icons/inscribe.svg';
-import PageFlowIcon from './../../assets/icons/pageflow.svg';
+import MEPSPIcon from './../../assets/icons/mepsp.svg';
+import MEPSAIcon from './../../assets/icons/mepsa.svg';
 import { useHistory } from "react-router-dom";
 import { useContext } from 'react';
 import { GlobalContext } from '../../store/GlobalState';
@@ -17,7 +17,7 @@ function DashboardBar() {
   const items = [
     {
       id: 0, 
-      icon: <img className="mr-3" width="20" src={InscribeIcon} alt="" />,
+      icon: <img className="mr-3" width="20" src={MEPSAIcon} alt="" />,
       text: 'Article',
       action: () => { 
         closeDropdown()
@@ -28,7 +28,7 @@ function DashboardBar() {
     },
     {
       id: 1, 
-      icon: <img className="mr-3" width="20" src={PageFlowIcon} alt="" />,
+      icon: <img className="mr-3" width="20" src={MEPSPIcon} alt="" />,
       text: 'Presentation',
       action: () => { 
         closeDropdown()
@@ -45,12 +45,12 @@ function DashboardBar() {
               <div className="py-4 px-4 text-gray-500 hasDropdown cursor-pointer">New</div>
             </InsMenu>
               
-                <div class="choose_file">
-                  <button type="button" className="py-4 px-4 text-gray-500" >Choose Image</button>
+                <div className="choose_file">
+                  <button type="button" className="py-4 px-4 text-gray-500" >Open...</button>
                   <input name="img" type="file" style={{ display: 'none' }} />
-              </div>
+                </div>
               <NavLink to="/home" activeClassName="border-b-4 border-indigo-500 text-indigo-500" className="px-4 py-4 text-gray-500">Home</NavLink>
-              <NavLink to="/extensions" activeClassName="border-b-4 border-indigo-500  text-indigo-500" className="px-4 py-4 text-gray-500">Extensions</NavLink>
+              {/* <NavLink to="/extensions" activeClassName="border-b-4 border-indigo-500  text-indigo-500" className="px-4 py-4 text-gray-500">Extensions</NavLink> */}
 
           </div>
       {/* <UserInfo /> */}

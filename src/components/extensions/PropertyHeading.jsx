@@ -3,7 +3,7 @@ import React from 'react'
 function PropertyHeading({ title, properties }) {
     return (
         <>
-            <div className="text-gray-500 border-b-2 font-semibold border-gray-100 py-1">{title}</div>
+            <div className="text-gray-500 border-b-2 border-gray-100 py-1">{title}</div>
             {
                 properties && properties.map((property, index ) => {
                     return <div key={index} className="flex w-full justify-between py-2 items-center">

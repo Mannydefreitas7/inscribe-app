@@ -4,7 +4,6 @@ import { GlobalContext } from '../store/GlobalState';
 import AddView from './../components/modal/AddView';
 import { useDrop } from 'react-dnd'
 import PlusIcon from './../assets/icons/plus-white.svg';
-import { useEffect } from 'react';
 
 export default function PlaceholderEditor() {
     const { selectedItem, openModal, selectItem, addToPresentation } = useContext(GlobalContext);
@@ -20,6 +19,8 @@ export default function PlaceholderEditor() {
           canDrop: monitor.canDrop()
         })
       }))
+
+
 
     
     return (

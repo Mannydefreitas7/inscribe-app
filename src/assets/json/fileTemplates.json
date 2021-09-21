@@ -1,14 +1,8 @@
 [
     {
-        "id": "1",
-        "name": "Blank Article",
-        "path": "/editor",
-        "image": "article-template.jpg"
-    },
-    {
         "id": "2",
         "name": "Blank Presentation",
-        "path": "/editor",
-        "image": "presentation-template.jpg"
+        "path": "/presentation",
+        "image": "presentation-template.png"
     }
 ]

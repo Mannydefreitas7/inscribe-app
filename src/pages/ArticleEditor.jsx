@@ -9,6 +9,7 @@ function ArticleEditor() {
 
     useEffect(() => {
         changeWorkspace('article')
+        // eslint-disable-next-line
     }, [])
 
     return (

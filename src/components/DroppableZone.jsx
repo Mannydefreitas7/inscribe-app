@@ -4,33 +4,19 @@ import {  useDragLayer } from 'react-dnd';
 import { useContext } from 'react';
 import { GlobalContext } from '../store/GlobalState';
 import localforage from 'localforage';
-
+import { v4 } from 'uuid';
 
 export default function DroppableZone(props) {
 
-  const { presentation, loadPresentation } = useContext(GlobalContext)
+  const { loadPresentation } = useContext(GlobalContext)
   const isDragging = useDragLayer(
     monitor => monitor.isDragging()
   );
 
-//   function array_move(arr, old_index, new_index) {
-//     if (new_index >= arr.length) {
-//         var k = new_index - arr.length + 1;
-//         while (k--) {
-//             arr.push(undefined);
-//         }
-//     }
-//     arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-//     return arr; // for testing
-// };
-
-
 
   const handleOnDrop = async (item, type) => {
-
+    item.id = v4()
     let _presentation = await localforage.getItem('presentation');
-
-    console.log(presentation)
     if (_presentation && item) {
       
         if (type === 'ASSET') { 
@@ -44,8 +30,7 @@ export default function DroppableZone(props) {
         if (props.type === 'top') {
           
           if (item.extension && item.extension === 'MEPSA') {
-           
-            console.log(_presentation)
+
             _presentation.items = [
                 ...item.items,
                 ..._presentation.items
@@ -64,22 +49,8 @@ export default function DroppableZone(props) {
             ]
           loadPresentation(_presentation);
         }
-
-
-
-        // if (props.type === 'column' && props.parent) {
-        //     let columnsIndex = presentation.items.findIndex(el => el.id === props.parent.id);
-        //     let columns = props.parent;
-        //     let columnIndex = columns.children.findIndex(el => el.id === props.id);
-        //     columns.children[columnIndex].children.push(item);
-        //     return setTimeout(() => addToPresentation(columns, columnsIndex, columnIndex), 500)
-        // }
-
         }
-
-
-    }
-      
+    } 
   }
 
     const [{ isOver }, drop] = useDrop(() => ({

@@ -12,3 +12,6 @@
     display: inline-block;
     vertical-align: bottom;
 }
+* {
+    font-family: 'JW Knoll';
+}
