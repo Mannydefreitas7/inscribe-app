@@ -100,7 +100,7 @@ export default function ImageCropper({selectedItem}) {
                         getCroppedImg(elementRef.current.imageRef, selectedItem.crops[cropIndex])
                             .then(blob => {
                                 
-                                setImageBlob(selectedItem, blob, selectedItem.crops[cropIndex].id, selectedItem.crops[cropIndex].name)
+                                setImageBlob(selectedItem, blob, selectedItem.crops[cropIndex].id, selectedItem.crops[cropIndex].name, presentation)
                                
                             })
                             .then(() => closeModal())

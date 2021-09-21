@@ -7,9 +7,13 @@ export default function InsContextMenu(props) {
             <ContextMenuTrigger id={props.id}>
                 {props.children}
             </ContextMenuTrigger>
-            <ContextMenu id={props.id} className="py-1 bg-gray-50 shadow rounded-sm z-50" style={{ minWidth: 200 }}>
+            <ContextMenu 
+                
+                hideOnLeave={true}
+            id={props.id} className="py-1 bg-gray-50 shadow rounded-sm z-50" style={{ minWidth: 200 }}>
                 {props.buttons && props.buttons.map((button, index) => (
                 <MenuItem 
+                
                     key={index}
                     data={props.data}
                     className="flex items-center w-full justify-between py-2 px-4 border-gray-100 hover:bg-black hover:bg-opacity-5"

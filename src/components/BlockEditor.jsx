@@ -2,6 +2,7 @@ import React, { useContext, useRef } from 'react'
 import CloseIcon from './../assets/icons/close-white.svg';
 import { ReactSVG } from 'react-svg';
 import CropIcon from './../assets/icons/crop.svg';
+import AddIcon from './../assets/icons/plus.svg';
 import TrashIcon from './../assets/icons/trash.svg';
 import { GlobalContext } from '../store/GlobalState';
 import ImageCropper from './modal/ImageCropper';
@@ -10,6 +11,7 @@ import ContentEditable from 'react-contenteditable';
 import { v4 } from 'uuid'
 import DropZoneImage from './DropZoneImage';
 import InsContextMenu from './modal/ContextMenu';
+import AddView from './modal/AddView';
 
 
 export default function BlockEditor(props) {
@@ -28,12 +30,20 @@ export default function BlockEditor(props) {
 
     const buttons = [
         {
+            label: 'Add',
+            icon: AddIcon,
+            action: (event, data) => {
+                openModal(<AddView />, event.clientX, event.clientY)
+            }
+        },
+        {
             label: 'Delete',
             icon: TrashIcon,
             action: (event, data) => {
                 removeItem(data, presentation)
             }
-        }
+        },
+        
     ]
 
     const imageButtons = [
@@ -163,7 +173,7 @@ export default function BlockEditor(props) {
 
  
                 <div 
-                className={`relative w-full ${!collected.isDragging && selectedItem && selectedItem.id === props.block.id ? 'border-2 mb-3 border-dashed border-indigo-300' : 'border-0 mb-0 p-0'} hover:bg-gray-500 hover:bg-opacity-5 `} >
+                className={`relative w-full ${!collected.isDragging && selectedItem && selectedItem.id === props.block.id ? 'border-2 mb-3 border-dashed border-indigo-300' : 'border-0 mb-0 p-0'} `} >
                   
                         { blockType() }
                     

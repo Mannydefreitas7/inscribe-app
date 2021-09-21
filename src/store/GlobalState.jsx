@@ -383,13 +383,10 @@ export const GlobalProvider = (props) => {
 
     const setImageCrop = async (item, crop, cropId, _presentation) => {
       
-       // let _presentation = await localforage.getItem('presentation');
-        if (_presentation && _presentation.items.length > 0) {
-
-            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
-            if (imageItems.length > 0) {
-                let imageItem = imageItems[0];
+        if (_presentation) {
+                let imageItem = item;
                 let crops = imageItem.crops.filter(c => c.id === cropId);
+                console.log(crops)
                 if (crops.length > 0) {
                     let imageCrop = {
                         ...crops[0],
@@ -397,33 +394,30 @@ export const GlobalProvider = (props) => {
                         y: crop.y
                     }
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
-
                     imageItem.crops[imageCropIndex] = imageCrop;
-                    _presentation.items[itemIndex] = imageItem;
-                    await localforage.setItem('presentation', _presentation);
 
-                    dispatch({
-                        type: LOAD_PRESENTATION,
-                        payload: _presentation
-                    })
                 }
-            }
+
+            await localforage.setItem('presentation', _presentation);
+
+            dispatch({
+                type: LOAD_PRESENTATION,
+                payload: _presentation
+            })
             
         }
     }
 
-    const setImageBlob = async (item, blob, cropId, cropName) => {
-        let _presentation = await localforage.getItem('presentation');
+    const setImageBlob = async (item, blob, cropId, cropName, _presentation) => {
+       // let _presentation = await localforage.getItem('presentation');
     
-        if (_presentation && _presentation.items.length > 0) {
-            let imageItems = _presentation.items.filter(_item => _item.id === item.id);
-            if (imageItems.length > 0) {
-                let imageItem = imageItems[0];
+        if (_presentation) {
+
+                let imageItem = item;
                 let crops = imageItem.crops.filter(c => c.id === cropId);
                 if (crops.length > 0) {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+                   // let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
                     imageItem.crop = cropName;
                     imageItem.classlist.forEach((classKey, index) => {
@@ -438,20 +432,15 @@ export const GlobalProvider = (props) => {
                         ...imageItem.crops[imageCropIndex],
                         blob: blob
                     }
-                    _presentation.items[itemIndex] = imageItem;
+                  //  _presentation.items[itemIndex] = imageItem;
                     await localforage.setItem('presentation', _presentation);
 
                     dispatch({
                         type: LOAD_PRESENTATION,
                         payload: _presentation
                     })
-
-                    dispatch({
-                        type: SELECT_ITEM,
-                        payload: imageItem
-                    })
+ 
                 }
-            }
             
         }
     }

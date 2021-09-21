@@ -106,21 +106,7 @@ export default function ColumnItemEditor(props) {
                     {
                         selectedItem && selectedItem.id === props.block.id ?
                             <div className="absolute -right-4 top-1/2 p-1 transform -translate-y-1/2  rounded inline-flex flex-col items-center justify-center z-20">
-                                 {
-                                    props.block.type === 'image' ?
-                                        <button
-                                            onClick={(e) => {
-                                                openModal(<ImageCropper />, 0, "0%")
-                                            }}
-                                            className="p-2 bg-white shadow-sm hover:bg-gray-50 rounded">
-                                            <ReactSVG src={CropIcon}
-                                                beforeInjection={(svg) => {
-                                                    svg.setAttribute('style', 'width: 16px; height: 16px;')
-                                                }}
-                                            />
-                                        </button> :
-                                        null
-                                }
+                                 
 
                             </div> : null
                     }

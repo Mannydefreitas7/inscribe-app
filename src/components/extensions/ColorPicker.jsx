@@ -8,46 +8,47 @@ function ColorButton({ value, name, color }) {
 
     const { selectedItem, addClass, closeModal, presentation } = useContext(GlobalContext)
 
+    const selectColor = () => {
+        if (selectedItem && selectedItem.classlist) {
+                    
+            let hasColor = selectedItem && selectedItem.classlist && selectedItem.classlist.join(' ').includes('color');
+
+            let colorClassIndex = selectedItem && selectedItem.classlist && selectedItem.classlist.findIndex(item => item.includes('color'));
+            
+            var classList;
+
+            if (color) {
+            // It means @color is part of
+            // the extended palette.
+            // So in that case, we add the 
+            // shade/tint value.
+                if (hasColor) {
+                    // check if current item
+                    // already has a color value.
+                    selectedItem.classlist[colorClassIndex] = `color-${color}-${name}`
+                } else {
+                    selectedItem.classlist.push(`color-${color}-${name}`)
+                }
+            } else {
+                if (hasColor) {
+                    // check if current item
+                    // already has a color value.
+                    selectedItem.classlist[colorClassIndex] = `color-${name.toLowerCase()}`
+                } else {
+                    selectedItem.classlist.push(`color-${name.toLowerCase()}`)
+                }
+            }
+
+            classList = selectedItem.classlist;
+            
+            addClass(selectedItem, classList, presentation);
+            closeModal()
+        }
+    }
+
     return (
         <button 
-            onClick={() => {
-                if (selectedItem && selectedItem.classlist) {
-                    
-                    let hasColor = selectedItem && selectedItem.classlist && selectedItem.classlist.join(' ').includes('color');
-
-                    let colorClassIndex = selectedItem && selectedItem.classlist && selectedItem.classlist.findIndex(item => item.includes('color'));
-                    
-                    var classList;
-
-                    if (color) {
-                    // It means @color is part of
-                    // the extended palette.
-                    // So in that case, we add the 
-                    // shade/tint value.
-                        if (hasColor) {
-                            // check if current item
-                            // already has a color value.
-                            selectedItem.classlist[colorClassIndex] = `color-${color}-${name}`
-                        } else {
-                            selectedItem.classlist.push(`color-${color}-${name}`)
-                        }
-                    } else {
-                        if (hasColor) {
-                            // check if current item
-                            // already has a color value.
-                            selectedItem.classlist[colorClassIndex] = `color-${name.toLowerCase()}`
-                        } else {
-                            selectedItem.classlist.push(`color-${name.toLowerCase()}`)
-                        }
-                    }
-
-                    classList = selectedItem.classlist;
-                    
-                    addClass(selectedItem, classList, presentation);
-                    closeModal()
-                }
-                
-            }}
+            onClick={selectColor}
             className="px-3 py-1 text-left text-sm border-2 border-gray-200 font-semibold"
             style={{ backgroundColor: value, color: name === 'Black' || Number(name) > 400 ? 'white' : 'black' }}
         >{name}</button>

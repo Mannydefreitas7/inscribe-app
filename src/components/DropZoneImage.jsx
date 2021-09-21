@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ImageIcon from "./../assets/icons/image.svg";
 import { useDrop } from 'react-dnd';
 import { GlobalContext } from '../store/GlobalState';
+import { v4 } from 'uuid'
 
 export default function DropZoneImage(props) {
 
@@ -11,6 +12,7 @@ export default function DropZoneImage(props) {
         accept: ['ASSET'],
         drop: (item, monitor) => {
             let index = presentation.items.findIndex(el => el.id === props.block.id);
+              item.id = v4()
               presentation.items[index] = item
               loadPresentation(presentation)
         },

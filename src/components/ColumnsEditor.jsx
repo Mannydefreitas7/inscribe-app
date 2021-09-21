@@ -26,7 +26,10 @@ export default function ColumnsEditor(props) {
     }))
 
     useEffect(() => {
-        onResizeStop(props.item.children[0].properties.width)
+        if (component && component.id === props.item.id) {
+            onResizeStop(props.item.children[0].properties.width)
+        }
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
@@ -115,7 +118,7 @@ export default function ColumnsEditor(props) {
                         bounds={'parent'}
                         onResizeStop={onResize}
                         size={{
-                            width: width,
+                            width: props.item.children[0].properties.width,
                             height: 'auto',
                         }}
                         minHeight={columnOneHasItems ? 'auto' : 200}
@@ -127,7 +130,7 @@ export default function ColumnsEditor(props) {
                         <div ref={dropColumnOneRef} className="h-full">
                             {
                                 columnOneHasItems && props.item.children[0].children.map((child, i) => {
-                                    return <ColumnItemEditor key={i} block={child} index={i} />
+                                    return <ColumnItemEditor key={child.id} block={child} index={i} />
                                 })
                             }
                         </div>
@@ -139,7 +142,7 @@ export default function ColumnsEditor(props) {
                         className={`border-2 border-gray-100 border-dashed relative ${component && props.item.id === component.id ? 'border-2 border-indigo-300' : ''} ${colTwoCollected.isOver ? 'bg-indigo-100 bg-opacity-20 border-indigo-100' : ''} w-full`} ref={dropColumnTwoRef} style={{ minHeight: columnTwoHasItems ? 'auto' : 200 }}>
                         {
                             columnTwoHasItems && props.item.children[1].children.map((child, i) => {
-                                return <ColumnItemEditor key={i} block={child} index={i} />
+                                return <ColumnItemEditor key={child.id} block={child} index={i} />
                             })
                         }
                         
