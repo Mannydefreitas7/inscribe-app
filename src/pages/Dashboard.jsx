@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import {
-    BrowserRouter as Router,
+    HashRouter,
     Switch,
     Route,
     Redirect
@@ -26,11 +26,11 @@ function Dashboard() {
 
 
     return (
-    <Router>
+    <HashRouter>
       <GlobalProvider>
       <div>
         <Switch>
-        <Route path="/" exact>
+        <Route path="/" exact={true}>
             <Redirect to="/home" />
           </Route>
         <Route path="/home">
@@ -59,7 +59,7 @@ function Dashboard() {
         </Switch>
       </div>
       </GlobalProvider>
-    </Router>
+    </HashRouter>
     )
 }
 

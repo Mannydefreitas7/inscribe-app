@@ -12,7 +12,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: [],
-            data: "./../images/textbox.jpg",
+            data: "./assets/images/textbox.jpg",
             date: new Date().toDateString(),
             text: null,
             description: "Text Box",
@@ -21,7 +21,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: [],
-            data: "./../images/imagebox.jpg",
+            data: "./assets/images/imagebox.jpg",
             date: new Date().toDateString(),
             text: null,
             description: "Image",
@@ -38,7 +38,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: ["columns"],
-            data: "./../images/columns.jpg",
+            data: "./assets/images/columns.jpg",
             date: new Date().toDateString(),
             text: "Columns",
             description: 'Columns',
@@ -70,7 +70,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: ["backgroundContainer"],
-            data: "./../images/background.jpg",
+            data: "./assets/images/background.jpg",
             date: new Date().toDateString(),
             text: "Background",
             description: 'Background',
@@ -99,7 +99,7 @@ export default function Components() {
         {
             id: v4(),
             classlist: ["boxContainer"],
-            data: "./../images/box.jpg",
+            data: "./assets/images/box.jpg",
             date: new Date().toDateString(),
             text: "Box",
             description: 'Box',

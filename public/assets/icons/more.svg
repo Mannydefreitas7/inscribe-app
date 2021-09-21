@@ -1,0 +1,12 @@
+<svg id="three-dots-horizontal" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1731" data-name="Rectangle 1731" width="16" height="16" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_5257" data-name="Group 5257" clip-path="url(#clip-path)">
+    <path id="Path_8732" data-name="Path 8732" d="M11,13a2,2,0,1,1,2-2,2,2,0,0,1-2,2m0-3.333A1.333,1.333,0,1,0,12.333,11,1.333,1.333,0,0,0,11,9.667" transform="translate(-3 -3)" fill="#707070"/>
+    <path id="Path_8733" data-name="Path 8733" d="M20,13a2,2,0,1,1,2-2,2,2,0,0,1-2,2m0-3.333A1.333,1.333,0,1,0,21.333,11,1.333,1.333,0,0,0,20,9.667" transform="translate(-6 -3)" fill="#707070"/>
+    <path id="Path_8734" data-name="Path 8734" d="M2,13a2,2,0,1,1,2-2,2,2,0,0,1-2,2M2,9.667A1.333,1.333,0,1,0,3.333,11,1.333,1.333,0,0,0,2,9.667" transform="translate(0 -3)" fill="#707070"/>
+  </g>
+</svg>

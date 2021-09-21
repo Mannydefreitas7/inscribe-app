@@ -1,0 +1,424 @@
+{
+    "id": "a34ae7f4-01de-4032-9cdb-3b911b98c726",
+    "name": "G21_01_07_Guidance_for_Peaceful_Relationships",
+    "size": "",
+    "title": "Guidance for Peaceful Relationships",
+    "extension": "MEPSA",
+    "date": "",
+    "type": "container",
+    "text": "Guidance for Peaceful Relationships",
+    "description": "MEPSA",
+    "index": 7,
+    "version": 1,
+    "items": [
+        {
+            "id": "8dbd905e-71f3-4569-a38f-06e359698b5b",
+            "index": 0,
+            "type": "text",
+            "text": "Guidance for Peaceful Relationships",
+            "description": "Title",
+            "classlist": ["title"],
+            "properties": {}
+        },
+        {
+            "id": "c1c6e82f-ad63-470a-927b-e03fff33b6b1",
+            "index": 2,
+            "text": "Our Creator tells us how we can enjoy peaceful rela...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "56c3139f-f2ff-4b34-909c-fc8644881e74",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "Our Creator tells us how we can enjoy peaceful relationships with others, whether at home, at work, or with friends. Consider some examples of his wise counsel that many people have successfully applied.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["opening", "paragraph", "color-gray-500"],
+            "properties": {}
+        },
+        {
+            "id": "86c36ebc-13a7-4892-8bc2-39cdaffac7ed",
+            "index": 3,
+            "type": "text",
+            "text": "Be Forgiving",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "5fcd1f6e-91df-434d-a824-8221cb1427da",
+            "index": 4,
+            "text": "“Continue . . . forgiving one another freely even if...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "2c6fa4db-b42c-4049-8822-43b6d94feed2",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "“Continue . . . forgiving one another freely even if anyone has a cause for complaint against another.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "87486c82-1c6b-4ef8-aebb-12880d616faa",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "COLOSSIANS 3:13..",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "48827dd8-9e79-4a63-a119-2f82ca920dd5",
+            "index": 5,
+            "text": "We all make mistakes. We might offend...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "c8e384f7-4af8-4929-b3fb-f0a508c8ddd5",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "We all make mistakes. We might offend others, or they might offend us. Whatever the case, we all need to forgive and to be forgiven. When we forgive, we stop feeling resentment toward the person who offended us. We do not “return evil for evil,” and we do not constantly remind the person of his failings or weaknesses. (",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "09d896ad-d29a-49af-911d-dbb8eb9bc008",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "Romans 12:17",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "9ca5af79-a6e6-4abf-9955-cc21b9e32757",
+                    "index": 2,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": ") But what if we have been deeply hurt and cannot stop thinking about what happened? Then we should respectfully talk to the person about the matter in private. Our goal should be to make peace, not to win the dispute.​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "568a6819-aa93-4af1-8871-4cf95785b794",
+                    "index": 3,
+                    "description": "link",
+                    "type": "link",
+                    "text": "Romans 12:18.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "8f30c647-4650-42d5-b1e6-f521dca6a12f",
+            "index": 6,
+            "type": "text",
+            "text": "Be Humble and Respectful",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "8bd8201a-22dd-40a6-89af-b2aa9103d7ec",
+            "index": 7,
+            "type": "container",
+            "text": "“With humility consider others...",
+            "items": [
+                {
+                    "id": "cee72034-a510-44a4-aaf7-489a61879502",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "“With humility consider others superior to you.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "76a6bb6d-3ac8-4b27-a254-ac86d7f0c183",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "PHILIPPIANS 2:3.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "353f13ca-f28b-4d97-8da2-ce03f21a87ca",
+            "index": 8,
+            "text": "When we are humble and respectful...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "65604742-5a66-4c2b-b1a2-828e21259678",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "When we are humble and respectful, people enjoy being with us. They know that we will be kind and considerate and that we will not  intentionally hurt their feelings. But if we view ourselves as superior to others or if we always insist on getting our way, we create strife and tension. People will avoid us, and we will have few friends, if any.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "37eaca11-2dd0-462f-a8af-2d3e1474a49a",
+            "index": 9,
+            "type": "text",
+            "text": "Be Impartial",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "717583ba-02ac-444a-b5f7-987febb976e5",
+            "index": 10,
+            "text": "“God is not partial, but in every nation...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "b3c11db6-2be6-4dac-b5e2-31aee0776e55",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "“God is not partial, but in every nation the man who fears him and does what is right is acceptable to him.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "09f2018e-306c-404b-8d43-26aca9ecb395",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "ACTS 10:34, 35.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "b7a0f08e-bead-4e0d-bd88-8c3122fcff4d",
+            "index": 11,
+            "text": "Our Creator does not favor people...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "d7479c36-2326-4a3c-8b1a-3dc3b656d430",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "Our Creator does not favor people because of their nationality, language, social standing, or skin color. “He made out of one man every nation of men.” (",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "823d723d-69e6-4c01-b9be-f55b83c41ad1",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "Acts 17:26",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "cec0b76c-5544-4791-8b1a-69dd8cedb26c",
+                    "index": 2,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": ") So in a sense, all humans are brothers and sisters. When we treat everyone with dignity and kindness, we make them happy, we ourselves are happier, and we please our Creator.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "dc90c13e-7bc2-4531-8a0e-329d046014af",
+            "index": 12,
+            "type": "text",
+            "text": "Be Mild-Tempered",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "3531fa3b-460a-4b34-aa83-72320636ba14",
+            "index": 13,
+            "text": "“Clothe yourselves with...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "9481b855-5d3b-41d4-98b3-299fdea0069e",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "“Clothe yourselves with . . . mildness.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "0c980125-c54c-4995-998e-c864abccd885",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "COLOSSIANS 3:12.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "d51aa7e3-ff50-493a-a6e6-a7c000df69fc",
+            "index": 14,
+            "text": "When we are mild-tempered, we put...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "aeb5d2e1-c653-4013-bf40-f198effa353c",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "When we are mild-tempered, we put others at ease. They feel free to talk to us and even to correct us because they know we will remain calm. And when someone is angry with us, our mild response may calm the person down. “A mild answer turns away rage, but a harsh word stirs up anger,” says ",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "13e5ca02-30c7-4d04-895a-a801962c0630",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "Proverbs 15:1.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "63cc28e9-fc47-4f53-96a8-3bd6e3e57b42",
+            "index": 15,
+            "type": "text",
+            "text": "Be Generous and Thankful",
+            "description": "Block",
+            "classlist": ["subheading-1"],
+            "properties": {}
+        },
+        {
+            "id": "6d56bea6-6f19-4ee2-91e6-dd57190f26bd",
+            "index": 16,
+            "text": "“There is more happiness in giving...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "ed29f573-41f3-494b-a552-7e713700d450",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "“There is more happiness in giving than there is in receiving.”​—",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "d92dba51-10d9-4955-9f7b-1344da3038fa",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "ACTS 20:35.",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["bold", "paragraph"],
+            "properties": {}
+        },
+        {
+            "id": "a3ae0617-22d7-40ca-bcb6-03b302bbfdf8",
+            "index": 17,
+            "text": "Many people today are greedy and...",
+            "type": "container",
+            "items": [
+                {
+                    "id": "3a68e615-289b-4112-8c4f-c36bd696f928",
+                    "index": 0,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": "Many people today are greedy and think only of themselves. But true happiness comes to those who are generous. (",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "af37a5a2-8656-41da-9dc8-75d092f631ff",
+                    "index": 1,
+                    "description": "link",
+                    "type": "link",
+                    "text": "Luke 6:38",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "f1ceeb99-3f68-438b-a32d-5853d5d6d1e5",
+                    "index": 2,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": ") Generous people are happy because they love people more than things. That same love moves them to be thankful and to show their appreciation when someone is generous toward them. (",
+                    "classlist": [],
+                    "properties": {}
+                },
+                {
+                    "id": "bea46d2d-605a-4181-bc63-8c9c24c021cc",
+                    "index": 3,
+                    "description": "link",
+                    "type": "link",
+                    "text": "Colossians 3:15",
+                    "classlist": [],
+                    "properties": {}
+                }, 
+                {
+                    "id": "0b7b3845-7800-4c6f-ae66-aa3a2959e9aa",
+                    "index": 4,
+                    "type": "text",
+                    "description": "fragment",
+                    "text": ") Ask yourself, ‘Whom do I like to be with​—the stingy and thankless or the generous and thankful?’ The point? Be the kind of person you want others to be.​",
+                    "classlist": [],
+                    "properties": {}
+                }
+            ],
+            "description": "Container",
+            "classlist": ["paragraph"],
+            "properties": {}
+        }
+    ]
+}

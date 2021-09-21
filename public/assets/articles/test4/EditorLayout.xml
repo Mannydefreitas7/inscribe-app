@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EditorLayout schema="1" compatibleSchema="1" mlSignature="5ec4bec3a16de0c15984f668d301e7b0fd922f1e">
+ <DecorationMap>
+  <Character name="Bold"/>
+  <TargetRef fragmentId="1191"/>
+  <TargetRef fragmentId="1196"/>
+  <TargetRef fragmentId="1197"/>
+  <TargetRef fragmentId="1200"/>
+  <TargetRef fragmentId="1211"/>
+  <TargetRef fragmentId="1212"/>
+  <TargetRef fragmentId="1213"/>
+  <TargetRef fragmentId="1221"/>
+  <TargetRef fragmentId="1244"/>
+  <TargetRef fragmentId="1245"/>
+  <TargetRef fragmentId="1246"/>
+  <TargetRef fragmentId="1247"/>
+  <TargetRef fragmentId="1257"/>
+  <TargetRef fragmentId="1258"/>
+  <TargetRef fragmentId="1259"/>
+  <TargetRef fragmentId="1278"/>
+  <TargetRef fragmentId="1279"/>
+  <TargetRef fragmentId="1280"/>
+  <TargetRef fragmentId="1286"/>
+  <TargetRef fragmentId="1290"/>
+  <TargetRef fragmentId="1291"/>
+  <TargetRef fragmentId="1292"/>
+  <TargetRef fragmentId="1308"/>
+  <TargetRef fragmentId="1316"/>
+  <TargetRef fragmentId="1317"/>
+  <TargetRef fragmentId="1320"/>
+  <TargetRef fragmentId="1321"/>
+  <TargetRef fragmentId="1324"/>
+  <TargetRef fragmentId="1327"/>
+  <TargetRef fragmentId="1328"/>
+  <TargetRef fragmentId="1337"/>
+  <TargetRef fragmentId="1338"/>
+  <TargetRef fragmentId="1341"/>
+  <TargetRef fragmentId="1342"/>
+  <TargetRef fragmentId="1343"/>
+  <TargetRef fragmentId="1350"/>
+  <TargetRef fragmentId="1351"/>
+  <TargetRef fragmentId="1352"/>
+  <TargetRef fragmentId="1359"/>
+  <TargetRef fragmentId="1360"/>
+  <TargetRef fragmentId="1361"/>
+  <TargetRef fragmentId="1362"/>
+ </DecorationMap>
+ <DecorationMap>
+  <Character name="Bold"/>
+  <Character name="Superscript"/>
+  <TargetRef fragmentId="1199"/>
+  <TargetRef fragmentId="1205"/>
+  <TargetRef fragmentId="1210"/>
+  <TargetRef fragmentId="1220"/>
+  <TargetRef fragmentId="1224"/>
+  <TargetRef fragmentId="1227"/>
+  <TargetRef fragmentId="1230"/>
+  <TargetRef fragmentId="1243"/>
+  <TargetRef fragmentId="1256"/>
+  <TargetRef fragmentId="1264"/>
+  <TargetRef fragmentId="1271"/>
+  <TargetRef fragmentId="1276"/>
+  <TargetRef fragmentId="1285"/>
+  <TargetRef fragmentId="1289"/>
+  <TargetRef fragmentId="1295"/>
+  <TargetRef fragmentId="1298"/>
+  <TargetRef fragmentId="1299"/>
+  <TargetRef fragmentId="1304"/>
+ </DecorationMap>
+ <DecorationMap>
+  <Character name="Italic"/>
+  <TargetRef fragmentId="1277"/>
+ </DecorationMap>
+</EditorLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResourceResolver schema="1" compatibleSchema="1" mlSignature="3f79d14b6b892306dac30f2ea75047dbf9516c42">
+ <Resource uuid="9D0C8E07-B398-4D13-9304-2333202559EA" category="Artifact" type="Image" metatagId="700">
+  <Hint text="image.cnt_01:label"/>
+ </Resource>
+ <Resource uuid="176F558B-8389-4724-B2C7-ED479597E558" category="Artifact" type="Image" metatagId="702">
+  <Hint text="image.cnt_02:label"/>
+ </Resource>
+ <Resource uuid="F2EE17BA-C61C-42AC-AE57-983A28BCB054" category="Artifact" type="Image" metatagId="705">
+  <Hint text="image.cnt_03:label"/>
+ </Resource>
+ <Resource uuid="4DF2F9A5-08C7-403C-8709-F0C87EC3923A" category="Artifact" type="Image" metatagId="950">
+  <Hint text="image.pnr:label"/>
+ </Resource>
+ <Resource uuid="A48A8C63-E90D-4DF6-8ADB-00A90EBB7196" category="Artifact" type="Image" metatagId="952">
+  <Hint text="image.pns:label"/>
+ </Resource>
+ <Resource uuid="8E7362CD-C460-4CF5-8305-0C02C62132FA" category="Artifact" type="Image" metatagId="954">
+  <Hint text="image.lsr:label"/>
+ </Resource>
+ <Resource uuid="E9ACDAFD-8DD4-4338-934D-CD11189C318C" category="Artifact" type="Image" metatagId="956">
+  <Hint text="image.lss:label"/>
+ </Resource>
+ <Resource uuid="6472F26E-A548-4E1E-96B1-0B104D33B679" category="Artifact" type="Image" metatagId="958">
+  <Hint text="image.sqr:label"/>
+ </Resource>
+ <Resource uuid="72B53589-C813-4CC1-8057-9348F1B81A0A" category="Artifact" type="Image" metatagId="960">
+  <Hint text="image.sqs:label"/>
+ </Resource>
+</ResourceResolver>

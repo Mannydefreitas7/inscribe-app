@@ -1,0 +1,86 @@
+[
+    {
+        "id": "be5771db-02cf-49ec-a21e-1a11a2c7a279",
+        "name": "Inscribe",
+        "description": "Includes article editing toolbar and document tree view.",
+        "size": "23 MB",
+        "isInstalled": true,
+        "hasUpdate": true,
+        "icon": "inscribe"
+    },
+    {
+        "id": "1aa30810-03cd-499f-8a51-faad504827b0",
+        "name": "Model Service",
+        "description": "Fetch and browse available publication models from the cloud.",
+        "size": "140 KB",
+        "isInstalled": true,
+        "hasUpdate": false,
+        "icon": "service"
+    },
+    {
+        "id": "bbeaa910-9bcd-4ad4-b356-1e2b8ba44952",
+        "name": "Article Service",
+        "description": "Fetch and browse available article from the cloud.",
+        "size": "169 KB",
+        "isInstalled": true,
+        "hasUpdate": false,
+        "icon": "service"
+    },
+    {
+        "id": "bbeaa910-9bcd-4ad4-b356-1e2b8ba44952",
+        "name": "Version Control",
+        "description": "Includes file version tooling with compare and track changes",
+        "size": "169 KB",
+        "isInstalled": true,
+        "hasUpdate": false,
+        "icon": "version"
+    },
+    {
+        "id": "2802c2fb-8c96-4432-9e0a-6cb9ab6ea775",
+        "name": "Talk Outline Templates",
+        "description": "Includes MEPSA and MEPSP Talk outline templates.",
+        "size": "230 KB",
+        "isInstalled": true,
+        "hasUpdate": false,
+        "icon": "template"
+    },
+    {
+        "id": "7630469e-d624-443a-be7d-dbeb2ccfb6dd",
+        "name": "PageFlow",
+        "description": "Digital content layout and presentation tooling.",
+        "size": "2.4 MB",
+        "isInstalled": false,
+        "hasUpdate": false,
+        "icon": "pageflow"
+    },
+    {
+        "id": "b209d335-e765-4ecf-a44d-50699cafdd51",
+        "name": "Photons",
+        "description": "Assets versioned explorer service",
+        "size": "345 KB",
+        "isInstalled": false,
+        "hasUpdate": false,
+        "icon": "photons"
+    },
+    {
+        "id": "11a0fbf1-fb9a-437a-8da0-6eaba9834136",
+        "name": "LFF Templates",
+        "description": "Includes MEPSA and MEPSP “Enjoy Life Forever” templates.",
+        "size": "678 KB",
+        "isInstalled": false,
+        "hasUpdate": false,
+        "icon": "template"
+    },
+    {
+        "id": "41f3663e-08a7-4d43-aa6a-bbba08a08238",
+        "name": "OBSL Templates",
+        "description": "Includes MEPSA and MEPSP “Online Bible Lessons” templates.",
+        "size": "1.2 MB",
+        "isInstalled": false,
+        "hasUpdate": false,
+        "icon": "template"
+    }
+
+
+    
+]

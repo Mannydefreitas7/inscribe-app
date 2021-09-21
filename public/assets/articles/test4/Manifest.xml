@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ArticleManifest schema="1" compatibleSchema="1" mlSignature="e34659c081487d405e4c9f0b0bccfd8411152a64">
+ <Identity type="Limited.Research">
+  <ArticleFile name="1004_W16_040_STRAN-1.mepsa" uuid="3D84B1FC-BA49-4723-965D-9BCB8F4416D6" version="1"/>
+  <MepsDocumentId number="2016762"/>
+ </Identity>
+ <Workflow>
+  <Modification timestamp="2016-12-30T21:40:44Z" uuid="27FCC775-E80D-4063-93CD-EDBF02A02CD5"/>
+ </Workflow>
+ <MepsLanguage symbol="E" uuid="5B30F384-64C4-4D70-A191-5B4C429224D2"/>
+ <MepsClassification number="40"/>
+ <Replacements>
+  <Replacement name="Research Source" fileName="1004_W16_040_STRA.N-1" fileCategory="RFF" signature="55e1243381ed6d49c821a600c5421ef7a1dd2b1e"/>
+ </Replacements>
+</ArticleManifest>
