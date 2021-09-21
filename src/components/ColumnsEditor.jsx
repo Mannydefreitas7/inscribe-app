@@ -8,7 +8,7 @@ import TrashIcon from './../assets/icons/trash.svg';
 import { Resizable } from 're-resizable';
 export default function ColumnsEditor(props) {
 
-    const { selectComponent, component, removeItem, presentation, loadPresentation, onResizeStop, width } = useContext(GlobalContext)
+    const { selectComponent, component, removeItem, presentation, loadPresentation, onResizeStop } = useContext(GlobalContext)
 
     const [colOneCollected, dropColumnOneRef] = useDrop(() => ({
 

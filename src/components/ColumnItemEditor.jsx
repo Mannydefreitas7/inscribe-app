@@ -1,17 +1,15 @@
 import React, { useContext } from 'react'
 // import ContentEditable from 'react-contenteditable'
 import CloseIcon from './../assets/icons/close-white.svg';
-import { ReactSVG } from 'react-svg';
-import CropIcon from './../assets/icons/crop.svg';
 import { GlobalContext } from '../store/GlobalState';
-import ImageCropper from './modal/ImageCropper';
+
 import ContentEditable from 'react-contenteditable';
 import { useDrag, useDrop } from 'react-dnd';
 import { v4 } from 'uuid'
 
 export default function ColumnItemEditor(props) {
 
-    const { selectItem, selectedItem, openModal, removeClass, loadPresentation, presentation } = useContext(GlobalContext);
+    const { selectItem, selectedItem, removeClass, loadPresentation, presentation } = useContext(GlobalContext);
 
       const handleDrop = (item) => {
         item.id = v4()
