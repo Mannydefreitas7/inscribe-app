@@ -86,8 +86,10 @@ export default function TextSizeProperties() {
         let index = selectedItem.classlist.findIndex(el => el.includes('text-'));
         if (index >= 0) {
             selectedItem.classlist[index] = size;
-            loadPresentation(presentation)
+        } else {
+            selectedItem.classlist.push(size)
         }
+        loadPresentation(presentation)
     }
 
     const selectedStyle = () => {

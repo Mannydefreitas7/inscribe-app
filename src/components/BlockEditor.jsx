@@ -118,13 +118,21 @@ export default function BlockEditor(props) {
                         ref={dropTextBoxRef}
                         className={` ${props.block.text ? 'bg-opacity-0' : 'p-2 border-2 bg-opacity-10' }   border-dashed ${dropTextBoxCollected.isOver ? 'bg-indigo-100 border-indigo-200' : 'bg-gray-100 border-gray-100'}`}
                         style={{ height: dropTextBoxCollected.isOver ? 200 : 'auto', minHeight: props.block.text ? 'auto' : 100, transition: 'height ease-in-out .2s'  }}>
-                        <div className={props.block.classlist.toString().replace(',', ' ')}>
+                        <div >
                             <ContentEditable
                                 tagName="div"
-                                className={props.block.text ? '' : 'text-gray-300'}
+                                className={props.block.text ? props.block.classlist.join(' ') : 'text-gray-300'}
                                 id={props.block.id}
-                                onChange={(e) => { props.block.text = e.target.value }}
-                                onBlur={(e) => loadPresentation(presentation)}
+                                onChange={(e) => { 
+                                    props.block.text = e.target.value 
+                                }}
+                                onBlur={(e) => {                                    
+                                    let i = props.block.classlist.findIndex(el => el.includes('text-'))
+                                    if (i < 0) {
+                                        props.block.classlist.push('text-paragraph')
+                                    }
+                                    loadPresentation(presentation)
+                                }}
                                 html={props.block.text ? props.block.text : 'Drop or enter text here...'}
                             />
                         </div>
