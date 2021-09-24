@@ -17,7 +17,7 @@
             "type": "text",
             "text": "Knowledge That Draws Us to God",
             "description": "Title",
-            "classlist": ["title"],
+            "classlist": ["text-title"],
             "properties": {}
         },
         {
@@ -64,7 +64,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["opening", "paragraph", "color-gray-500"],
+            "classlist": ["text-opening", "text-paragraph", "color-gray-500"],
             "properties": {}
         },
         {
@@ -73,7 +73,7 @@
             "type": "text",
             "text": "Our Creator Has a Personal Name",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -102,7 +102,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -131,7 +131,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -140,7 +140,7 @@
             "type": "text",
             "text": "Jehovah Is a Loving God",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -169,7 +169,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -189,7 +189,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -198,7 +198,7 @@
             "type": "text",
             "text": "Jehovah Is a Forgiving God",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -227,7 +227,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -256,7 +256,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -265,7 +265,7 @@
             "type": "text",
             "text": "Jehovah Welcomes Our Prayers",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -294,7 +294,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -314,7 +314,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         }
     ]

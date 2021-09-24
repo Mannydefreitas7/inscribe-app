@@ -12,12 +12,40 @@ import SecondaryButton from '../buttons/SecondaryButton';
 import { NavLink } from 'react-router-dom';
 import localforage from 'localforage';
 import ColumnsResize from './ColumnsResize';
+import Togglebuttons from '../buttons/Togglebuttons';
+import TextSizeProperties from './TextSizeProperties';
+import TextFormatProperties from './TextFormatProperties';
 
 
 export default function Properties() {
 
     const { component, openModal, selectedItem, presentation, loadPresentation } = useContext(GlobalContext)
     const captionRef = useRef(null)
+
+    const addFloatClass = (classname) => {
+        if (selectedItem) {
+            let currentIndex = selectedItem.classlist.findIndex(el => el.includes('float'));
+                if (currentIndex >= 0) {
+                    selectedItem.classlist[currentIndex] = classname
+                } else {
+                    selectedItem.classlist.push(classname)
+                }
+               loadPresentation(presentation)
+        }
+        
+    }
+
+    const selectedFloat = () => {
+        if (selectedItem) {
+        let currentIndex = selectedItem.classlist.findIndex(el => el.includes('float'));
+            if (currentIndex >= 0) {
+                let name = selectedItem.classlist[currentIndex];
+                return name
+            }
+        }
+      return null
+    }
+
     const textProperties = {
         title: 'Text',
         properties: [
@@ -29,11 +57,11 @@ export default function Properties() {
             },
             {
                 name: 'Style',
-                children: <SecondaryButton label="Bold" />
+                children: <TextFormatProperties />
             },
             {
                 name: 'Size',
-                children: <SecondaryButton label="Small" />
+                children: <TextSizeProperties />
             }
         ]
     }
@@ -102,6 +130,29 @@ export default function Properties() {
                 />
             },
             {
+                name: 'Float',
+                children: <Togglebuttons 
+                    selection={{id: selectedFloat() ? selectedFloat() : 'float-none'}}
+                items={[
+                    {
+                        name: 'left',
+                        id: 'float-left',
+                        onClick: () => { addFloatClass('float-left') }
+                    },
+                    {
+                        name: 'right',
+                        id: 'float-right',
+                        onClick: () => { addFloatClass('float-right') }
+                    },
+                    {
+                        name: 'none',
+                        id: 'float-none',
+                        onClick: () => { addFloatClass('float-none') }
+                    },
+                    
+                ]} />
+            },
+            {
                 children: <TextArea
                     innerRef={captionRef}
                     label={'Caption'}
@@ -120,10 +171,16 @@ export default function Properties() {
     return (
         <Collaspible title="Properties" >
             
-            <PropertyHeading title={textProperties.title} properties={textProperties.properties} />
+            
 
             <PropertyHeading title={borderProperties.title} properties={borderProperties.properties} />
-            <div></div>
+
+            {
+                
+                selectedItem && (selectedItem.type.includes('text') || selectedItem.type.includes('container')) ?
+                <PropertyHeading title={textProperties.title} properties={textProperties.properties} /> : null
+            }
+
             {
                 
                 component && component.type === 'columns' ?

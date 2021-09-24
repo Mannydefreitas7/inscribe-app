@@ -59,8 +59,8 @@ export default function InsDropDown(props) {
                     onClick={item.action}
                     key={item.id}>
                         {item.icon ? item.icon : null}
-                        <div className="text-gray-600 font-semibold">
-                            {item.text}<br />
+                        <div className="text-gray-600">
+                            <span className={item.id ? item.id :''}>{item.text}</span><br />
                             {item.description ? <span className="text-sm font-normal text-gray-300">{item.description}</span> : null}
                         </div>
                     </StyledMenuItem>

@@ -3,14 +3,14 @@ import { ContextMenu, ContextMenuTrigger, MenuItem } from "react-contextmenu";
 
 export default function InsContextMenu(props) {
     return (
-        <>
+        <div>
             <ContextMenuTrigger id={props.id}>
                 {props.children}
             </ContextMenuTrigger>
             <ContextMenu 
                 
                 hideOnLeave={true}
-            id={props.id} className="py-1 bg-gray-50 shadow rounded-sm z-50" style={{ minWidth: 200 }}>
+                id={props.id} className="py-1 bg-gray-50 shadow rounded-sm z-50" style={{ minWidth: 200 }}>
                 {props.buttons && props.buttons.map((button, index) => (
                 <MenuItem 
                 
@@ -27,6 +27,6 @@ export default function InsContextMenu(props) {
                    
                 </ContextMenu>
             
-        </>
+        </div>
     )
 }

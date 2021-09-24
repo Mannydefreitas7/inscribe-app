@@ -17,7 +17,7 @@
             "type": "text",
             "text": "Guidance for Peaceful Relationships",
             "description": "Title",
-            "classlist": ["title"],
+            "classlist": ["text-title"],
             "properties": {}
         },
         {
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["opening", "paragraph", "color-gray-500"],
+            "classlist": ["text-opening", "text-paragraph", "color-gray-500"],
             "properties": {}
         },
         {
@@ -46,7 +46,7 @@
             "type": "text",
             "text": "Be Forgiving",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -75,7 +75,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -122,7 +122,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -131,7 +131,7 @@
             "type": "text",
             "text": "Be Humble and Respectful",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -160,7 +160,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -180,7 +180,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -189,7 +189,7 @@
             "type": "text",
             "text": "Be Impartial",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -218,7 +218,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -256,7 +256,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -265,7 +265,7 @@
             "type": "text",
             "text": "Be Mild-Tempered",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -294,7 +294,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -323,7 +323,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         },
         {
@@ -332,7 +332,7 @@
             "type": "text",
             "text": "Be Generous and Thankful",
             "description": "Block",
-            "classlist": ["subheading-1"],
+            "classlist": ["text-subheading-1"],
             "properties": {}
         },
         {
@@ -361,7 +361,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["bold", "paragraph"],
+            "classlist": ["font-bold", "text-paragraph"],
             "properties": {}
         },
         {
@@ -417,7 +417,7 @@
                 }
             ],
             "description": "Container",
-            "classlist": ["paragraph"],
+            "classlist": ["text-paragraph"],
             "properties": {}
         }
     ]
