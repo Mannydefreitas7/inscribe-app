@@ -112,8 +112,6 @@ export default function ColumnsEditor(props) {
                 onClick={() => selectComponent(props.item)}
                 className={`cursor-default relative w-full`}>
                 <div className={props.item.classlist}>
-
-
                     <Resizable
                         bounds={'parent'}
                         onResizeStop={onResize}
@@ -133,8 +131,7 @@ export default function ColumnsEditor(props) {
                                     return <ColumnItemEditor key={child.id} block={child} index={i} />
                                 })
                             }
-                        </div>
-                        
+                        </div>  
                     </Resizable>
                             
 

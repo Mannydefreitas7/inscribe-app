@@ -28,12 +28,13 @@ export default function PresentationEditor() {
     }
     useEffect(() => {
         changeWorkspace('presentation')
-        load() 
+        load()
         // eslint-disable-next-line
     },[])
 
+
+
     useEventListener('keydown', (event) => {
-        
         switch (event.key) {
             case 'Backspace': 
                 if (selectedItem) {
@@ -48,38 +49,34 @@ export default function PresentationEditor() {
     const load = async () => {
         try {
             let presentation = await localforage.getItem('presentation');
-            loadPresentation(presentation)
-            
+            loadPresentation(presentation)   
         } catch (error) {
             console.log(error)
         } 
     }
- 
+
+
     
     return (
-        <div 
-        id="canvas"
-        
+        <div id="canvas"
         className={`bg-white flex-1 mx-auto ${breakpoint !== 'desktop' ? 'shadow-lg' : ''}`} style={{ maxWidth: setBreakPointWidth(), transition: 'max-width ease-in-out .2s' }}>
-            <div className="container px-4 h-screen overflow-auto pb-24 mx-auto" style={{ paddingTop: 100, maxWidth: 1024 }}  >
-                <DroppableZone type="top"/>
-           
+            <div className="container px-4 h-screen overflow-auto pb-24 mx-auto" 
+                style={{ paddingTop: 100, maxWidth: 1024 }}>
                 {
-                    presentation && presentation.items.map((item, index) => {  
-                        return <div key={item.id}>
-                            {
-                                item && item.type === 'columns' ? 
-                                <ColumnsEditor item={item} index={index} /> : 
-                                <BlockEditor block={item} index={index} />
-                            }
+                    presentation && presentation.items.length > 0 ?
+                    presentation.items.map((item, index) => (
+                        <div key={item.id}>
+                            <DroppableZone index={index} block={item}>
+                                {
+                                    item && item.type === 'columns' ? 
+                                    <ColumnsEditor item={item} index={index} /> : 
+                                    <BlockEditor block={item} index={index} />
+                                }
+                            </DroppableZone>
                         </div>
-                    })
+                    )) :
+                    <DroppableZone />
                 }
-
-                {
-                    presentation && presentation.items.length > 0 ? <DroppableZone type="bottom"/> : null
-                }
-                
             </div>
         </div>
     )

@@ -3773,8 +3773,16 @@
     font-weight: normal;
   }
   
-  .font-weight-bold {
+  .font-bold {
     font-weight: bold;
+  }
+
+  .font-underline {
+    text-decoration: underline;
+  }
+
+  .font-italic {
+    font-style: italic;
   }
   
   .font-weight-light {

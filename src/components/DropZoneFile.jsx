@@ -43,6 +43,9 @@ function DropZoneFile(props) {
             raw: reader.result,
             blob: reader.result,
             crop: null,
+            properties: {
+              width: ''
+            },
             crops: [
               {
                 blob: null,

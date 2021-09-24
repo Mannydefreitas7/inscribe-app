@@ -18,8 +18,8 @@ function ColorPickerButton(props) {
             {...props}
             disabled={!selectedItem}
             className="flex items-center">
-                <span className={`text-sm px-2 ${selectedItem ? 'text-gray-600' : 'text-gray-200'}`}>{selectedItem && hasColor ? colorName : 'Black'}</span>
-                <div className={`rounded-sm border border-gray-200 ${hasColor ? 'background-' + selectedItem.classlist[colorClassIndex] : 'bg-black'} ${!selectedItem ? 'bg-opacity-20' : 'bg-opacity-100'}`} style={{ height: 20, width: 20 }}></div>
+                <span className={`text-sm py-1 px-2 rounded mr-1 bg-gray-100 ${selectedItem ? 'text-gray-600' : 'text-gray-200'}`}>{selectedItem && hasColor ? colorName : 'Black'}</span>
+                <div className={`rounded-sm border border-gray-200 ${hasColor ? 'background-' + selectedItem.classlist[colorClassIndex] : 'bg-black'} ${!selectedItem ? 'bg-opacity-20' : 'bg-opacity-100'}`} style={{ height: 25, width: 25 }}></div>
             </button>
         </>
         
