@@ -11,7 +11,7 @@ import ListOrderedIcon from './../../assets/icons/list-ordered.svg';
 
 function ArticleToolbar() {
     return (
-        <div id="toolbar" className="flex px-2 flex-row">
+        <div id="toolbar" className="flex px-2 items-center flex-row">
             <EditButton cmd="bold" icon={BoldIcon} />
             <EditButton cmd="italic" icon={ItalicIcon} />
             <EditButton cmd="underline" icon={UnderlineIcon} />
@@ -21,14 +21,13 @@ function ArticleToolbar() {
             <button 
             onMouseDown={evt => {
                 evt.preventDefault();
-                if (window.getSelection().anchorNode.parentElement.localName === "a") {
-                    console.log("it's a link")
+                if (window.getSelection().anchorNode && window.getSelection().anchorNode.parentElement.localName === "a") {
                     document.execCommand("unlink", true, "") 
                 } else {
                     document.execCommand("createLink", false, "https://github.com/lovasoa/react-contenteditable");
                 }
             }}
-            className="p-2 ql-bold rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
+            className="p-2 ql-bold flex items-center rounded hasDropdown bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
                 <ReactSVG
                     src={LinkIcon}
                 />
@@ -39,7 +38,7 @@ function ArticleToolbar() {
                 evt.preventDefault();
                 document.execCommand("styleWithCSS", false, false) 
             }}
-            className="p-2 rounded bg-gray-900 bg-opacity-0 hover:bg-opacity-5">
+            className="p-2 flex items-center rounded bg-gray-900 hasDropdown bg-opacity-0 hover:bg-opacity-5">
                 <ReactSVG
                     src={ParagraphIcon}
                 />
