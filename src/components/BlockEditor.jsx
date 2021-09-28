@@ -12,6 +12,7 @@ import DropZoneImage from './DropZoneImage';
 import InsContextMenu from './modal/ContextMenu';
 import AddView from './modal/AddView';
 import { Resizable } from 're-resizable';
+import localforage from 'localforage';
 
 
 export default function BlockEditor(props) {
@@ -58,7 +59,7 @@ export default function BlockEditor(props) {
             label: 'Crop',
             icon: CropIcon,
             action: (event, data) => {
-                openModal(<ImageCropper selectedItem={data} />, 0, "0%")
+                openModal(<ImageCropper selectedItem={data} />, 50, "0%")
             }
         },
         {
@@ -79,11 +80,30 @@ export default function BlockEditor(props) {
       }))
 
       const [width, setWidth] = useState();
-      const handleDrop = (item) => {
-        let index = presentation.items.findIndex(el => el.id === props.block.id)
-        item.id = v4()
-        presentation.items[index] = item
-        loadPresentation(presentation)
+
+      const handleDrop = async (item) => {
+        let _presentation = await localforage.getItem('presentation');
+        if (_presentation) {
+            if (item.extension && item.items && item.items.length > 0) { 
+                let items = item.items.map(i => {
+                  return {
+                    id: v4(),
+                    ...i
+                  }
+                })
+                if (_presentation && _presentation.items) {
+                  _presentation.items.push(...items) 
+                }
+               
+            } else { 
+              item.id = v4() 
+              let items = _presentation.items
+              let i = items.findIndex(el => el.id === props.block.id)
+              _presentation.items.splice(i, 0, item)
+            }
+            loadPresentation(_presentation)
+            localforage.setItem('presentation', _presentation)
+        }
     }
 
     const onResize = (event, direction, el, delta) => {

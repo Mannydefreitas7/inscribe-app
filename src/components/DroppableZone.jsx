@@ -16,41 +16,44 @@ export default function DroppableZone(props) {
 
   const handleOnDrop = async (item, type) => {
     let _presentation = await localforage.getItem('presentation');
-    switch (type) {
-      case 'ASSET':
-          if (item.extension && item.items && item.items.length > 0) { 
-              let items = item.items.map(i => {
-                return {
-                  id: v4(),
-                  ...i
+    if (_presentation) {
+      switch (type) {
+        case 'ASSET':
+            if (item.extension && item.items && item.items.length > 0) { 
+                let items = item.items.map(i => {
+                  return {
+                    id: v4(),
+                    ...i
+                  }
+                })
+                if (_presentation && _presentation.items) {
+                  _presentation.items.push(...items) 
                 }
-              })
-              if (_presentation && _presentation.items) {
-                _presentation.items.push(...items) 
-              }
-             
-          } else { 
-            item.id = v4() 
+               
+            } else { 
+              item.id = v4() 
+              let items = _presentation.items
+              let i = items.findIndex(el => el.id === props.block.id)
+              _presentation.items.splice(i, 0, item)
+            }
+          break;
+            
+          case 'BLOCK':
+            let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+            item.id = v4()
             let items = _presentation.items
             let i = items.findIndex(el => el.id === props.block.id)
+            _presentation.items.splice(itemIndex, 1)
             _presentation.items.splice(i, 0, item)
-          }
-        break;
+          break;
+      
+        default:
+          break;
           
-        case 'BLOCK':
-          let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
-          item.id = v4()
-          let items = _presentation.items
-          let i = items.findIndex(el => el.id === props.block.id)
-          _presentation.items.splice(itemIndex, 1)
-          _presentation.items.splice(i, 0, item)
-        break;
-    
-      default:
-        break;
-        
+      }
+      loadPresentation(_presentation)
     }
-    loadPresentation(_presentation)
+    
   }
 
     const [{ isOver }, drop] = useDrop(() => ({

@@ -153,17 +153,20 @@ export const GlobalProvider = (props) => {
                     assets: [],
                     toc: []
                 }
-                await localforage.setItem('presentation', data)
+             
                 dispatch({
                     type: LOAD_PRESENTATION,
                     payload: data
                 })
+                localforage.setItem('presentation', data)
             } else {
-                await localforage.setItem('presentation', presentation)
+                
                 dispatch({
                     type: LOAD_PRESENTATION,
                     payload: presentation
                 })
+
+                localforage.setItem('presentation', presentation)
             }
 
         } catch (error) {
@@ -298,8 +301,8 @@ export const GlobalProvider = (props) => {
         } 
     }
 
-    const addComponent = async (component, _presentation) => {
-
+    const addComponent = async (component, presentation) => {
+        let _presentation = await localforage.getItem('presentation');
             if (_presentation) {
 
                 if (_presentation.items.length > 0 && state.selectedItem) {
@@ -332,8 +335,8 @@ export const GlobalProvider = (props) => {
     }
 
 
-    const removeItem = async (item, _presentation) => {
-
+    const removeItem = async (item, presentation) => {
+        let _presentation = await localforage.getItem('presentation');
         if (_presentation && _presentation.items.length > 0) {
            
             if (item.type === 'columns') {
@@ -381,12 +384,12 @@ export const GlobalProvider = (props) => {
     }
 
 
-    const setImageCrop = async (item, crop, cropId, _presentation) => {
-      
+    const setImageCrop = async (item, crop, cropId, presentation) => {
+        let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
                 let imageItem = item;
                 let crops = imageItem.crops.filter(c => c.id === cropId);
-                console.log(crops)
+ 
                 if (crops.length > 0) {
                     let imageCrop = {
                         ...crops[0],
@@ -398,26 +401,24 @@ export const GlobalProvider = (props) => {
 
                 }
 
-            await localforage.setItem('presentation', _presentation);
-
             dispatch({
                 type: LOAD_PRESENTATION,
                 payload: _presentation
             })
-            
+             localforage.setItem('presentation', _presentation);
         }
     }
 
-    const setImageBlob = async (item, blob, cropId, cropName, _presentation) => {
+    const setImageBlob = async (item, blob, cropId, cropName, presentation) => {
        // let _presentation = await localforage.getItem('presentation');
-    
+       let _presentation = await localforage.getItem('presentation');
         if (_presentation) {
 
                 let imageItem = item;
                 let crops = imageItem.crops.filter(c => c.id === cropId);
                 if (crops.length > 0) {
                     let imageCropIndex = imageItem.crops.findIndex(el => el.id === cropId);
-                   // let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
+                    let itemIndex = _presentation.items.findIndex(el => el.id === item.id);
                     imageItem.blob = blob;
                     imageItem.crop = cropName;
                     imageItem.classlist.forEach((classKey, index) => {
@@ -432,17 +433,18 @@ export const GlobalProvider = (props) => {
                         ...imageItem.crops[imageCropIndex],
                         blob: blob
                     }
-                  //  _presentation.items[itemIndex] = imageItem;
-                    await localforage.setItem('presentation', _presentation);
+                    _presentation.items[itemIndex] = imageItem;
+                    
 
                     dispatch({
                         type: LOAD_PRESENTATION,
                         payload: _presentation
                     })
- 
+                  
                 }
-            
+                localforage.setItem('presentation', _presentation); 
         }
+        
     }
 
     const selectItem = (item) => {

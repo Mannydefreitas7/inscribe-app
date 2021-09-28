@@ -75,8 +75,9 @@ export default function PresentationEditor() {
                             </DroppableZone>
                         </div>
                     )) :
-                    <DroppableZone />
+                    null
                 }
+                <DroppableZone />
             </div>
         </div>
     )
