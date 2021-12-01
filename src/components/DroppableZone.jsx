@@ -8,7 +8,7 @@ import localforage from 'localforage';
 
 export default function DroppableZone(props) {
 
-  const { loadPresentation } = useContext(GlobalContext)
+  const { loadPresentation, addComponent } = useContext(GlobalContext)
   const isDragging = useDragLayer(
     monitor => monitor.isDragging()
   );
@@ -19,10 +19,13 @@ export default function DroppableZone(props) {
     if (_presentation) {
       switch (type) {
         case 'ASSET':
+
             if (item.extension && item.items && item.items.length > 0) { 
+
                 let items = item.items.map(i => {
+                  let id = v4()
                   return {
-                    id: v4(),
+                    id: id,
                     ...i
                   }
                 })
@@ -31,10 +34,17 @@ export default function DroppableZone(props) {
                 }
                
             } else { 
-              item.id = v4() 
-              let items = _presentation.items
-              let i = items.findIndex(el => el.id === props.block.id)
-              _presentation.items.splice(i, 0, item)
+              if (item.id) {
+                console.log('test 2')
+                item.id = v4() 
+                let items = _presentation.items
+                if (props.block) {
+                  let i = items.findIndex(el => el.id === props.block.id)
+                  _presentation.items.splice(i, 0, item)
+                } else {
+                  _presentation.items.push(item)
+                }
+              }
             }
           break;
             
@@ -46,7 +56,9 @@ export default function DroppableZone(props) {
             _presentation.items.splice(itemIndex, 1)
             _presentation.items.splice(i, 0, item)
           break;
-      
+          case 'COMPONENT':
+            addComponent(item, _presentation)
+            break;
         default:
           break;
           
@@ -57,7 +69,7 @@ export default function DroppableZone(props) {
   }
 
     const [{ isOver }, drop] = useDrop(() => ({
-        accept: ['ASSET', 'BLOCK'],
+        accept: ['ASSET', 'BLOCK', 'COMPONENT'],
         drop: (item, monitor) => handleOnDrop(item, monitor.getItemType()),
         collect: (monitor) => ({
           isOver: monitor.isOver({shallow: true})
@@ -67,9 +79,9 @@ export default function DroppableZone(props) {
       const setHeight = () => {
           if (isDragging) {
             if (isOver) {
-              return props.children ? 50 : 100
+              return props.children ? 50 : 150
             }
-            return props.children ? 0 : 50
+            return props.children ? 10 : 150
           }
           return 'auto'
       }

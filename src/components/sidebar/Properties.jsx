@@ -45,6 +45,35 @@ export default function Properties() {
         }
       return null
     }
+    const updateTextStyle = () => {
+        if (presentation && presentation.items && presentation.items.length > 0) {
+            let _presentation = presentation;
+            if (selectedItem.classlist.join(' ').includes('subheading')) {
+                let index = selectedItem.classlist.findIndex(el => el.includes('subheading'));
+                if (_presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index])).length > 0) {
+                    _presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index])).forEach(el => el.classlist = selectedItem.classlist);
+                }
+                loadPresentation(_presentation)
+            }
+            
+        }
+    }
+
+    const shouldUpdate = () => {
+        if (presentation && presentation.items && presentation.items.length > 0 && selectedItem) {
+           
+            if (selectedItem.classlist.join(' ').includes('subheading')) {
+                let index = selectedItem.classlist.findIndex(el => el.includes('subheading'))
+                let subheadings = presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index]));
+               
+                if (subheadings.length > 0) {
+                    let a = subheadings.map(s => s.classlist.sort((a, b) => a.localeCompare(b)).join(' '))
+                    return !a.every((el, i, arr) => el === arr[0])
+                }
+            }
+            return false
+        }
+    }
 
     const textProperties = {
         title: 'Text',
@@ -62,6 +91,9 @@ export default function Properties() {
             {
                 name: 'Size',
                 children: <TextSizeProperties />
+            },
+            {
+                children: shouldUpdate() ? <div className="flex justify-center w-full"><SecondaryButton onClick={updateTextStyle} label={`Apply All`} hasDropdown={false} /></div> : null
             }
         ]
     }
@@ -86,27 +118,29 @@ export default function Properties() {
         ]
     }
 
-    const borderProperties = {
-        title: 'Border',
-        properties: [
-            {
-                name: 'Color',
-                children: <SecondaryButton label="Black" />
-            },
-            {
-                name: 'Width',
-                children: <SecondaryButton label="Small" />
-            },
-            {
-                name: 'Style',
-                children: <SecondaryButton label="Small" />
-            },
-            {
-                name: 'Sides',
-                children: <SecondaryButton label="Start" />
-            }
-        ]
-    }
+ 
+
+    // const borderProperties = {
+    //     title: 'Border',
+    //     properties: [
+    //         {
+    //             name: 'Color',
+    //             children: <SecondaryButton label="Black" />
+    //         },
+    //         {
+    //             name: 'Width',
+    //             children: <SecondaryButton label="Small" />
+    //         },
+    //         {
+    //             name: 'Style',
+    //             children: <SecondaryButton label="Small" />
+    //         },
+    //         {
+    //             name: 'Sides',
+    //             children: <SecondaryButton label="Start" />
+    //         }
+    //     ]
+    // }
 
     const columnsProperties = {
         title: 'Columns',
@@ -169,11 +203,7 @@ export default function Properties() {
 
 
     return (
-        <Collaspible title="Properties" >
-            
-            
-
-            <PropertyHeading title={borderProperties.title} properties={borderProperties.properties} />
+        <Collaspible title="Properties" isOpen={true}>
 
             {
                 

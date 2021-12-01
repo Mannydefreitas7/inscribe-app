@@ -3,6 +3,7 @@ import { GlobalContext } from '../store/GlobalState';
 import BlockEditor from '../components/BlockEditor'
 import ColumnsEditor from '../components/ColumnsEditor';
 import DroppableZone from '../components/DroppableZone';
+import DroppablePlaceholder from '../components/DroppablePlaceholder';
 import { useEffect } from 'react';
 import localforage from 'localforage';
 import './PresentationEditor.css';
@@ -75,7 +76,7 @@ export default function PresentationEditor() {
                             </DroppableZone>
                         </div>
                     )) :
-                    null
+                    <DroppablePlaceholder />
                 }
                 <DroppableZone />
             </div>

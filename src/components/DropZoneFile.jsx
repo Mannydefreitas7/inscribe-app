@@ -5,13 +5,13 @@ import { GlobalContext } from "../store/GlobalState";
 import DragDropIcon from "./../assets/icons/drag.svg";
 
 import { v4 } from 'uuid';
-import { useHistory, useLocation } from "react-router-dom";
+ import { useHistory, useLocation } from "react-router-dom";
 import SecondaryButton from "./buttons/SecondaryButton";
 function DropZoneFile(props) {
 
   const { addAsset, toggleLeftSidebar } = useContext(GlobalContext);
   const location = useLocation();
-  const history = useHistory();
+ const history = useHistory();
   const {
     getRootProps,
     getInputProps,
@@ -51,8 +51,8 @@ function DropZoneFile(props) {
                 blob: null,
                 id: v4(),
                 name: 'SQR',
+                aspect: 1 / 1,
                 height: 224,
-                width: 224,
                 unit: "px",
                 x: 0,
                 y: 0
@@ -61,8 +61,8 @@ function DropZoneFile(props) {
                 blob: null,
                 id: v4(),
                 name: 'PNR',
-                height: 267,
-                width: 801,
+                aspect: 3 / 1,
+                height: 250,
                 unit: "px",
                 x: 0,
                 y: 0
@@ -71,8 +71,8 @@ function DropZoneFile(props) {
                 id: v4(),
                 blob: null,
                 name: 'LSR',
+                aspect: 2 / 1,
                 height: 400,
-                width: 800,
                 unit: "px",
                 x: 0,
                 y: 0
@@ -83,13 +83,13 @@ function DropZoneFile(props) {
         }
       }
 
-      if (file.name.includes('MEPSA')) {
         file.text().then(article => {
+         console.log(article)
           let file = JSON.parse(article);
             if (file && file.extension === 'MEPSA') {
               
               if (location.pathname === '/home') {
-                history.push('/editor')
+                history.push('/article')
                 setTimeout(() => {
                   addAsset(file)
                   toggleLeftSidebar(true)
@@ -100,19 +100,18 @@ function DropZoneFile(props) {
               }
             }
         })
-      }
+
       return null
     });
     // eslint-disable-next-line
   }, [acceptedFiles])
 
   return (
-    <div className="flex justify-center content-center mb-4" {...props}>
+    <div className="flex justify-center content-center mb-4 w-full" {...props}>
       <div
         {...getRootProps({
           onDrop: event => {
             console.log(acceptedFiles)
-            
           },
           className: `${
             isDragActive

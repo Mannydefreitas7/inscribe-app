@@ -3,10 +3,9 @@ import {
     NavLink
   } from "react-router-dom";
 import InsMenu from './../modal/InsMenu';
-import MEPSPIcon from './../../assets/icons/mepsp.svg';
-import MEPSAIcon from './../../assets/icons/mepsa.svg';
 import { useHistory } from "react-router-dom";
 import { useContext } from 'react';
+import BrochureIcon from './../../assets/icons/brochure.svg';
 import { GlobalContext } from '../../store/GlobalState';
 
 function DashboardBar() {
@@ -15,21 +14,20 @@ function DashboardBar() {
   const { closeDropdown } = useContext(GlobalContext);
 
   const items = [
-    {
-      id: 0, 
-      icon: <img className="mr-3" width="20" src={MEPSAIcon} alt="" />,
-      text: 'Article',
-      action: () => { 
-        closeDropdown()
-        history.push("/article/") 
-      }, 
-      disabled: false,
-      description: 'Includes article writing and editing tools'
-    },
+    // {
+    //   id: 0, 
+    //   text: 'Article',
+    //   action: () => { 
+    //     closeDropdown()
+    //     history.push("/article/") 
+    //   }, 
+    //   disabled: false,
+    //   description: 'Includes article writing and editing tools'
+    // },
     {
       id: 1, 
-      icon: <img className="mr-3" width="20" src={MEPSPIcon} alt="" />,
-      text: 'Presentation',
+      icon: <img src={BrochureIcon} className="mr-3" alt="" />,
+       text: 'Layout Design',
       action: () => { 
         closeDropdown()
         history.push("/presentation/") 

@@ -17,9 +17,16 @@ export default function SideBarLeft() {
         <div className="fixed h-full z-10 bg-gray-50 border-r-2 border-gray-100 overflow-x-hidden"
             style={{ width: 320, paddingTop: 60 }}>
             
+
+
             {
                 workspace === 'presentation' ?
-                <Collaspible title="Assets" >
+                <PresentationOutline /> : <ArticleOutline />
+            }
+
+            {
+                workspace === 'presentation' ?
+                <Collaspible title="Assets" isOpen={true} >
 
                 <DropZoneFile />
                 <div className="py-1" >
@@ -51,11 +58,6 @@ export default function SideBarLeft() {
                 </div>
             </Collaspible> : null
 
-            }
-
-            {
-                workspace === 'presentation' ?
-                <PresentationOutline /> : <ArticleOutline />
             }
 
         </div>

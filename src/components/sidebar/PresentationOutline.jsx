@@ -12,7 +12,7 @@ function PresentationOutline() {
     return (
         <div>
             {
-                presentation && presentation.items.length > 0 ? <Collaspible title="Outline">
+                presentation && presentation.items.length > 0 ? <Collaspible title="Outline" isOpen={false}>
                
                     {
                         presentation && presentation.items.length > 0 ? 

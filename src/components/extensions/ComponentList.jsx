@@ -1,13 +1,13 @@
 import React from 'react'
 import { useContext } from 'react';
 import { GlobalContext } from './../../store/GlobalState';
-import Component from './Component';
 import { v4 } from 'uuid';
+import PlusIcon from './../../assets/icons/plus.svg';
+import { useDrag } from 'react-dnd';
 
-export default function Components() {
+function ComponentList() {
 
-    const { addComponent, closeModal, presentation } = useContext(GlobalContext);
-
+  
     const components = [
         {
             id: v4(),
@@ -108,22 +108,50 @@ export default function Components() {
         //     children: []
         // }
     ]
-
     return (
-     //   <Collaspible title="Components">
-            <div className="grid grid-cols-3 gap-1">
-                {
-                    components && components.map(component => {
-                        return <Component 
+        <div>
+            {
+                components && components.map(component => {
+
+         
+
+                    return <ComponentListItem
                         key={component.id}
-                        component={component} 
-                        onClick={() => {
-                            addComponent(component, presentation)
-                            closeModal()
-                        }}/>
-                    })
-                }
-            </div>
-     //   </Collaspible> 
+                        component={component}
+                    />
+                })
+            }
+        </div>
     )
 }
+
+function ComponentListItem({component}) {
+
+    const { addComponent, presentation } = useContext(GlobalContext);
+    const [{ opacity }, dragRef] = useDrag(() => ({
+        type: 'COMPONENT',
+        item: component,
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging()
+        })
+    }))
+    return (
+        <div
+            key={component.id}
+           
+            className="flex items-center cursor-move rounded-sm justify-between py-2 px-3 hover:bg-black hover:bg-opacity-5"
+            onClick={() => {
+                addComponent(component, presentation)
+            }}>
+                <div className="inline-flex items-center">
+                    <img style={{ width: 70 }} src={component.data} alt={component.text} />
+                    <span className="text-gray-600 text-sm ml-3">{component.description}</span>
+                </div>
+                <img className="opacity-0 hover:opacity-100 group-hover:opacity-30" src={PlusIcon} alt=""/>
+            </div>
+    )
+}
+   
+
+
+export default ComponentList

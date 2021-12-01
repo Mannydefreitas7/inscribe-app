@@ -66,21 +66,21 @@ export default function TextSizeProperties() {
             }
             return false
         }
-    }
+    } 
 
-    const updateTextStyle = () => {
-        if (presentation && presentation.items && presentation.items.length > 0) {
-            let _presentation = presentation;
-            if (selectedItem.classlist.join(' ').includes('subheading')) {
-                let index = selectedItem.classlist.findIndex(el => el.includes('subheading'));
-                if (_presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index])).length > 0) {
-                    _presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index])).forEach(el => el.classlist = selectedItem.classlist);
-                }
-                loadPresentation(_presentation)
-            }
+    // const updateTextStyle = () => {
+    //     if (presentation && presentation.items && presentation.items.length > 0) {
+    //         let _presentation = presentation;
+    //         if (selectedItem.classlist.join(' ').includes('subheading')) {
+    //             let index = selectedItem.classlist.findIndex(el => el.includes('subheading'));
+    //             if (_presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index])).length > 0) {
+    //                 _presentation.items.filter(el => el.classlist.includes(selectedItem.classlist[index])).forEach(el => el.classlist = selectedItem.classlist);
+    //             }
+    //             loadPresentation(_presentation)
+    //         }
             
-        }
-    }
+    //     }
+    // }
 
     const changeTextSize = (size) => {
         let index = selectedItem.classlist.findIndex(el => el.includes('text-'));
@@ -110,9 +110,9 @@ export default function TextSizeProperties() {
             <InsDropDown items={textStyles} title="Text Styles">
                 <SecondaryButton label={`${selectedStyle()}${shouldUpdate() ? '*' : ''}`} hasDropdown={true} />
             </InsDropDown>
-            {
-                shouldUpdate() ? <SecondaryButton onClick={updateTextStyle} label={`Update`} hasDropdown={false} /> : null
-            }
+            {/* {
+                shouldUpdate() ? <SecondaryButton onClick={updateTextStyle} label={`Apply All`} hasDropdown={false} /> : null
+            } */}
             </div>
         </div>
     )

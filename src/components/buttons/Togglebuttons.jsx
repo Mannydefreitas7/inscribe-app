@@ -13,7 +13,7 @@ export default function Togglebuttons({ items, selection }) {
                     onClick={item.onClick}
                     className={`
                     ${item.name && item.icon ? 'pr-3 pl-2 py-1' : item.icon ? 'p-2' : 'px-2 py-1'} 
-                    ${selection.id.includes(item.id) ? 'bg-gray-700 text-white border-gray-700' : 'border-gray-100'}
+                    ${selection.id && selection.id.includes(item.id) ? 'bg-gray-700 text-white border-gray-700' : 'border-gray-100'}
                     border-r-2 border-t-2 border-b-2
                     ${item.id === items[0].id ? 'border-l-2 rounded-tl-sm rounded-bl-sm' : ''}
                     ${item.id === items[items.length - 1].id ? 'border-r-2 rounded-tr-sm rounded-br-sm' : ''}
